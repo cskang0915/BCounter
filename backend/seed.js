@@ -9,7 +9,7 @@ database.serialize( () => {
     email TEXT UNIQUE, password TEXT)`;
   const createTableBudgetEntry = `CREATE TABLE IF NOT EXISTS budget_entry
     (userId INTEGER UNIQUE, amount TEXT, isNeeds INTEGER, isWants INTEGER,
-    isSavings INTEGER, dateOfEntry TEXT, monthOfEntry INTEGER)`;
+    isSavings INTEGER, dateOfEntry TEXT, monthOfEntry INTEGER, comment TEXT)`;
   const createTableCategory = `CREATE TABLE IF NOT EXISTS category
     (userId INTEGER UNIQUE, needs TEXT, wants TEXT, savings TEXT)`;
 
