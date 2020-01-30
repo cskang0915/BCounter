@@ -76,9 +76,6 @@ userRouter.post("/login", (req, res) => {
   SELECT *, rowid FROM user
   WHERE user.username = ?`;
 
-  console.log('here')
-  console.log(req.body)
-
   database.all(checkUser, [req.body.username], (err, checkedUser) => {
     if (err) {
       return res.status(500).json({
