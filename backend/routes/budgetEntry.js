@@ -72,15 +72,11 @@ budgetEntryRouter.get("/get/:month", authRequired, (req, res) => {
 	});
 });
 
-budgetEntryRouter.put("/update/:needs/:wants/:savings/:month/:date", authRequired, (req, res) => {
+budgetEntryRouter.put("/update/:rowid", authRequired, (req, res) => {
 	const updateBudgetEntryByMonthDate = `
 	UPDATE budget_entry SET userId = ?, amount = ?, isNeeds = ?, isWants = ?, isSavings = ?, dateOfEntry = ?, monthOfEntry = ?, comment = ?
 	WHERE budget_entry.userId = ${req.userId}
-	AND budget_entry.isNeeds = ${req.params.needs}
-	AND budget_entry.isWants = ${req.params.wants}
-	AND budget_entry.isSavings = ${req.params.savings}
-	AND budget_entry.dateOfEntry = ${req.params.date}
-	AND budget_entry.monthOfEntry = ${req.params.month}`;
+	AND budget_entry.rowid = ${req.params.rowid}`;
 
 	database.run(updateBudgetEntryByMonthDate,
 		[
