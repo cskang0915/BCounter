@@ -38,7 +38,6 @@ budgetEntryRouter.get("/get/all", authRequired, (req, res) => {
 	WHERE budget_entry.userId = ${req.userId}`;
 
 	database.all(getAllBudgetEntry, (err, budgetEntry) => {
-		console.log(err)
 		if(err) {
 			return res.status(500).json({
 				status: 500,
@@ -50,15 +49,59 @@ budgetEntryRouter.get("/get/all", authRequired, (req, res) => {
 	});
 });
 
-// --------------------------------------- //
-// WE NEED A GET ALL ENTRY BY CURRENT WEEK //
-// --------------------------------------- //
-
-budgetEntryRouter.get("/get/:month", authRequired, (req, res) => {
-	const getAllBudgetEntryByMonth = `
-	SELECT *, budget_entry.rowid from budget_entry
+budgetEntryRouter.get("/get/day/:month/:day/:year", authRequired, (req, res) => {
+	const getAllBudgetEntryByDay = `
+	SELECT *, budget_entry.rowid FROM budget_entry
+	JOIN category ON category.rowid = budget_entry.category
 	WHERE budget_entry.userId = ${req.userId}
-	AND budget_entry.monthOfEntry = ${req.params.month}`;
+	AND budget_entry.monthOfEntry = ${req.params.month}
+	AND budget_entry.dayOfEntry = ${req.params.day}
+	AND budget_entry.yearOfEntry = ${req.params.year}`;
+
+	database.all(getAllBudgetEntryByDay, (err, budgetEntry) => {
+		if(err) {
+			return res.status(500).json({
+				status: 500,
+				message: "something went wrong. try again"
+			});
+		} else if(budgetEntry.length === 0) {
+			return res.status(200).json('no entries on this day')
+		} else {
+			return res.status(200).json(budgetEntry)
+		};
+	});
+});
+
+budgetEntryRouter.get("/get/week/:week/:year", authRequired, (req, res) => {
+	const getAllBudgetEntryByWeek = `
+	SELECT *, budget_entry.rowid FROM budget_entry
+	JOIN category ON category.rowid = budget_entry.category
+	WHERE budget_entry.userId = ${req.userId}
+	AND budget_entry.weekOfEntry = ${req.params.week}
+	AND budget_entry.yearOfEntry = ${req.params.year}`;
+
+	database.all(getAllBudgetEntryByWeek, (err, budgetEntry) => {
+		if(err) {
+			console.log(err)
+			return res.status(500).json({
+				status: 500,
+				message: "something went wrong. try again"
+			});
+		} else if (budgetEntry.length === 0) {
+			return res.status(200).json('no entries on this month');
+		} else {
+			return res.status(200).json(budgetEntry)
+		};
+	});
+});
+
+budgetEntryRouter.get("/get/month/:month/:year", authRequired, (req, res) => {
+	const getAllBudgetEntryByMonth = `
+	SELECT *, budget_entry.rowid FROM budget_entry
+	JOIN category ON category.rowid = budget_entry.category
+	WHERE budget_entry.userId = ${req.userId}
+	AND budget_entry.monthOfEntry = ${req.params.month}
+	AND budget_entry.yearOfEntry = ${req.params.year}`;
 
 	database.all(getAllBudgetEntryByMonth, (err, budgetEntry) => {
 		if(err) {
@@ -67,7 +110,7 @@ budgetEntryRouter.get("/get/:month", authRequired, (req, res) => {
 				message: "something went wrong. try again"
 			});
 		} else if(budgetEntry.length === 0) {
-			return res.status(200).json('no entries on this date');
+			return res.status(200).json('no entries on this month');
 		} else {
 			return res.status(200).json(budgetEntry)
 		};
