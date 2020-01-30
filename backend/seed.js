@@ -8,10 +8,10 @@ database.serialize( () => {
     user (first_name TEXT, last_name TEXT, username TEXT UNIQUE,
     email TEXT UNIQUE, password TEXT)`;
   const createTableBudgetEntry = `CREATE TABLE IF NOT EXISTS budget_entry
-    (userId INTEGER UNIQUE, amount TEXT, isNeeds INTEGER, isWants INTEGER,
+    (userId INTEGER, amount TEXT, isNeeds INTEGER, isWants INTEGER,
     isSavings INTEGER, dateOfEntry TEXT, monthOfEntry INTEGER, comment TEXT)`;
   const createTableCategory = `CREATE TABLE IF NOT EXISTS category
-    (userId INTEGER UNIQUE, needs TEXT, wants TEXT, savings TEXT)`;
+    (userId INTEGER, needs TEXT, wants TEXT, savings TEXT)`;
 
   database.run(dropTableUser, (error => {
     if (error) {
