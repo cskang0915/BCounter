@@ -9,11 +9,11 @@ budgetEntryRouter.post("/new", authRequired, (req, res) => {
 		[
 			req.userId,
 			req.body.amount,
-			req.body.isNeeds,
-			req.body.isWants,
-			req.body.isSavings,
-			req.body.dateOfEntry,
+			req.body.category,
+			req.body.dayOfEntry,
+			req.body.weekOfEntry,
 			req.body.monthOfEntry,
+			req.body.yearOfEntry,
 			req.body.comment
 		], (err) => {
 			if(err) {
@@ -34,9 +34,11 @@ budgetEntryRouter.post("/new", authRequired, (req, res) => {
 budgetEntryRouter.get("/get/all", authRequired, (req, res) => {
 	const getAllBudgetEntry = `
 	SELECT *, budget_entry.rowid from budget_entry
+	JOIN category ON category.rowid = budget_entry.category
 	WHERE budget_entry.userId = ${req.userId}`;
 
 	database.all(getAllBudgetEntry, (err, budgetEntry) => {
+		console.log(err)
 		if(err) {
 			return res.status(500).json({
 				status: 500,
@@ -74,7 +76,7 @@ budgetEntryRouter.get("/get/:month", authRequired, (req, res) => {
 
 budgetEntryRouter.put("/update/:rowid", authRequired, (req, res) => {
 	const updateBudgetEntryByRowid = `
-	UPDATE budget_entry SET userId = ?, amount = ?, isNeeds = ?, isWants = ?, isSavings = ?, dateOfEntry = ?, monthOfEntry = ?, comment = ?
+	UPDATE budget_entry SET userId = ?, amount = ?, category = ?, dayOfEntry = ?, weekOfEntry = ?, monthOfEntry = ?, yearOfEntry = ?, comment = ?
 	WHERE budget_entry.userId = ${req.userId}
 	AND budget_entry.rowid = ${req.params.rowid}`;
 
@@ -82,11 +84,11 @@ budgetEntryRouter.put("/update/:rowid", authRequired, (req, res) => {
 		[
 			req.userId,
 			req.body.amount,
-			req.body.isNeeds,
-			req.body.isWants,
-			req.body.isSavings,
-			req.body.dateOfEntry,
+			req.body.category,
+			req.body.dayOfEntry,
+			req.body.weekOfEntry,
 			req.body.monthOfEntry,
+			req.body.yearOfEntry,
 			req.body.comment
 		], (err) => {
 			if(err) {
