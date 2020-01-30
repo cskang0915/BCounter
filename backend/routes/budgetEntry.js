@@ -48,6 +48,26 @@ budgetEntryRouter.get("/get/all", authRequired, (req, res) => {
 	});
 });
 
+budgetEntryRouter.get("/get/:month", authRequired, (req, res) => {
+	const getAllBudgetEntryByMonth = `
+	SELECT *, budget_entry.rowid from budget_entry
+	WHERE budget_entry.userId = ${req.userId}
+	AND budget_entry.monthOfEntry = ${req.params.month}`;
+
+	database.all(getAllBudgetEntryByMonth, (err, budgetEntry) => {
+		if(err) {
+			return res.status(500).json({
+				status: 500,
+				message: "something went wrong. try again"
+			});
+		} else if(budgetEntry.length === 0) {
+			return res.status(200).json('no entries on this date');
+		} else {
+			return res.status(200).json(budgetEntry)
+		};
+	});
+});
+
 
 
 module.exports = budgetEntryRouter;
