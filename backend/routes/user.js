@@ -77,38 +77,39 @@ userRouter.post("/login", (req, res) => {
   WHERE user.username = ?`;
 
   database.all(checkUser, [req.body.username], (err, checkedUser) => {
+    console.log(checkedUser)
     if (err) {
       return res.status(500).json({
         status: 500,
         message: "something went wrong. try again"
-      });
-    } else if (!checkedUser) {
+      })
+    } else if (checkedUser.length === 0) {
       return res.status(400).json({
         status: 400,
         message: "username or password is incorrect"
-      });
+      })
     } else {
       bcrypt.compare(req.body.password, checkedUser[0].password, (err, isMatch) => {
         if (err) {
           return res.status(500).json({
             status: 500,
             message: "something went wrong. try again"
-          });
+          })
         } else if (!isMatch) {
           return res.status(400).json({
             status: 400,
             message: "username or password is incorrect"
-          });
-        } else {
+          })
+        } else if(isMatch){
           let user = {
             id:checkedUser[0].rowid
-          };
+          }
           jwt.sign(user, "brock", {expiresIn: "1hr"}, (err, signedJwt) => {
             if(err) {
               return res.status(500).json({
                 status: 500,
                 message: "something went wrong. try again"
-              });
+              })
             } else {
               return res.status(200).json({
                 status: 200,
