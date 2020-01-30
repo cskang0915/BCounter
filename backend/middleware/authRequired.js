@@ -6,8 +6,8 @@ module.exports = (req, res, next) => {
 	const bearerHeader = req.headers["authorization"]
 
 	if(typeof bearerHeader !== 'undefined') {
-		const bearer = bearerHeader.split(" "); // Bearer + " " + jwt
-        const bearerToken = bearer[1];
+		const bearer = bearerHeader.split(" ") // Bearer + " " + jwt
+        const bearerToken = bearer[1]
         req.token = bearerToken;
 
         let verified = jwt.verify(bearerToken, "brock");

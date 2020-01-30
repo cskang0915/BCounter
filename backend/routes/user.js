@@ -3,6 +3,8 @@ const database = require("../database");
 const validate = require("../validation/formValidation");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const authRequired = require("../middleware/authRequired")
+
 
 userRouter.post("/register", (req, res) => {
   const {error, notValid} = validate(req.body);
@@ -122,6 +124,24 @@ userRouter.post("/login", (req, res) => {
   });
 });
 
+userRouter.get("/info", authRequired, (err, user) => {
+  const getOneUser = `
+  SELECT * FROM user 
+  WHERE user.rowid = ${req.userId}`
 
+  database.all(getOneUser, (err, user) => {
+    if(err){
+      return res.status(500).json({ 
+        status: 500,
+        message: "something went wrong, try again."
+      })
+    } else{
+      return res.status(200).json({
+        rowId: req.userId,
+        user
+      })
+    }
+  })
+})
 
 module.exports = userRouter;
