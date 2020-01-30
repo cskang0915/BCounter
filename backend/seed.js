@@ -20,7 +20,7 @@ database.serialize( () => {
     else {
       console.log("dropped user table success");
     }
-  }))
+  }));
 
   database.run(dropTableBudgetEntry, (error => {
     if (error) {
@@ -29,7 +29,7 @@ database.serialize( () => {
     else {
       console.log("dropped budget entry table success");
     }
-  }))
+  }));
 
   database.run(dropTableCategory, (error => {
     if (error) {
@@ -38,7 +38,7 @@ database.serialize( () => {
     else {
       console.log("dropped category table success");
     }
-  }))
+  }));
 
   database.run(createTableUser, (error => {
     if (error) {
@@ -47,7 +47,7 @@ database.serialize( () => {
     else {
       console.log("created user table success");
     }
-  }))
+  }));
 
   database.run(createTableBudgetEntry, (error => {
     if (error) {
@@ -56,7 +56,7 @@ database.serialize( () => {
     else {
       console.log("created budget entry table success");
     }
-  }))
+  }));
 
   database.run(createTableCategory, (error => {
     if (error) {
@@ -65,9 +65,8 @@ database.serialize( () => {
     else {
       console.log("created category table success");
     }
-  }))
-})
-
+  }));
+});
 
 
 
