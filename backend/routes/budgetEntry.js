@@ -73,7 +73,7 @@ budgetEntryRouter.get("/get/:month", authRequired, (req, res) => {
 });
 
 budgetEntryRouter.put("/update/:rowid", authRequired, (req, res) => {
-	const updateBudgetEntryByMonthDate = `
+	const updateBudgetEntryByRowid = `
 	UPDATE budget_entry SET userId = ?, amount = ?, isNeeds = ?, isWants = ?, isSavings = ?, dateOfEntry = ?, monthOfEntry = ?, comment = ?
 	WHERE budget_entry.userId = ${req.userId}
 	AND budget_entry.rowid = ${req.params.rowid}`;
@@ -104,5 +104,28 @@ budgetEntryRouter.put("/update/:rowid", authRequired, (req, res) => {
 		});
 });
 
+budgetEntryRouter.delete("/delete/:rowid", authRequired, (req, res) => {
+	const deleteBudgetEntryByRowid = `DELETE FROM budget_entry
+	WHERE budget_entry.userId = ${req.userId}
+	AND budget_entry.rowid = ${req.params.rowid}`;
+
+	database.run(deleteBudgetEntryByRowid, (err) => {
+		if(err) {
+			return res.status(500).json({
+				status: 500,
+				message: "something went wrong. try again"
+			});
+		} else {
+			return res.status(200).json({
+				status: 200,
+				message: "successfully deleted entry by rowid"
+			});
+		};
+	});
+});
+
+// ------------------------------------------- //
+// WHAT ABOUT WHEN WE ALREADY DELETE THE ROWID //
+// ------------------------------------------- //
 
 module.exports = budgetEntryRouter;
