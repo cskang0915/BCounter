@@ -129,13 +129,8 @@ userRouter.post("/login", (req, res) => {
 
 userRouter.get("/info", authRequired, (req, res) => {
   const getOneUser = `
-<<<<<<< HEAD
   SELECT user.first_name, user.last_name, user.username, user.email FROM user 
-  WHERE user.rowid = ${req.userId}`
-=======
-  SELECT * FROM user 
   WHERE user.rowid = ${req.userId}`;
->>>>>>> chang
 
   database.all(getOneUser, (err, user) => {
     if(err){
