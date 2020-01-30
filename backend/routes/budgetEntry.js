@@ -16,13 +16,13 @@ budgetEntryRouter.post("/new", authRequired, (req, res) => {
 			req.body.monthOfEntry,
 			req.body.comment
 		], (err) => {
-			if(err){
+			if(err) {
 				console.log(err)
 				return res.status(500).json({
 					status: 500,
 					message: "something went wrong. try again"
 				});
-			} else{
+			} else {
 				return res.status(200).json({
 					status: 200,
 					message: "created a new entry."
@@ -30,6 +30,24 @@ budgetEntryRouter.post("/new", authRequired, (req, res) => {
 			};
 		});
 });
+
+budgetEntryRouter.get("/get/all", authRequired, (req, res) => {
+	const getAllBudgetEntry = `
+	SELECT *, budget_entry.rowid from budget_entry
+	WHERE budget_entry.userId = ${req.userId}`;
+
+	database.all(getAllBudgetEntry, (err, budgetEntry) => {
+		if(err) {
+			return res.status(500).json({
+				status: 500,
+				message: "something went wrong. try again"
+			});
+		} else {
+			return res.status(200).json(budgetEntry)
+		};
+	});
+});
+
 
 
 module.exports = budgetEntryRouter;
