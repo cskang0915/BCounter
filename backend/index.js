@@ -23,5 +23,5 @@ app.use("/api/user", userRouter)
 //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 app.listen(PORT, ()=>{
-  console.log(`POST ${PORT} IS ON`);
+  console.log(`PORT ${PORT} IS ON`);
 });
