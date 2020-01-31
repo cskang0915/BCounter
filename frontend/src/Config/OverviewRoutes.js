@@ -2,29 +2,101 @@ import React, { Component } from 'react';
 import OverviewNavbar from '../Navbar/OverviewNavbar';
 import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom';
 import OverviewTimeContainer from '../Containers/OverviewTimeContainer';
+import moment from 'moment';
 
 class OverviewRoutes extends Component {
 	state = {
-		day: 'day',
-		week: 'week',
-		month: 'month'
+		dataDay: [],
+		dataWeek: [],
+		dataMonth: []
 	}
 
-	render(){
+	componentDidMount() {
+		this.getByDay();
+		this.getByWeek();
+		this.getByMonth();
+		console.log(moment().startOf("week").week(1))
+		let week = moment().format('W')
+		console.log('here')
+		console.log(moment().startOf("week").week(week))
+		console.log(moment().endOf("week").week(week))
+	}
+
+	// create function for get by day
+	getByDay = () => {
+		let day = moment().format('D')
+		let month = moment().format('M')
+		let year = moment().format('Y')
+		fetch(`http://localhost:4000/api/budgetEntry/get/day/${month}/${day}/${year}`, {
+			headers: {
+				"authorization": `Bearer ${localStorage.uid}`
+			}
+		})
+			.then((response) => response.json())
+			.then(console.log(day, year))
+			.then(data => {
+				console.log(data)
+				this.setState({
+					dataDay: data
+				})
+			})
+			.catch(error => console.log(error))
+		}
+	// create function for get by week
+	getByWeek = () => {
+		let year = moment().format('Y')
+		let week = moment().format('W')
+		fetch(`http://localhost:4000/api/budgetEntry/get/week/${week}/${year}`, {
+			headers: {
+				"authorization": `Bearer ${localStorage.uid}`
+			}
+		})
+			.then((response) => response.json())
+			.then(console.log(week, year))
+			.then(data => {
+				console.log(data)
+				this.setState({
+					dataDay: data
+				})
+			})
+			.catch(error => console.log(error))
+		}
+		
+	// create function for get by month
+	getByMonth = () => {
+		let month = moment().format('M')
+		let year = moment().format('Y')
+		fetch(`http://localhost:4000/api/budgetEntry/get/month/${month}/${year}`, {
+			headers: {
+				"authorization": `Bearer ${localStorage.uid}`
+			}
+		})
+			.then((response) => response.json())
+			.then(console.log(month, year))
+			.then(data => {
+				console.log(data)
+				this.setState({
+					dataDay: data
+				})
+			})
+			.catch(error => console.log(error))
+		}
+
+	render() {
 		return(
 			<div>
 				<BrowserRouter>
 					<OverviewNavbar/>
 					<Switch>
 						<Route exact path = "/overview/daily" render = {() => {
-							return <OverviewTimeContainer data = {this.state.day} />
+							return <OverviewTimeContainer data = {this.state.dataDay} />
 						}}/>
-						<Route exact path = "/overview/weekly" render = {() => {
-							return <OverviewTimeContainer data = {this.state.week} />
+						{/* <Route exact path = "/overview/weekly" render = {() => {
+							return <OverviewTimeContainer data = {this.state.dataWeek} />
 						}}/>
 						<Route exact path = "/overview/monthly" render = {() => {
-							return <OverviewTimeContainer data = {this.state.month} />
-						}}/>
+							return <OverviewTimeContainer data = {this.state.dataMonth} />
+						}}/> */}
 					</Switch>
 				</BrowserRouter>
 			</div>

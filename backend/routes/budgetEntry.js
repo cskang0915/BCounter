@@ -31,6 +31,7 @@ budgetEntryRouter.post("/new", authRequired, (req, res) => {
 		});
 });
 
+// get all
 budgetEntryRouter.get("/get/all", authRequired, (req, res) => {
 	const getAllBudgetEntry = `
 	SELECT *, budget_entry.rowid from budget_entry
@@ -49,6 +50,7 @@ budgetEntryRouter.get("/get/all", authRequired, (req, res) => {
 	});
 });
 
+// get all by specific month, day, year
 budgetEntryRouter.get("/get/day/:month/:day/:year", authRequired, (req, res) => {
 	const getAllBudgetEntryByDay = `
 	SELECT *, budget_entry.rowid FROM budget_entry
@@ -72,6 +74,7 @@ budgetEntryRouter.get("/get/day/:month/:day/:year", authRequired, (req, res) => 
 	});
 });
 
+// get all by week, year
 budgetEntryRouter.get("/get/week/:week/:year", authRequired, (req, res) => {
 	const getAllBudgetEntryByWeek = `
 	SELECT *, budget_entry.rowid FROM budget_entry
@@ -95,6 +98,7 @@ budgetEntryRouter.get("/get/week/:week/:year", authRequired, (req, res) => {
 	});
 });
 
+// get all by month, year
 budgetEntryRouter.get("/get/month/:month/:year", authRequired, (req, res) => {
 	const getAllBudgetEntryByMonth = `
 	SELECT *, budget_entry.rowid FROM budget_entry
@@ -117,6 +121,7 @@ budgetEntryRouter.get("/get/month/:month/:year", authRequired, (req, res) => {
 	});
 });
 
+// put request
 budgetEntryRouter.put("/update/:rowid", authRequired, (req, res) => {
 	const updateBudgetEntryByRowid = `
 	UPDATE budget_entry SET userId = ?, amount = ?, category = ?, dayOfEntry = ?, weekOfEntry = ?, monthOfEntry = ?, yearOfEntry = ?, comment = ?
@@ -149,6 +154,7 @@ budgetEntryRouter.put("/update/:rowid", authRequired, (req, res) => {
 		});
 });
 
+// delete request
 budgetEntryRouter.delete("/delete/:rowid", authRequired, (req, res) => {
 	const selectBudgetEntryByRowid = `
 	SELECT * FROM budget_entry

@@ -2,9 +2,14 @@ import React, { Component } from 'react';
 
 class OverviewTimeContainer extends Component {
 	render(){
+		
+		let test = this.props.data.map((test) => {
+			return <p>hello</p>
+		})
+
 		return(
 			<div>
-				{this.props.data}
+				{test}
 			</div>
 		)
 	}
