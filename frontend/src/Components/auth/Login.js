@@ -12,7 +12,7 @@ class Login extends Component {
   componentDidMount() {
     if(localStorage.getItem('uid')) {
       // added weekly to overview below because weekly will be default view
-      this.props.history.push('/overview/daily')
+      this.props.history.push('/overview')
     }
   }
 
