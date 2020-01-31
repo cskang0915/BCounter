@@ -15,7 +15,9 @@ class OverviewRoutes extends Component {
 		this.getByDay();
 		this.getByWeek();
 		this.getByMonth();
-		// below is going to be displayed for the user
+		console.log(moment().startOf("week").week(1))
+		let week = moment().format('W')
+		console.log('here')
 		console.log(moment().startOf("week").week(week))
 		console.log(moment().endOf("week").week(week))
 	}
