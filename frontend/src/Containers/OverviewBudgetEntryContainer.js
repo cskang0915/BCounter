@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
+import BudgetEntry from '../Components/BudgetEntry';
 
 class OverviewBudgetEntryContainer extends Component {
   render() {
   	let budgetEntry = this.props.data.map((entry) => {
-  		return (
-  			<div>
-  			<p>{entry.amount}</p>
-  			<p>{entry.category}</p>
-  			</div>
-  			)
+  		return <BudgetEntry data={entry}/>
   	})
     return (
       <div>
