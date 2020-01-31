@@ -88,7 +88,7 @@ budgetEntryRouter.get("/get/week/:week/:year", authRequired, (req, res) => {
 				message: "something went wrong. try again"
 			});
 		} else if (budgetEntry.length === 0) {
-			return res.status(200).json('no entries on this month');
+			return res.status(200).json('no entries on this week');
 		} else {
 			return res.status(200).json(budgetEntry)
 		};
