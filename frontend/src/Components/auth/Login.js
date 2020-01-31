@@ -11,7 +11,7 @@ class Login extends Component {
 
   componentDidMount() {
     if(localStorage.getItem('uid')) {
-      this.props.history.push('/profile')
+      this.props.history.push('/overview')
     }
   }
 
@@ -83,6 +83,9 @@ class Login extends Component {
           </div>
           <button type = "submit">Log in</button>
         </form>
+        <div>
+          <a href="#">Forgot Password?</a>
+        </div>
       </div>
     )
   }

@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 
 class Register extends Component {
 
@@ -118,6 +119,9 @@ class Register extends Component {
           >Register
           </button>
         </form>
+        <div>
+          <p>Already a member? <Link to="/login">Log in</Link></p>
+        </div>
       </div>
     )
   }

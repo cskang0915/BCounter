@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 
-class ProfileContainer extends Component {
+class OverviewContainer extends Component {
   render() {
     return (
       <div>
-        Profile Container
+        Overview Container
       </div>
     )
   }
 }
 
-export default ProfileContainer
+export default OverviewContainer
