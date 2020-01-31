@@ -11,7 +11,8 @@ class Login extends Component {
 
   componentDidMount() {
     if(localStorage.getItem('uid')) {
-      this.props.history.push('/overview')
+      // added weekly to overview below because weekly will be default view
+      this.props.history.push('/overview/weekly')
     }
   }
 
@@ -45,7 +46,8 @@ class Login extends Component {
         this.setState({
           rowid: data.id.id
         })
-        this.props.history.push("/overview");
+        // added weekly to overview below because weekly will be default view
+        this.props.history.push("/overview/weekly");
       } else {
         alert("incorrect username or password");
       }

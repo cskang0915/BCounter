@@ -11,4 +11,4 @@ class OverviewContainer extends Component {
 	}
 }
 
-export default OverviewContainer
+export default OverviewContainer;

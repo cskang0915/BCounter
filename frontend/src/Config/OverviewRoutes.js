@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import OverviewNavbar from '../Navbar/OverviewNavbar';
 import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom';
-import OverviewTimeContainer from '../Container/OverviewTimeContainer';
+import OverviewTimeContainer from '../Containers/OverviewTimeContainer';
 
 class OverviewRoutes extends Component {
 	state = {
@@ -31,4 +31,4 @@ class OverviewRoutes extends Component {
 	}
 }
 
-export default OverviewRoutes
+export default OverviewRoutes;
