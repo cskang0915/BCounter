@@ -24,14 +24,14 @@ class OverviewNavbar extends Component {
 				<a href="main-menu-toggle" className="backdrop" hidden></a>
 			</header>
 
-			<div>
+			/*<div>
 				<p>navbar</p>
 				<nav>
 					<Link to = '/overview/daily'>day</Link>
 					<Link to = '/overview/weekly'>week</Link>
 					<Link to = '/overview/monthly'>month</Link>
 				</nav>
-			</div>
+			</div>*/
 		)
 	}
 }
