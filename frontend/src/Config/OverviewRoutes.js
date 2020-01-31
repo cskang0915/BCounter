@@ -11,13 +11,15 @@ class OverviewRoutes extends Component {
 		dataMonth: []
 	}
 
-	componentDidMount() {
+	componentWillMount() {
 		this.getByDay();
 		this.getByWeek();
 		this.getByMonth();
+		// console.log("here")
+		// console.log(this.state.dataDay)
 		// below is going to be displayed for the user
-		console.log(moment().startOf("week").week(week))
-		console.log(moment().endOf("week").week(week))
+		// console.log(moment().startOf("week").week(week))
+		// console.log(moment().endOf("week").week(week))
 	}
 
 	// create function for get by day
@@ -31,7 +33,6 @@ class OverviewRoutes extends Component {
 			}
 		})
 			.then((response) => response.json())
-			.then(console.log(day, year))
 			.then(data => {
 				console.log(data)
 				this.setState({
@@ -50,11 +51,10 @@ class OverviewRoutes extends Component {
 			}
 		})
 			.then((response) => response.json())
-			.then(console.log(week, year))
 			.then(data => {
 				console.log(data)
 				this.setState({
-					dataDay: data
+					dataWeek: data
 				})
 			})
 			.catch(error => console.log(error))
@@ -70,11 +70,10 @@ class OverviewRoutes extends Component {
 			}
 		})
 			.then((response) => response.json())
-			.then(console.log(month, year))
 			.then(data => {
 				console.log(data)
 				this.setState({
-					dataDay: data
+					dataMonth: data
 				})
 			})
 			.catch(error => console.log(error))

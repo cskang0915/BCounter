@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 class OverviewNavbar extends Component {
 	render(){
 		return(
-			<header>
+			/*<header>
 				<a href="#main-menu" className="menu-toggle">
 					<span className="fa fa-bars"></span>
 				</a>
@@ -22,16 +22,16 @@ class OverviewNavbar extends Component {
 					</ul>
 				</nav>
 				<a href="main-menu-toggle" className="backdrop" hidden></a>
-			</header>
+			</header>*/
 
-			/*<div>
+			<div>
 				<p>navbar</p>
 				<nav>
 					<Link to = '/overview/daily'>day</Link>
 					<Link to = '/overview/weekly'>week</Link>
 					<Link to = '/overview/monthly'>month</Link>
 				</nav>
-			</div>*/
+			</div>
 		)
 	}
 }
