@@ -45,7 +45,7 @@ class Login extends Component {
         this.setState({
           rowid: data.id.id
         })
-        this.props.history.push("/profile");
+        this.props.history.push("/overview");
       } else {
         alert("incorrect username or password");
       }
