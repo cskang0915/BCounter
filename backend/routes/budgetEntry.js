@@ -185,8 +185,4 @@ budgetEntryRouter.delete("/delete/:rowid", authRequired, (req, res) => {
 	});
 });
 
-// ------------------------------------------- //
-// WHAT ABOUT WHEN WE ALREADY DELETE THE ROWID //
-// ------------------------------------------- //
-
 module.exports = budgetEntryRouter;
