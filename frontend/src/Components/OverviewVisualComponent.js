@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 class OverviewVisualComponent extends Component {
   render() {
     return (
       <div>
         Render graph
-        Render total
+        Render total spent
       </div>
     )
   }
