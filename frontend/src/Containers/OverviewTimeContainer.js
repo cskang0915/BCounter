@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import OverviewVisualComponent from '../Components/OverviewVisualComponent'
 
 class OverviewTimeContainer extends Component {
 	render(){
-		
+
 		let test = this.props.data.map((test) => {
 			return <p>hello</p>
 		})
@@ -10,6 +11,7 @@ class OverviewTimeContainer extends Component {
 		return(
 			<div>
 				{test}
+				<OverviewVisualComponent />
 			</div>
 		)
 	}
