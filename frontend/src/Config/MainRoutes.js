@@ -3,7 +3,8 @@ import {Switch, Route, withRouter, Redirect} from 'react-router-dom';
 import Home from '../Components/Home';
 import Login from '../Components/auth/Login';
 import Register from '../Components/auth/Register';
-import OverviewContainer from '../Containers/OverviewContainer';
+import OverviewContainer from '../Containers/OverviewContainer'
+import OverviewRoutes from '../Config/OverviewRoutes';
 
 export default withRouter(({setCurrentUser, currentUser, history}) => {
   const PrivateRoute = ({component: Component, ...rest}) => {

@@ -4,8 +4,8 @@ class BudgetEntry extends Component {
 	render() {
 		return (
 			<ul>
-				<li>{this.props.category}</li>
-				<li>{this.props.amount}</li>
+				<li>{this.props.data.category}</li>
+				<li>{this.props.data.amount}</li>
 			</ul>
 		)
 	}

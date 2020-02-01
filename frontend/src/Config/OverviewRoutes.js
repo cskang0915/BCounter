@@ -85,7 +85,7 @@ class OverviewRoutes extends Component {
 				<BrowserRouter>
 					<OverviewNavbar/>
 					<Switch>
-						<Route exact path = "/overview" render = {() => {
+						<Route exact path = "/overview/" render = {() => {
 							return <OverviewTimeContainer data = {this.state.dataDay} />
 						}}/>
 						<Route exact path = "/overview/daily" render = {() => {

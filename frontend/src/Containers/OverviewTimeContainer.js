@@ -14,23 +14,41 @@ class OverviewTimeContainer extends Component {
 		console.log(this.state)
 		console.log(this.props.data)
 		this.sortData()
+		console.log('here')
+		console.log(this.state)
+		console.log(this.props.data)
+
 	}
 
 	sortData = () => {
+		let needs = []
+		let wants = []
+		let savings = []
+
 		this.props.data.map((budgetEntry) => {
 			if(budgetEntry.category === "Needs"){
-				this.setState({
-					needs: [...this.state.needs, budgetEntry]
-				})
+				needs.push(budgetEntry)
+				// this.setState({
+				// 	needs: [...this.state.needs, budgetEntry]
+				// })
 			} else if(budgetEntry.category === "Wants") {
-				this.setState({
-					wants: [...this.state.wants, budgetEntry]
-				})
+				wants.push(budgetEntry)
+				// this.setState({
+				// 	wants: [...this.state.wants, budgetEntry]
+				// })
 			} else if(budgetEntry.category === "Savings") {
-				this.setState({
-					savings: [...this.state.savings, budgetEntry]
-				})
+				savings.push(budgetEntry)
+				// this.setState({
+				// 	savings: [...this.state.savings, budgetEntry]
+				// })
 			}
+
+		})
+
+		this.setState({
+			needs: needs,
+			wants: wants,
+			savings: savings
 		})
 	}
 
