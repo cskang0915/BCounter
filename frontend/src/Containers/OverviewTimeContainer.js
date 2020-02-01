@@ -10,14 +10,7 @@ class OverviewTimeContainer extends Component {
 	}
 
 	componentDidMount() {
-		console.log('here')
-		console.log(this.state)
-		console.log(this.props.data)
 		this.sortData()
-		console.log('here')
-		console.log(this.state)
-		console.log(this.props.data)
-
 	}
 
 	sortData = () => {
