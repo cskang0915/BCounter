@@ -13,8 +13,8 @@ class OverviewContainer extends Component {
 		this.getByDay();
 		this.getByWeek();
 		this.getByMonth();
-		// console.log("here")
-		// console.log(this.state.dataDay)
+		console.log("here")
+		console.log(this.state.dataDay)
 		// below is going to be displayed for the user
 		// console.log(moment().startOf("week").week(week))
 		// console.log(moment().endOf("week").week(week))
