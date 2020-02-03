@@ -2,6 +2,7 @@ const budgetEntryRouter = require("express").Router();
 const database = require("../database");
 const authRequired = require("../middleware/authRequired");
 
+// post request
 budgetEntryRouter.post("/new", authRequired, (req, res) => {
 	const createNewBudgetEntry = `INSERT INTO budget_entry VALUES (?, ?, ?, ?, ?, ?, ?, ?)`
 
@@ -31,7 +32,7 @@ budgetEntryRouter.post("/new", authRequired, (req, res) => {
 		});
 });
 
-// get all
+// get all - entries
 budgetEntryRouter.get("/get/all", authRequired, (req, res) => {
 	const getAllBudgetEntry = `
 	SELECT *, budget_entry.rowid from budget_entry
@@ -187,6 +188,23 @@ budgetEntryRouter.delete("/delete/:rowid", authRequired, (req, res) => {
 					});
 				};
 			});
+		};
+	});
+});
+
+// ------------------------------ CATEGORIES ROUTES ------------------------------
+// get all
+budgetEntryRouter.get("/get/category/all", authRequired, (req, res) => {
+	const getAllCategories = `
+	SELECT *, category.rowid from category`;
+	database.all(getAllCategories, (err, category) => {
+		if(err) {
+			return res.status(500).json({
+				status: 500,
+				message: "something went wrong. try again"
+			});
+		} else {
+			return res.status(200).json(category)
 		};
 	});
 });

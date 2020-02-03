@@ -43,7 +43,6 @@ class OverviewTimeContainer extends Component {
 					// 	savings: [...this.state.savings, budgetEntry]
 					// })
 				}
-
 			})
 
 			this.setState({

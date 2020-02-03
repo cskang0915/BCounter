@@ -1,43 +1,32 @@
 import React, { Component } from 'react';
-import moment from 'moment';
 
-class EntryForm extends Component {
+class EditForm extends Component {
 
-  // drop down menu
   state = {
-    category_name: '',
-    category_rowid: null
+    
   }
 
-  componentDidMount() {
-    this.getByCategory()
-  }
-
-  // get by category fetch
-  getByCategory = () => {
-		fetch(`http://localhost:4000/api/budgetEntry/get/category/all`, {
-			headers: {
-        "authorization": `Bearer ${localStorage.uid}`,
-        "Content-Type":"applicaton/json"
-			}
-		})
-			.then((response) => response.json())
-			.then(data => {
-				console.log(data)
-				this.setState({
-					category_name: data
-				})
-			})
-			.catch(error => console.log(error))
-		}
-
-  render() {
-    let options
-    if (this.state.category_name.length > 0) {
-      options = this.state.category_name.map(category => {
-        return <option value={category.rowid}>{category.category}</option>
+  updateEntry = () => {
+    fetch(`http://localhost:4000/api/budgetEntry/update/${this.props.rowid}`, {
+      method: 'PUT',
+      headers: {
+        'authorization': `Bearer ${localStorage.uid}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        eventName: this.state.eventName,
+        eventDescription: this.state.eventDescription,
+        location: this.state.location,
+        time: this.state.time,
+        month: this.state.month,
+        day: this.state.day,
+        year: this.state.year
       })
-    }
+    })
+    //  .then(()=> this.props.getEvents())
+    //  .then(()=> this.props.history.push('/Calendar'))
+  }
+  render() {
     return (
       <div className="eventForm">
         <h1>Entry Form</h1>
@@ -48,6 +37,7 @@ class EntryForm extends Component {
               type="text"
               name="amount"
               placeholder="Amount"
+              // value={this.props.state.amount}
               onChange={this.props.handleChange}
             />
           </label>
@@ -79,4 +69,4 @@ class EntryForm extends Component {
   }
 }
 
-export default EntryForm
+export default EditForm
