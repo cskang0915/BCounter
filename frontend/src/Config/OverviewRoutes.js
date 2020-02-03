@@ -17,13 +17,13 @@ class OverviewRoutes extends Component {
 						<Route exact path = "/overview/daily" render = {() => {
 							return <OverviewTimeContainer data = {this.props.dataDay} />
 						}}/>
-						{/* <Route exact path = "/overview/weekly" render = {() => {
-							return <OverviewTimeContainer data = {this.state.dataWeek} />
+						{/*<Route path = "/overview/weekly" render = {() => {
+							return <OverviewTimeContainer data = {this.props.dataWeek} />
 						}}/>
-						<Route exact path = "/overview/monthly" render = {() => {
-							return <OverviewTimeContainer data = {this.state.dataMonth} />
-						}}/> */}
-						<Route exact path ="/overview/entry" component={EntryFormContainer} />
+						<Route path = "/overview/monthly" render = {() => {
+							return <OverviewTimeContainer data = {this.props.dataMonth} />
+						}}/>*/}
+						<Route path ="/overview/entry" component={EntryFormContainer} />
 					</Switch>
 				</BrowserRouter>
 			</div>
