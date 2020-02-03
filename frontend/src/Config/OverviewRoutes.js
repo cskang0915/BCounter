@@ -8,24 +8,30 @@ class OverviewRoutes extends Component {
 	render() {
 		return(
 			<div>
-				<BrowserRouter>
-					<OverviewNavbar/>
-					<Switch>
-						<Route exact path = "/overview" render = {() => {
-							return <OverviewTimeContainer data = {this.props.dataDay} />
-						}}/>
-						<Route exact path = "/overview/daily" render = {() => {
-							return <OverviewTimeContainer data = {this.props.dataDay} />
-						}}/>
-						{/*<Route path = "/overview/weekly" render = {() => {
-							return <OverviewTimeContainer data = {this.props.dataWeek} />
-						}}/>
-						<Route path = "/overview/monthly" render = {() => {
-							return <OverviewTimeContainer data = {this.props.dataMonth} />
-						}}/>*/}
-						<Route path ="/overview/entry" component={EntryFormContainer} />
-					</Switch>
-				</BrowserRouter>
+				<OverviewNavbar/>
+				<Switch>
+					<Route exact path = "/overview" render = {() => {
+						return this.props.dataDay.length 
+								? <OverviewTimeContainer data = {this.props.dataDay} />
+								: "Loading..."
+					}}/>
+					<Route exact path = "/overview/daily" render = {() => {
+						return this.props.dataDay.length 
+								? <OverviewTimeContainer data = {this.props.dataDay} />
+								: "Loading..."
+					}}/>
+					<Route path = "/overview/weekly" render = {() => {
+						return this.props.dataWeek.length 
+								? <OverviewTimeContainer data = {this.props.dataWeek} />
+								: "Loading..."
+					}}/>
+					<Route path = "/overview/monthly" render = {() => {
+						return this.props.dataMonth.length 
+								? <OverviewTimeContainer data = {this.props.dataMonth} />
+								: "Loading..."
+					}}/>
+					<Route path ="/overview/entry" component={EntryFormContainer} />
+				</Switch>
 			</div>
 		)
 	}

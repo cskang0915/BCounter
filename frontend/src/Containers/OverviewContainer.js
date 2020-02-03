@@ -9,11 +9,10 @@ class OverviewContainer extends Component {
 		dataMonth: []
 	}
 
-	componentWillMount() {
+	componentDidMount() {
 		this.getByDay();
 		this.getByWeek();
 		this.getByMonth();
-		this.forceUpdate()
 		console.log("here")
 		console.log(this.state.dataDay)
 		// below is going to be displayed for the user
