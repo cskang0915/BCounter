@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 
 class BudgetEntry extends Component {
 	handleDelete = () => {
@@ -27,6 +28,11 @@ class BudgetEntry extends Component {
 				<li>{this.props.data.category}</li>
 				<li>{this.props.data.amount}</li>
 				<button onClick={this.handleDelete}>Delete entry</button>
+				<Link to = {`/overview/update/${this.props.rowid}`}>
+					<button>
+						Edit
+					</button>
+				</Link>
 			</div>
 		)
 	}
