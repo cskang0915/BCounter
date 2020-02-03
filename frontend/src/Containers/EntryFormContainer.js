@@ -38,39 +38,40 @@ class EntryFormContainer extends Component {
     console.log(value)
   }
 
-    // POST request via form
-    handleSubmit = (event) => {
-      event.preventDefault();
-      let day = moment().format('D')
-      let week = moment().format('W')
-      let month = moment().format('M')
-      let year = moment().format('Y')
+  // POST request via form
+  handleSubmit = (event) => {
+    event.preventDefault();
+    let day = moment().format('D')
+    let week = moment().format('W')
+    let month = moment().format('M')
+    let year = moment().format('Y')
 
-      this.state.dayOfEntry = day
-      this.state.weekOfEntry = week
-      this.state.monthOfEntry = month
-      this.state.yearOfEntry = year
+    this.state.dayOfEntry = day
+    this.state.weekOfEntry = week
+    this.state.monthOfEntry = month
+    this.state.yearOfEntry = year
 
-      fetch('http://localhost:4000/api/budgetEntry/new', {
-        method: 'POST',
-        headers: {
-          'authorization': `Bearer ${localStorage.uid}`,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(this.state),
-      })
-        .then(response => this.setState({
-          userId: null,
-          amount: '',
-          category: null,
-          dayOfEntry: null,
-          weekOfEntry: null,
-          monthOfEntry: null,
-          yearOfEntry: null,
-          comment: ''
-        }))
-        console.log("entry submitted")
-      };
+    fetch('http://localhost:4000/api/budgetEntry/new', {
+      method: 'POST',
+      headers: {
+        'authorization': `Bearer ${localStorage.uid}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(this.state),
+    })
+    .then(response => this.setState({
+      userId: null,
+      amount: '',
+      category: null,
+      dayOfEntry: null,
+      weekOfEntry: null,
+      monthOfEntry: null,
+      yearOfEntry: null,
+      comment: ''
+    }))
+    console.log("entry submitted")
+    this.props.history.push('/overview/weekly')
+  };
 
   render() {
     return (
