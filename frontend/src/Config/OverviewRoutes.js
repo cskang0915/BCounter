@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import OverviewNavbar from '../Navbar/OverviewNavbar';
 import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom';
 import OverviewTimeContainer from '../Containers/OverviewTimeContainer';
+import EntryFormContainer from '../Containers/EntryFormContainer';
 
 class OverviewRoutes extends Component {
 	render() {
@@ -22,6 +23,7 @@ class OverviewRoutes extends Component {
 						<Route exact path = "/overview/monthly" render = {() => {
 							return <OverviewTimeContainer data = {this.state.dataMonth} />
 						}}/> */}
+						<Route exact path ="/overview/entry" component={EntryFormContainer} />
 					</Switch>
 				</BrowserRouter>
 			</div>
