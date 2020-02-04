@@ -3,6 +3,7 @@ import OverviewNavbar from '../Navbar/OverviewNavbar';
 import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom';
 import OverviewTimeContainer from '../Containers/OverviewTimeContainer';
 import EntryFormContainer from '../Containers/EntryFormContainer';
+import EditFormContainer from '../Containers/EditFormContainer';
 
 class OverviewRoutes extends Component {
 	render() {
@@ -31,6 +32,9 @@ class OverviewRoutes extends Component {
 								: "Loading..."
 					}}/>
 					<Route path ="/overview/entry" component={EntryFormContainer} />
+					<Route path = "/overview/update/:rowid" render={(props) => {
+						return <EditFormContainer rowid={props.match.params.rowid} />
+					}} />
 				</Switch>
 			</div>
 		)
