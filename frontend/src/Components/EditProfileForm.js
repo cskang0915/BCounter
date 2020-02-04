@@ -48,7 +48,7 @@ class EditProfileForm extends Component {
 					<br />
 					<label>Password
 					<input
-						type="text"
+						type="password"
 						name="password"
 						value={this.props.state.password}
 						placeholder="Password"
@@ -58,7 +58,7 @@ class EditProfileForm extends Component {
 					<br />
 					<label>Re-enter Password
 					<input
-						type="text"
+						type="password"
 						name="password2"
 						value={this.props.state.password2}
 						placeholder="Re-enter Password"
