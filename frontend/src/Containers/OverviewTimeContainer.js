@@ -7,7 +7,7 @@ class OverviewTimeContainer extends Component {
 		needs: [],
 		wants: [],
 		savings: [],
-		message: ''
+		message: 'sending chart data'
 	}
 
 	componentDidMount() {
@@ -45,7 +45,7 @@ class OverviewTimeContainer extends Component {
 	render(){
 		return(
 			<div>
-				<OverviewVisualComponent />
+				<OverviewVisualComponent state = {this.state}/>
 				<OverviewBudgetEntryContainer data = {this.state.needs} message = {this.state.message}/>
 				<OverviewBudgetEntryContainer data = {this.state.wants} message = {this.state.message}/>
 				<OverviewBudgetEntryContainer data = {this.state.savings} message = {this.state.message}/>

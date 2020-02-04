@@ -24,15 +24,16 @@ class EditProfileContainer extends Component {
 	}
 
 	handleSubmit = (event) => {
+		event.preventDefault();
 	    const entry = this.state
 	    fetch('http://localhost:4000/api/user/update', {
 		    method: 'PUT',
 	    	headers: {
 	        	'authorization': `Bearer ${localStorage.uid}`,
 	        	'Content-Type': 'application/json'
-	    	},
+				},
 	    	body: JSON.stringify(entry)
-	    })
+			})
 	}
 
 	getUserInfo = () => {
