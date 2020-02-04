@@ -11,7 +11,7 @@ class OverviewRoutes extends Component {
 	render() {
 		return(
 			<div>
-				<OverviewNavbar/>
+				<OverviewNavbar logout={this.props.logout}/>
 				<Switch>
 					<Route exact path = "/overview" render = {() => {
 						return this.props.dataDay.length 
@@ -37,7 +37,9 @@ class OverviewRoutes extends Component {
 					<Route exact path = "/overview/update/:rowid" render={(props) => {
 						return <EditFormContainer rowid={props.match.params.rowid} />
 					}} />
-					<Route exact path ="/overview/profile" component={ProfileContainer} />
+					<Route exact path ="/overview/profile" render={() => {
+						return <ProfileContainer history={this.props.history} />
+					}}/>
 					<Route exact path ="/overview/profile/edit/:rowid" render={(props) => {
 						return <EditProfileContainer history={this.props.history} rowid={props.match.params.rowid} />
 					}}/>

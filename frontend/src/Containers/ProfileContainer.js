@@ -35,10 +35,22 @@ class ProfileContainer extends Component {
 		})
 	}
 
+	deleteUserInfo = () => {
+		fetch('http://localhost:4000/api/user/delete', {
+			method: "DELETE",
+			headers: {
+				"authorization": `Bearer ${localStorage.uid}`
+			}
+		})
+		.then(() => localStorage.removeItem('uid'))
+		.then(() => this.props.history.push('/'))
+	}
+
 	render() {
 		return(
 			<div>
 				<Profile state={this.state} />
+				<button onClick={this.deleteUserInfo}>delete account</button>
 			</div>
 		)
 	}

@@ -77,7 +77,6 @@ userRouter.post("/login", (req, res) => {
   WHERE user.username = ?`;
 
   database.all(checkUser, [req.body.username], (err, checkedUser) => {
-    console.log(checkedUser)
     if (err) {
       return res.status(500).json({
         status: 500,

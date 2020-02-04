@@ -62,7 +62,7 @@ class EditProfileContainer extends Component {
 	render(){
 		return(
 			<div>
-				<EditProfileForm state={this.state} handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
+				<EditProfileForm state={this.state} handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
 			</div>
 		)
 	}
