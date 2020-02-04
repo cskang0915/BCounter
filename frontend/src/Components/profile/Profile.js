@@ -5,10 +5,10 @@ class Profile extends Component {
 	render(){
 		return(
 			<div>
-				<p>{this.props.state.first_name}</p>
-				<p>{this.props.state.last_name}</p>
-				<p>{this.props.state.username}</p>
-				<p>{this.props.state.email}</p>
+				<p><b>First name:</b> {this.props.state.first_name}</p>
+				<p><b>Last name:</b> {this.props.state.last_name}</p>
+				<p><b>Username:</b> {this.props.state.username}</p>
+				<p><b>Email:</b> {this.props.state.email}</p>
 				<Link to={`/overview/profile/edit/${this.props.state.rowid}`} >edit profile</Link>
 			</div>
 		)
