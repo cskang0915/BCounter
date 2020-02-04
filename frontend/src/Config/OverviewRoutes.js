@@ -15,22 +15,22 @@ class OverviewRoutes extends Component {
 				<Switch>
 					<Route exact path = "/overview" render = {() => {
 						return this.props.dataDay.length 
-								? <OverviewTimeContainer data = {this.props.dataDay} />
+								? <OverviewTimeContainer data = {this.props.dataDay} time = "Daily"/>
 								: "Loading..."
 					}}/>
 					<Route exact path = "/overview/daily" render = {() => {
 						return this.props.dataDay.length 
-								? <OverviewTimeContainer data = {this.props.dataDay} />
+								? <OverviewTimeContainer data = {this.props.dataDay} time = "Daily"/>
 								: "Loading..."
 					}}/>
 					<Route exact path = "/overview/weekly" render = {() => {
 						return this.props.dataWeek.length 
-								? <OverviewTimeContainer data = {this.props.dataWeek} />
+								? <OverviewTimeContainer data = {this.props.dataWeek} time = "Weekly"/>
 								: "Loading..."
 					}}/>
 					<Route exact path = "/overview/monthly" render = {() => {
 						return this.props.dataMonth.length 
-								? <OverviewTimeContainer data = {this.props.dataMonth} />
+								? <OverviewTimeContainer data = {this.props.dataMonth} time = "Monthly"/>
 								: "Loading..."
 					}}/>
 					<Route exact path ="/overview/entry" component={EntryFormContainer} />
@@ -39,7 +39,7 @@ class OverviewRoutes extends Component {
 					}} />
 					<Route exact path ="/overview/profile" component={ProfileContainer} />
 					<Route exact path ="/overview/profile/edit/:rowid" render={(props) => {
-						return <EditProfileContainer rowid={props.match.params.rowid} />
+						return <EditProfileContainer history={this.props.history} rowid={props.match.params.rowid} />
 					}}/>
 				</Switch>
 			</div>

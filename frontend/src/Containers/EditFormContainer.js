@@ -25,6 +25,7 @@ class EditFormContainer extends Component {
   }
 
   handleSubmit = (event) => {
+    event.preventDefault();
     const entry = this.state
     fetch(`http://localhost:4000/api/budgetEntry/update/${this.props.rowid}`, {
       method: 'PUT',
@@ -34,6 +35,7 @@ class EditFormContainer extends Component {
       },
       body: JSON.stringify(entry)
     })
+    window.location.reload(true);
   }
 
   getById = () => {

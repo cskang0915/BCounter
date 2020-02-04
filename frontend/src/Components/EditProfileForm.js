@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 
 class EditProfileForm extends Component {
 	render(){
@@ -66,8 +67,15 @@ class EditProfileForm extends Component {
 					/>
 					</label>
 					<br />
-					<input type="submit" value="submit" />
+						<button type="submit">
+							Submit
+						</button>
 				</form>
+					<Link to="/overview/weekly">
+						<button>
+							Go back
+						</button>
+					</Link>
 			</div>
 		)
 	}

@@ -71,7 +71,7 @@ class OverviewContainer extends Component {
 	render(){
 		return(
 			<div>
-				<OverviewRoutes dataDay = {this.state.dataDay} dataWeek = {this.state.dataWeek} dataMonth = {this.state.dataMonth}/>
+				<OverviewRoutes history={this.props.history} dataDay = {this.state.dataDay} dataWeek = {this.state.dataWeek} dataMonth = {this.state.dataMonth}/>
 			</div>
 		)
 	}

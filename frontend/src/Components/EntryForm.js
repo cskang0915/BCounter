@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import moment from 'moment';
+import {Link} from 'react-router-dom';
 
 class EntryForm extends Component {
 
@@ -74,6 +74,7 @@ class EntryForm extends Component {
           <br />
           <input type="submit" value="submit" />
         </form>
+        <Link to="/overview/weekly"><button>Go back</button></Link>
       </div>
     )
   }

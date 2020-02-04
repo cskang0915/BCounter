@@ -9,7 +9,8 @@ class Profile extends Component {
 				<p><b>Last name:</b> {this.props.state.last_name}</p>
 				<p><b>Username:</b> {this.props.state.username}</p>
 				<p><b>Email:</b> {this.props.state.email}</p>
-				<Link to={`/overview/profile/edit/${this.props.state.rowid}`} >edit profile</Link>
+				<Link to={`/overview/profile/edit/${this.props.state.rowid}`} ><button>edit profile</button></Link>
+				<Link to="/overview/weekly"><button>Go back</button></Link>
 			</div>
 		)
 	}

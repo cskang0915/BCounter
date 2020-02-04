@@ -34,6 +34,9 @@ class EditProfileContainer extends Component {
 				},
 	    	body: JSON.stringify(entry)
 			})
+				.then(res => res.json())
+				.then(() => this.props.history.push('/overview/profile'))
+				.catch(err => console.log(err))
 	}
 
 	getUserInfo = () => {

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from "react-router-dom";
 
 class EditForm extends Component {
 
@@ -77,6 +78,7 @@ class EditForm extends Component {
           <br />
           <input type="submit" value="submit" />
         </form>
+        <Link to="/overview/weekly"><button>Go back</button></Link>
       </div>
     )
   }
