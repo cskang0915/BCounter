@@ -13,21 +13,8 @@ class OverviewContainer extends Component {
 		this.getByDay();
 		this.getByWeek();
 		this.getByMonth();
-		console.log("here")
-		console.log(this.state.dataDay)
-		// below is going to be displayed for the user
-		// console.log(moment().startOf("week").week(week))
-		// console.log(moment().endOf("week").week(week))
 	}
 
-	// getAll = () => {
-	// 	let day = moment().format('D')
-	// 	let week = moment()
-
-	// 	// write a get all and sort in one function
-	// }
-
-	// create function for get by day
 	getByDay = () => {
 		let day = moment().format('D')
 		let month = moment().format('M')
@@ -39,14 +26,9 @@ class OverviewContainer extends Component {
 		})
 			.then((response) => response.json())
 			.then(data => {
-				console.log('get by day')
-				console.log(data)
 				this.setState({
 					dataDay: data
 				})
-			})
-			.then(() => {
-				console.log(this.state)
 			})
 			.catch(error => console.log(error))
 		}
@@ -61,14 +43,9 @@ class OverviewContainer extends Component {
 		})
 			.then((response) => response.json())
 			.then(data => {
-				console.log('get by week')
-				console.log(data)
 				this.setState({
 					dataWeek: data
 				})
-			})
-			.then(() => {
-				console.log(this.state)
 			})
 			.catch(error => console.log(error))
 		}
@@ -84,14 +61,9 @@ class OverviewContainer extends Component {
 		})
 			.then((response) => response.json())
 			.then(data => {
-				console.log('get by month')
-				console.log(data)
 				this.setState({
 					dataMonth: data
 				})
-			})
-			.then(() => {
-				console.log(this.state)
 			})
 			.catch(error => console.log(error))
 		}

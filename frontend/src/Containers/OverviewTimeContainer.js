@@ -18,8 +18,6 @@ class OverviewTimeContainer extends Component {
 		let needs = []
 		let wants = []
 		let savings = []
-		console.log('we are here')
-		console.log(this.props.data)
 
 		if(typeof this.props.data === "string") {
 			this.setState({
@@ -29,19 +27,10 @@ class OverviewTimeContainer extends Component {
 			this.props.data.map((budgetEntry) => {
 				if(budgetEntry.category === "Needs"){
 					needs.push(budgetEntry)
-					// this.setState({
-					// 	needs: [...this.state.needs, budgetEntry]
-					// })
 				} else if(budgetEntry.category === "Wants") {
 					wants.push(budgetEntry)
-					// this.setState({
-					// 	wants: [...this.state.wants, budgetEntry]
-					// })
 				} else if(budgetEntry.category === "Savings") {
 					savings.push(budgetEntry)
-					// this.setState({
-					// 	savings: [...this.state.savings, budgetEntry]
-					// })
 				}
 			})
 
@@ -51,7 +40,6 @@ class OverviewTimeContainer extends Component {
 				savings: savings
 			})
 		}
-		console.log("!!!!!!!!!!!!")
 	}
 
 	render(){

@@ -146,37 +146,60 @@ userRouter.get("/info", authRequired, (req, res) => {
 });
 
 userRouter.put("/update", authRequired, (req, res) => {
-  bcrypt.genSalt(10, (err, salt) => {
-    if(err){
-      return res.status(500).json({
-        status: 500,
-        message: "something went wrong. try again."
+  const {error, notValid} = validate(req.body);
+  if (notValid) {
+    return res.status(400).json({
+      status: 400, 
+      error
+    });
+  };
+  
+  const checkUser = `
+  SELECT * FROM user
+  WHERE user.username = ${req.body.username}
+  AND user.email = ${req.body.email}`;
+
+  database.all(checkUser, (err, checkedUser) => {
+    if(checkedUser) {
+      return res.status(400).json({
+        status: 400,
+        message: "username or email is already registered"
       });
     };
-    bcrypt.hash(req.body.password, salt, (err, hash) => {
-      if(err){
+
+    bcrypt.genSalt(10, (err, salt) => {
+      if(err) {
         return res.status(500).json({
           status: 500,
           message: "something went wrong. try again"
         });
       };
 
-      const updateUser = `
-      UPDATE user SET first_name = ?, last_name = ?, username = ?, email = ?, password = ?
-      WHERE user.rowid = ${req.userId}`;
-
-      database.run(updateUser, [req.body.first_name, req.body.last_name, req.body.username, req.body.email, hash], (err) => {
-        if(err){
+      bcrypt.hash(req.body.password, salt, (err, hash) => {
+        if (err) {
           return res.status(500).json({
             status: 500,
             message: "something went wrong. try again"
           });
-        } else{
-          return res.status(200).json({
-            status: 200,
-            message: "successfully updated user info"
-          });
         };
+
+        const updateUser = `
+        UPDATE user SET first_name = ?, last_name = ?, username = ?, email = ?, password = ?
+        WHERE user.rowid = ${req.userId}`;
+
+        database.run(updateUser, [req.body.first_name, req.body.last_name, req.body.username, req.body.email, hash], (err) => {
+          if(err){
+            return res.status(500).json({
+              status: 500,
+              message: "something went wrong. try again"
+            });
+          } else{
+            return res.status(200).json({
+              status: 200,
+              message: "successfully updated user info"
+            });
+          };
+        });
       });
     });
   });

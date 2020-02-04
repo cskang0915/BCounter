@@ -22,13 +22,10 @@ class EditFormContainer extends Component {
     let name = target.name
     let value = target.value
     this.setState({[name]:value})
-    console.log(value)
   }
 
   handleSubmit = (event) => {
-    // event.preventDefault();
     const entry = this.state
-    console.log("sdklfjskldjflksdjf")
     fetch(`http://localhost:4000/api/budgetEntry/update/${this.props.rowid}`, {
       method: 'PUT',
       headers: {
@@ -37,8 +34,6 @@ class EditFormContainer extends Component {
       },
       body: JSON.stringify(entry)
     })
-    //  .then(()=> this.props.getEvents())
-    //  .then(()=> this.props.history.push('/Calendar'))
   }
 
   getById = () => {

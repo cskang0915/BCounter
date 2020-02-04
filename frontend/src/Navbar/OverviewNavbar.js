@@ -31,6 +31,7 @@ class OverviewNavbar extends Component {
 					<Link to = '/overview/weekly'>week</Link>
 					<Link to = '/overview/monthly'>month</Link>
 					<Link to = '/overview/entry'>new entry</Link>
+					<Link to = '/overview/profile'>profile</Link>
 				</nav>
 			</div>
 		)
