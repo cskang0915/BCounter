@@ -12,6 +12,7 @@ class Login extends Component {
 
   componentDidMount() {
     if(localStorage.getItem('uid')) {
+      // added weekly to overview below because weekly will be default view
       this.props.history.push('/overview')
     }
   }
@@ -46,7 +47,8 @@ class Login extends Component {
         this.setState({
           rowid: data.id.id
         })
-        this.props.history.push("/overview");
+        // added weekly to overview below because weekly will be default view
+        this.props.history.push("/overview/weekly");
       } else {
         alert("incorrect username or password");
       }
@@ -84,7 +86,14 @@ class Login extends Component {
           </div>
             <button type = "submit" className="form-login-button">Log in</button>
         </form>
+<<<<<<< HEAD
           <a href="#" className="form-login-forgotPW">Forgot Password?</a>
+=======
+        <Link to="/register"><button>Register</button></Link>
+        <div>
+          <a href="#">Forgot Password?</a>
+        </div>
+>>>>>>> ca16c577a2b9035aefb4700dc2c81f8398a5d67e
       </div>
     )
   }
