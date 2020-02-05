@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './LoginStyles.css';
+import './Login.css';
 
 class Login extends Component {
 
@@ -86,14 +86,7 @@ class Login extends Component {
           </div>
             <button type = "submit" className="form-login-button">Log in</button>
         </form>
-<<<<<<< HEAD
           <a href="#" className="form-login-forgotPW">Forgot Password?</a>
-=======
-        <Link to="/register"><button>Register</button></Link>
-        <div>
-          <a href="#">Forgot Password?</a>
-        </div>
->>>>>>> ca16c577a2b9035aefb4700dc2c81f8398a5d67e
       </div>
     )
   }
