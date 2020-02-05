@@ -6,11 +6,12 @@ import EntryFormContainer from '../Containers/form/EntryFormContainer';
 import EditFormContainer from '../Containers/form/EditFormContainer';
 import ProfileContainer from '../Containers/profile/ProfileContainer';
 import EditProfileContainer from '../Containers/profile/EditProfileContainer';
+import './OverviewRoutes.css'
 
 class OverviewRoutes extends Component {
 	render() {
 		return(
-			<div>
+			<div className="overview-routes-wrapper">
 				<OverviewNavbar logout={this.props.logout}/>
 				<Switch>
 					<Route exact path = "/overview" render = {() => {
