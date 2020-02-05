@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Doughnut, Pie} from 'react-chartjs-2';
+import {Pie} from 'react-chartjs-2';
 
 class Chart extends Component {
 
@@ -10,9 +10,9 @@ class Chart extends Component {
         {
           label: 'Percentages',
           data: [
-            50, 
-            30, 
-            20
+            null, 
+            null, 
+            null
           ],
           backgroundColor:[
             'rgba(255, 0, 0, 0.6)',

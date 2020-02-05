@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import OverviewNavbar from '../Navbar/OverviewNavbar';
-import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom';
+import {Switch, Route} from 'react-router-dom';
 import OverviewTimeContainer from '../Containers/overview/OverviewTimeContainer';
 import EntryFormContainer from '../Containers/form/EntryFormContainer';
 import EditFormContainer from '../Containers/form/EditFormContainer';

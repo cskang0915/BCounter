@@ -4,7 +4,6 @@ import Home from '../Components/home/Home';
 import Login from '../Components/auth/Login';
 import Register from '../Components/auth/Register';
 import OverviewContainer from '../Containers/overview/OverviewContainer'
-import OverviewRoutes from '../Config/OverviewRoutes';
 
 export default withRouter(({setCurrentUser, currentUser, logout, history}) => {
   const PrivateRoute = ({component: Component, ...rest}) => {
