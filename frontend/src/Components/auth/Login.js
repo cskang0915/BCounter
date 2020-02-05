@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import './LoginStyles.css';
 
 class Login extends Component {
 
@@ -61,31 +62,29 @@ class Login extends Component {
     return (
       <div className = "form-login">
         <form onSubmit = {this.handleSubmit}>
-          <div className ="form-group-register">
-            <label>Username</label>
-            <input 
+          <div>
+            {/* <label>Username</label> */}
+            <input className ="form-login-username"
               type="text" 
               name="username" 
               value={this.state.username} 
-              onChange={this.handleChange} 
-              placeholder="Enter Username"
+              onChange={this.handleChange}
+              placeholder="     Username"
             />
           </div>
-          <div className ="form-group-register">
-            <label>Password</label>
-            <input 
+          <div>
+            {/* <label>Password</label> */}
+            <input className ="form-login-password" 
               type="password" 
               name="password" 
               value={this.state.password} 
               onChange={this.handleChange} 
-              placeholder="Enter Password"
+              placeholder="     Password"
             />
           </div>
-          <button type = "submit">Log in</button>
+            <button type = "submit" className="form-login-button">Log in</button>
         </form>
-        <div>
-          <a href="#">Forgot Password?</a>
-        </div>
+          <a href="#" className="form-login-forgotPW">Forgot Password?</a>
       </div>
     )
   }

@@ -1,0 +1,89 @@
+*{
+  background: #2A2B37;
+}
+
+div .form-login-username {
+  position: absolute;
+  width: 383px;
+  height: 58px;
+  left: 550px;
+  top: 413px;
+  
+  border: 1px solid #E2C792;
+  box-sizing: border-box;
+  border-radius: 3px;
+
+  font-family: Helvetica;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+
+}
+
+div .form-login-password {
+  position: absolute;
+  width: 383px;
+  height: 58px;
+  left: 550px;
+  top: 489px;
+
+  border: 1px solid #E2E2E2;
+  box-sizing: border-box;
+  border-radius: 3px;
+
+  font-family: Helvetica;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+
+}
+
+div .form-login-button {
+  background: #E2C792;
+  
+  position: absolute;
+  width: 383px;
+  height: 54px;
+  left: 550px;
+  top: 591px;
+  
+  font-family: Helvetica;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 23px;
+  align-items: center;
+  text-align: center;
+  text-transform: capitalize;
+
+  color: #000000;
+}
+
+div .form-login-forgotPW {
+  position: absolute;
+  width: 383px;
+  height: 35px;
+  left: 686px;
+  top: 650px;
+
+  font-family: Helvetica;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-transform: capitalize;
+  text-decoration: none;
+
+  color: #7C7F91;
+}
