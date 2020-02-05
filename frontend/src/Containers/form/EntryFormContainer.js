@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import EntryForm from '../Components/EntryForm';
+import EntryForm from '../../Components/form/EntryForm';
 import moment from 'moment';
 
 class EntryFormContainer extends Component {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import BudgetEntry from '../Components/BudgetEntry';
+import BudgetEntry from '../../Components/entry/BudgetEntry';
 
 class OverviewBudgetEntryContainer extends Component {
 

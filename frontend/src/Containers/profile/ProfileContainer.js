@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Profile from '../Components/profile/Profile';
+import Profile from '../../Components/profile/Profile';
 
 class ProfileContainer extends Component {
 	state = {

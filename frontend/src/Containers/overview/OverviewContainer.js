@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import OverviewRoutes from '../Config/OverviewRoutes';
+import OverviewRoutes from '../../Config/OverviewRoutes';
 import moment from 'moment';
 
 class OverviewContainer extends Component {

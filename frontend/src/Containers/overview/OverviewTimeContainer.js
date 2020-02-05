@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import OverviewVisualComponent from '../Components/OverviewVisualComponent';
-import OverviewBudgetEntryContainer from './OverviewBudgetEntryContainer';
+import OverviewVisualContainer from '../entry/OverviewVisualContainer';
+import OverviewBudgetEntryContainer from '../entry/OverviewBudgetEntryContainer';
 
 class OverviewTimeContainer extends Component {
 	state = {
@@ -46,7 +46,7 @@ class OverviewTimeContainer extends Component {
 		return(
 			<div>
 				<h1>{this.props.time}</h1>
-				<OverviewVisualComponent state = {this.state}/>
+				<OverviewVisualContainer state = {this.state}/>
 				<OverviewBudgetEntryContainer data = {this.state.needs} message = {this.state.message}/>
 				<OverviewBudgetEntryContainer data = {this.state.wants} message = {this.state.message}/>
 				<OverviewBudgetEntryContainer data = {this.state.savings} message = {this.state.message}/>

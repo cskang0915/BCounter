@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import EditProfileForm from '../Components/EditProfileForm';
+import EditProfileForm from '../../Components/profile/EditProfileForm';
 
 class EditProfileContainer extends Component {
 	state = {

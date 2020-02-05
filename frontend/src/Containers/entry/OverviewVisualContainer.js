@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Chart from './Chart';
+import Chart from '../../Components/entry/Chart';
 
-class OverviewVisualComponent extends Component {
+class OverviewVisualContainer extends Component {
   render() {
     return (
       <div>
@@ -15,4 +15,4 @@ class OverviewVisualComponent extends Component {
   }
 }
 
-export default OverviewVisualComponent;
+export default OverviewVisualContainer;
