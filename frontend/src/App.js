@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {withRouter} from 'react-router-dom';
 import Routes from './Config/MainRoutes';
-import Home from './Components/Home';
+import Home from './Components/home/Home';
 
 class App extends Component {
   state = {
