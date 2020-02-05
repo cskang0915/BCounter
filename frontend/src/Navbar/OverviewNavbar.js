@@ -32,7 +32,6 @@ class OverviewNavbar extends Component {
 								<Link to = '/overview/monthly' className="overview-navbar-link"> Monthly </Link>
 							</div>
 						</div>
-						<Link to = '/overview/entry' className="overview-navbar-link"> New Entry </Link>
 						<Link to = '/overview/profile' className="overview-navbar-link"> Profile </Link>
 						<Link to = '/' onClick={this.props.logout} className="overview-navbar-link overview-navbar-logout"> logout </Link>
 					</nav>

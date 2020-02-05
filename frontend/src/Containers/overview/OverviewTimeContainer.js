@@ -47,9 +47,9 @@ class OverviewTimeContainer extends Component {
 			<div>
 				<h1>{this.props.time}</h1>
 				<OverviewVisualContainer state = {this.state}/>
-				<OverviewBudgetEntryContainer data = {this.state.needs} message = {this.state.message}/>
-				<OverviewBudgetEntryContainer data = {this.state.wants} message = {this.state.message}/>
-				<OverviewBudgetEntryContainer data = {this.state.savings} message = {this.state.message}/>
+				<OverviewBudgetEntryContainer data = {this.state.needs} message = {this.state.message} time = "Needs"/>
+				<OverviewBudgetEntryContainer data = {this.state.wants} message = {this.state.message} time = "Wants"/>
+				<OverviewBudgetEntryContainer data = {this.state.savings} message = {this.state.message} time = "Savings"/>
 			</div>
 		)
 	}

@@ -25,8 +25,9 @@ class BudgetEntry extends Component {
 	render() {
 		return (
 			<div>
-				<li>{this.props.data.category}</li>
-				<li>{this.props.data.amount}</li>
+				<li><b>Amount: </b>{this.props.data.amount}</li>
+				<li><b>Comment: </b>{this.props.data.comment}</li>
+				<li><b>Date: </b>{this.props.data.monthOfEntry}/{this.props.data.dayOfEntry}/{this.props.data.yearOfEntry}</li>
 				<button onClick={this.handleDelete}>Delete entry</button>
 				<Link to = {`/overview/update/${this.props.rowid}`}>
 					<button>

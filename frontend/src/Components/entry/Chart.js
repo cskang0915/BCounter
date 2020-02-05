@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Pie} from 'react-chartjs-2';
+import {Link} from 'react-router-dom';
 
 class Chart extends Component {
 
@@ -22,7 +23,10 @@ class Chart extends Component {
         }
       ]
     },
-    total: null
+    total: null,
+    sumNeeds: null,
+    sumWants: null,
+    sumSavings: null
   }
 
   componentDidMount() {
@@ -53,9 +57,6 @@ class Chart extends Component {
       let parsed = parseInt(state.savings[i].amount)
       sumSavings = sumSavings + parsed
     }
-    console.log('herehrerh')
-    console.log(sumNeeds, sumWants, sumSavings)
-
 
     this.setState({
       chartData: {
@@ -75,7 +76,11 @@ class Chart extends Component {
             ]
           }
         ]
-      }    })
+      },
+      sumNeeds: sumNeeds,
+      sumWants: sumWants,
+      sumSavings: sumSavings
+    })
   }
 
   render() {
@@ -87,6 +92,8 @@ class Chart extends Component {
             maintainAspectRatio: false
           }}
         />
+        <h2 className="total-spent"><b>Total Spent: </b>{this.state.sumNeeds + this.state.sumWants + this.state.sumSavings}</h2>
+        <Link to='/overview/entry'><button>Add Entry</button></Link>
       </div>
     )
   }
