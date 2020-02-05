@@ -1,5 +1,4 @@
 .overview-sidenav {
-	width: 50%;
 	transition: .5s;
 	overflow-x: hidden;
 	background: #2A2B37;
@@ -24,6 +23,16 @@
 	position: absolute;
 	font-size: 40px;
 
+}
+
+.sub-menu a {
+	transition: 10s;
+}
+
+.sub-menu {
+	display: none;
+	transition: .5s;
+	-webkit-transition: all .5s ease-out;
 }
 
 .overview-navbar-logout {

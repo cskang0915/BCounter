@@ -9,10 +9,26 @@ import EditProfileContainer from '../Containers/profile/EditProfileContainer';
 import './OverviewRoutes.css'
 
 class OverviewRoutes extends Component {
+	state = {
+		width: "0"
+	}
+
+	closeNavbar = (event) => {
+		this.setState({
+			width: "0"
+		})
+	}
+
+	openNavbar = (event) => {
+		this.setState({
+			width:"50%"
+		})
+	}
 	render() {
 		return(
 			<div className="overview-routes-wrapper">
-				<OverviewNavbar logout={this.props.logout}/>
+				<a onClick={this.openNavbar}>☰</a>
+				<OverviewNavbar logout={this.props.logout} closeNavbar={this.closeNavbar} width={this.state.width}/>
 				<Switch>
 					<Route exact path = "/overview" render = {() => {
 						return this.props.dataDay.length 
