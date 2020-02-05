@@ -20,7 +20,6 @@ div .form-login-username {
   line-height: 16px;
   display: flex;
   align-items: center;
-  text-transform: capitalize;
 
 }
 
@@ -42,7 +41,6 @@ div .form-login-password {
   line-height: 16px;
   display: flex;
   align-items: center;
-  text-transform: capitalize;
 
 }
 
