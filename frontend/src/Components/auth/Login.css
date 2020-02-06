@@ -85,3 +85,8 @@ div .form-login-forgotPW {
 
   color: #7C7F91;
 }
+
+.form-login-username{
+  color: white;
+  margin: 5px;
+}

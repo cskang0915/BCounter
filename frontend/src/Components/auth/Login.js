@@ -64,9 +64,9 @@ class Login extends Component {
     return (
       <div className = "form-login">
         <form onSubmit = {this.handleSubmit}>
-          <div>
+          <div className="form-login-username">
             {/* <label>Username</label> */}
-            <input className ="form-login-username"
+            <input className ="form-login-username-input"
               type="text" 
               name="username" 
               value={this.state.username} 
