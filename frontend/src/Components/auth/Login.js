@@ -63,26 +63,35 @@ class Login extends Component {
   render() {
     return (
       <div className = "form-login">
+        <div className = "welcome-back">
+          <p>Welcome Back!</p>
+        </div>
+        <div className = "login-instructions">
+          <p>Please enter your username &amp; password to log in.</p>
+        </div>
         <form onSubmit = {this.handleSubmit}>
-          <div>
+          <div className="username">
             {/* <label>Username</label> */}
-            <input className ="form-login-username"
+            <i className = "fa fa-user-o fa-lg fa-fw"></i>
+            <input
               type="text" 
               name="username" 
               value={this.state.username} 
               onChange={this.handleChange}
-              placeholder="     Username"
+              placeholder=" Username"
             />
           </div>
-          <div>
+          <div className="password">
             {/* <label>Password</label> */}
-            <input className ="form-login-password" 
+            <input 
               type="password" 
               name="password" 
               value={this.state.password} 
               onChange={this.handleChange} 
-              placeholder="     Password"
+              placeholder=" Password"
             />
+            <i className = "fa fa-lock icon"></i>
+
           </div>
             <button type = "submit" className="form-login-button">Log in</button>
         </form>

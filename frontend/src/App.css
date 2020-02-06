@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Heebo&display=swap');
+*{
+  background: #2A2B37;
+}
 
 .App {
   text-align: center;
