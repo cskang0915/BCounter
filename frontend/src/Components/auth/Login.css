@@ -16,6 +16,11 @@ text-transform: capitalize;
 color: #C4C4C4;
 }
 
+.form-login {
+  margin-left: auto;
+  margin-right: : auto;
+}
+
 .login-instructions {
 position: absolute;
 width: 383px;
