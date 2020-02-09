@@ -63,16 +63,22 @@ class Login extends Component {
   render() {
     return (
       <div className = "form-login">
+        <div className="app-name">
+          <p>B COUNTER</p>
+        </div>
         <div className = "welcome-back">
           <p>Welcome Back!</p>
         </div>
         <div className = "login-instructions">
-          <p>Please enter your username &amp; password to log in.</p>
+          <p>Please enter your Email &amp; Password to log in.</p>
+          <div className="sign-up">
+            <p>Don't have an account? <a href='#'>Sign Up.</a></p>
+          </div>
         </div>
         <form onSubmit = {this.handleSubmit}>
           <div className="username">
             {/* <label>Username</label> */}
-            <i className = "fa fa-user-o fa-lg fa-fw"></i>
+            {/* <i className = "fa fa-user-o fa-lg fa-fw"></i> */}
             <input
               type="text" 
               name="username" 
@@ -90,7 +96,7 @@ class Login extends Component {
               onChange={this.handleChange} 
               placeholder=" Password"
             />
-            <i className = "fa fa-lock icon"></i>
+            {/* <i className = "fa fa-lock icon"></i> */}
 
           </div>
             <button type = "submit" className="form-login-button">Log in</button>
