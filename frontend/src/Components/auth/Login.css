@@ -1,146 +1,223 @@
-.welcome-back {
-position: absolute;
-width: 219px;
-height: 49px;
-left: 640px;
-top: 250px;
+@media(max-width: 768px) {
+  .form-login {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10rem;
+    justify-content: center;
+  }
 
-font-weight: 500;
-font-size: 30px;
-line-height: 44px;
-display: flex;
-align-items: center;
-text-align: center;
-text-transform: capitalize;
+  .app-name {
+    font-family: Heebo;
+    font-size: 1.125rem;
+    line-height: 1.625rem;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
 
-color: #C4C4C4;
+    margin: auto auto 0.6rem auto;
+
+    color: #E2C792;
+  }
+
+  .sign-up {
+    font-family: Heebo;
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+    align-items: center;
+    text-align: center;
+
+    color: #7C7F91;
+  }
+
+  .sign-up a {
+    text-decoration: none;
+    color: #E2C792;
+  }
+
+
+  .welcome-back {
+    font-family: Heebo;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.6rem;
+    align-items: center;
+    text-align: center;
+
+    height: 3.5rem;
+    
+    flex-basis: 100%;
+
+    color: #C4C4C4;
+  }
+
+  .login-instructions {
+    font-family: Heebo;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+    align-items: center;
+    text-align: center;
+
+    flex-basis: 100%;
+
+    color: #979797;
+
+  }
+
+  input{
+    font-family: Helvetica;
+    font-size: 1.2rem;
+    text-indent: 5%;
+    color: #E2C792;;
+
+    border: 1px solid #E2E2E2;
+    box-sizing: border-box;
+    border-radius: 3px;
+
+    flex-basis: 100%;
+  }
+
+  .username {
+    margin: 1.75rem auto 1rem auto; 
+  }
+
+  .password {
+    margin-bottom: 2.75rem;
+  }
+
+  .form-login-button {
+    background: #E2C792;  
+    font-family: Helvetica;
+    font-size: 0.85rem;
+    text-transform: capitalize;
+    width: 13.4375rem;
+    
+    color: #000000;
+  }
+
+  .form-login-forgotPW {
+    display: flex;
+    justify-content: center;
+    height: 2.2rem;
+    margin-top: 0.5rem;
+
+    font-size: 0.625rem;
+    line-height: 1rem;
+    text-transform: capitalize;
+    text-decoration: none;
+
+    flex-basis: 100%;
+
+    color: #7C7F91;
+  }
 }
-
-.form-login {
-  margin-left: auto;
-  margin-right: : auto;
-}
-
-.login-instructions {
-position: absolute;
-width: 383px;
-height: 35px;
-left: 595px;
-top: 290px;
-
-font-family: Heebo;
-font-style: normal;
-font-weight: normal;
-font-size: 14px;
-line-height: 21px;
-display: flex;
-align-items: center;
-text-align: center;
-
-color: #C4C4C4;
-}
-
-input {
-  color: white;
-  text-indent: 5%;
-}
-
-.username i {
-  position: absolute;
-  left: 490px;
-  top: 385px;
-  font-size: 30px;
-  color: #E2C792;
-}
-
-.username input {
-  position: absolute;
-  width: 383px;
-  height: 58px;
-  left: 540px;
-  top: 363px;
   
-  border: 1px solid #E2C792;
-  box-sizing: border-box;
-  border-radius: 3px;
+@media(min-width: 768px) {
+  .form-login {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 13rem;
+    justify-content: center;
+  }
 
-  font-family: Helvetica;
-  /* font-style: normal; */
-  /* font-weight: normal; */
-  font-size: 20px;
-  /* display: flex;
-  align-items: center; */
-  color: white;
-}
+  .app-name {
+    display: none;
+  }
 
-.password i {
-  position: absolute;
-  left: 498px;
-  top: 450px;
-  font-size: 35px;
-  color: gray;
-}
+  .welcome-back {
+    font-family: Heebo;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.9rem;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 2rem;
 
-.password input {
-  position: absolute;
-  width: 383px;
-  height: 58px;
-  left: 540px;
-  top: 439px;
+    height: 2.75rem;
+    
+    flex-basis: 100%;
 
-  border: 1px solid #E2E2E2;
-  box-sizing: border-box;
-  border-radius: 3px;
+    color: #C4C4C4;
+  }
 
-  font-family: Helvetica;
-  /* font-style: normal;
-  font-weight: normal; */
-  font-size: 20px;
-  /* display: flex;
-  align-items: center; */
-}
+  .login-instructions {
+    font-family: Heebo;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    align-items: center;
+    text-align: center;
 
-.form-login-button {
-  background: #E2C792;
-  
-  position: absolute;
-  width: 383px;
-  height: 54px;
-  left: 540px;
-  top: 541px;
-  
-  font-family: Helvetica;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 20px;
-  /* align-items: center;
-  text-align: center; */
-  text-transform: uppercase;
+    flex-basis: 100%;
 
-  color: #000000;
-}
+    color: #979797;
 
-.form-login-forgotPW {
-  position: absolute;
-  width: 383px;
-  height: 35px;
-  left: 686px;
-  top: 600px;
+  }
 
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 16px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  text-transform: capitalize;
-  text-decoration: none;
+  .sign-up {
+    font-family: Heebo;
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+    margin-top: -0.75rem;
 
-  color: #7C7F91;
-}
+    color: #7C7F91;
+    
+  }
 
-.form-login-username{
-  color: white;
-  margin: 5px;
+  .sign-up a {
+    text-decoration: none;
+    color: #E2C792;
+  }
+
+  input{
+    font-family: Helvetica;
+    font-size: 1.2rem;
+    text-indent: 5%;
+    color: #E2C792;
+    width: 24rem;
+    height: 3.625rem;
+
+    border: 1px solid #E2E2E2;
+    box-sizing: border-box;
+    border-radius: 3px;
+
+  }
+
+  .username {
+    margin: 1rem auto 1rem auto; 
+  }
+
+  .password {
+    margin-bottom: 2.75rem;
+  }
+
+  .form-login-button {
+    background: #E2C792;  
+    font-family: Helvetica;
+    font-size: 0.85rem;
+    text-transform: capitalize;
+    height: 3.375rem;
+    width: 24rem;
+    
+    color: #000000;
+  }
+
+  .form-login-forgotPW {
+    display: flex;
+    justify-content: center;
+    height: 2.2rem;
+    margin-top: 1rem;
+
+    font-size: 0.875rem;
+    line-height: 1rem;
+    text-transform: capitalize;
+    text-decoration: none;
+
+    flex-basis: 100%;
+
+    color: #7C7F91;
+  }
 }
