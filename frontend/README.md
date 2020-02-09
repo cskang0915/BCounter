@@ -1,3 +1,49 @@
+
+# BCounter - The Budget Counter App
+
+BCounter is an application created to help manage where the money in your pocket is going: 
+
+## How it works
+ 1. Login to the site. If you don't have an account, you can always register on our site. 
+ 2. After logging in to the site, you can look at your current expenditure for the day, week, or month. 
+ 3. Navigate to the bottom of the pie chart to add an entry. 
+ 4. Enter the amount, select a category, write a note, and hit 'submit' to log the entry and route back to the pie chart. 
+ 5. If you need to edit an entry, you can hit 'edit' next to that entry to do so. 
+ 6. If you need to delete an entry, hitting the 'delete' button will help you out with that. 
+ 7. Be smart with your money by using this app!
+
+ERD:
+
+## Approach taken:
+We came together as a group to create an application that would help us solidify our skills in this stack as well as be used by people. 
+
+## Technologies used:	
+	 - SQLite3
+	 - Express
+	 - React.js
+	 - Node
+	 - Moment.js
+	 - Chart.js
+	 - FontAwesome
+
+## MVP Functionality
+When we created our MVP, we had an idea of what the MVP functionality would be:
+
+ - Have a login/registration page
+ - Make sure JSON-Web-Token Authentication works
+ - Being able to create, read, update, and delete all entries
+ - Make sure pie chart displays all categories
+ - Make sure we displayed the total amount spent and the amount in each category that was spent
+ - Be able to view/edit/delete your profile information
+ - Have a working hamburger menu
+ - Have decent styling
+
+ 
+
+## Goals for improvement
+We'd like to get feedback from users to see what we can improve upon. (insert more)
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
