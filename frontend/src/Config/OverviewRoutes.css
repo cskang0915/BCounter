@@ -8,3 +8,7 @@
 	-webkit-flex-flow: row wrap;
 	justify-content: flex-start;
 } */
+
+.hamburger-menu {
+	visibility: visible;
+}
