@@ -76,7 +76,7 @@ userRouter.post("/login", (req, res) => {
   SELECT *, rowid FROM user
   WHERE user.email = ?`;
 
-  database.all(checkUser, [req.body.username], (err, checkedUser) => {
+  database.all(checkUser, [req.body.email], (err, checkedUser) => {
     if (err) {
       return res.status(500).json({
         status: 500,
@@ -85,7 +85,7 @@ userRouter.post("/login", (req, res) => {
     } else if (checkedUser.length === 0) {
       return res.status(400).json({
         status: 400,
-        message: "username or password is incorrect"
+        message: "email or password is incorrect"
       })
     } else {
       bcrypt.compare(req.body.password, checkedUser[0].password, (err, isMatch) => {
@@ -97,7 +97,7 @@ userRouter.post("/login", (req, res) => {
         } else if (!isMatch) {
           return res.status(400).json({
             status: 400,
-            message: "username or password is incorrect"
+            message: "email or password is incorrect"
           })
         } else if(isMatch){
           let user = {
