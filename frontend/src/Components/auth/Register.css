@@ -1,0 +1,184 @@
+@media(max-width: 768px) {
+  .form-register {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10rem;
+    justify-content: center;
+  }
+
+  .create-new-acc {
+    font-family: Heebo;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.6rem;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 2.4rem;
+
+    height: 3.5rem;
+    
+    flex-basis: 100%;
+
+    color: #C4C4C4;
+  }
+
+  input{
+    font-family: Helvetica;
+    font-size: 1.2rem;
+    text-indent: 5%;
+    color: #E2C792;;
+
+    border: 1px solid #E2E2E2;
+    box-sizing: border-box;
+    border-radius: 3px;
+
+    flex-basis: 100%;
+  }
+
+  .first-name {
+    margin: 1rem auto 0.75rem auto;
+  }
+
+  .last-name {
+    margin-bottom: 0.75rem;
+  }
+
+  .register-username {
+    margin-bottom: 0.75rem;
+  }
+
+  .email {
+    margin-bottom: 0.75rem;
+  }
+
+  .password {
+    margin-bottom: 0.75rem;
+  }
+
+  .create-account-button {
+    background: #E2C792;  
+    font-family: Helvetica;
+    font-size: 0.85rem;
+    text-transform: capitalize;
+    height: 2rem;
+    width: 13.4375rem;
+    
+    color: #000000;
+  }
+
+  .already-registered {
+    display: flex;
+    justify-content: center;
+    font-family: Heebo;
+    height: 2.2rem;
+    margin-top: 1rem;
+
+    font-size: 0.875rem;
+    line-height: 1rem;
+    text-decoration: none;
+
+    flex-basis: 100%;
+
+    color: #7C7F91;
+  }
+
+  .link-to-login {
+    color: #E2C792;
+    text-decoration: none;
+  }
+}
+
+@media(min-width: 768px) {
+  .form-register {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 6rem;
+    justify-content: center;
+  }
+
+  .app-name {
+    display: none;
+  }
+
+  .create-new-acc {
+    font-family: Heebo;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.6rem;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 2rem;
+
+    height: 2.75rem;
+    
+    flex-basis: 100%;
+
+    color: #C4C4C4;
+  }
+
+  input{
+    font-family: Helvetica;
+    font-size: 1.2rem;
+    text-indent: 5%;
+    color: #E2C792;
+    width: 24rem;
+    height: 3.625rem;
+
+    border: 1px solid #E2E2E2;
+    box-sizing: border-box;
+    border-radius: 3px;
+
+  }
+
+  .first-name {
+    margin: 1.5rem auto 1.25rem auto;
+  }
+
+  .last-name {
+    margin-bottom: 1.25rem;
+  }
+
+  .register-username {
+    margin-bottom: 1.25rem;
+  }
+
+  .email {
+    margin-bottom: 1.25rem;
+  }
+
+  .password {
+    margin-bottom: 1.25rem;
+  }
+
+  .create-account-button {
+    background: #E2C792;  
+    font-family: Helvetica;
+    font-size: 0.85rem;
+    text-transform: capitalize;
+    height: 3.375rem;
+    width: 24rem;
+    
+    color: #000000;
+  }
+
+  .already-registered {
+    display: flex;
+    justify-content: center;
+    font-family: Heebo;
+    height: 2.2rem;
+    margin-top: 1rem;
+
+    font-size: 0.875rem;
+    line-height: 1rem;
+    text-decoration: none;
+
+    flex-basis: 100%;
+
+    color: #7C7F91;
+  }
+
+  .link-to-login {
+    color: #E2C792;
+    text-decoration: none;
+  }
+}

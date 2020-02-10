@@ -3,6 +3,13 @@ const userRouter = require("./routes/user");
 const budgetEntry = require("./routes/budgetEntry");
 const app = express();
 
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "*");
+  res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requeted-With, Content-Type, Accept, Authorization");
+  next();
+})
+
 app.use(express.json());
 
 app.get("/", (req, res) => {

@@ -1,0 +1,43 @@
+.overview-sidenav {
+	transition: .5s;
+	overflow-x: hidden;
+	background: #2A2B37;
+	color: #C4C4C4;
+	position: fixed;
+	padding-top: 40px;
+	height: 100%;
+}
+
+.overview-navbar-link {
+	display: block;
+	text-decoration: none;
+	color: #C4C4C4;
+	border-bottom: 1px solid #E2C792;
+	padding: 8px 8px 8px 20px;
+	margin: 0 10px;
+}
+
+.close-button {
+	top: 0;
+	left: 25px;
+	position: absolute;
+	font-size: 40px;
+
+}
+
+.sub-menu a {
+	transition: 10s;
+}
+
+.sub-menu {
+	display: none;
+	transition: .5s;
+	-webkit-transition: all .5s ease-out;
+}
+
+.overview-navbar-logout {
+	color: #E2C792;
+	border: 0;
+	padding: 25% 0 0 0;
+	text-align: center;
+}
