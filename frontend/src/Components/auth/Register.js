@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
+import './Register.css';
 
 class Register extends Component {
 
@@ -52,59 +53,67 @@ class Register extends Component {
   render() {
     return (
       <div className = "form-register">
+        <div className="app-name">
+          <p>B COUNTER</p>
+        </div>
+        <div className="create-new-acc">
+          <p>
+          Create A New Account
+          </p>
+        </div>
         <form onSubmit = {this.handleSubmit}>
-          <div className ="form-group-register">
-            <label>First Name</label>
+          <div className ="first-name">
+            {/* <label>First Name</label> */}
             <input 
               type="text" 
               name="first_name" 
               value={this.state.first_name} 
               onChange={this.handleChange} 
-              placeholder="Enter First Name"
+              placeholder="First Name"
             />
           </div>
-          <div className ="form-group-register">
-            <label>Last Name</label>
+          <div className ="last-name">
+            {/* <label>Last Name</label> */}
             <input 
               type="text" 
               name="last_name" 
               value={this.state.last_name} 
               onChange={this.handleChange} 
-              placeholder="Enter Last Name"
+              placeholder="Last Name"
             />
           </div>
-          <div className ="form-group-register">
-            <label>Username</label>
+          <div className ="register-username">
+            {/* <label>Username</label> */}
             <input 
               type="text" 
               name="username" 
               value={this.state.username} 
               onChange={this.handleChange} 
-              placeholder="Enter Username"
+              placeholder="Username"
             />
           </div>
-          <div className ="form-group-register">
-            <label>Email</label>
+          <div className ="email">
+            {/* <label>Email</label> */}
             <input 
               type="email" 
               name="email" 
               value={this.state.email} 
               onChange={this.handleChange} 
-              placeholder="Enter Email"
+              placeholder="Email"
             />
           </div>
-          <div className ="form-group-register">
-            <label>Password</label>
+          <div className ="password">
+            {/* <label>Password</label> */}
             <input 
               type="password" 
               name="password" 
               value={this.state.password} 
               onChange={this.handleChange} 
-              placeholder="Enter Password"
+              placeholder="Password"
             />
           </div>
-          <div className ="form-group-register">
-            <label>Re-enter Password</label>
+          <div className ="password">
+            {/* <label>Re-enter Password</label> */}
             <input 
               type="password" 
               name="password2" 
@@ -115,13 +124,11 @@ class Register extends Component {
           </div>
           <button
             type="submit"
-            className="button-submit"
-          >Register
+            className="create-account-button"
+          >Create Account
           </button>
         </form>
-        <div>
-          <p>Already a member? <Link to="/login">Log in</Link></p>
-        </div>
+        <p className="already-registered">Already a member?<Link to="/login" className="link-to-login">&nbsp;Log in</Link></p>
       </div>
     )
   }

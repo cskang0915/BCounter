@@ -70,7 +70,7 @@ class Login extends Component {
           <p>Welcome Back!</p>
         </div>
         <div className = "login-instructions">
-          <p>Please enter your Email &amp; Password to log in.</p>
+          <p>Please enter your Username &amp; Password to log in.</p>
           <div className="sign-up">
             <p>Don't have an account? <a href='#'>Sign Up.</a></p>
           </div>
@@ -89,7 +89,7 @@ class Login extends Component {
           </div>
           <div className="password">
             {/* <label>Password</label> */}
-            <input 
+            <input
               type="password" 
               name="password" 
               value={this.state.password} 

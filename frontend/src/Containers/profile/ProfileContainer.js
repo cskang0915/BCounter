@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Profile from '../../Components/profile/Profile';
+import './ProfileContainer.css';
+
 
 class ProfileContainer extends Component {
 	state = {
@@ -48,12 +50,14 @@ class ProfileContainer extends Component {
 
 	render() {
 		return(
-			<div>
+			<div className="profile-page">
+				<p className="B-counter">B COUNTER</p>
+				<p className="profile">Profile</p>
 				<Profile state={this.state} />
-				<button onClick={this.deleteUserInfo}>delete account</button>
+				<a className="delete-account" onClick={this.deleteUserInfo}>delete account</a>
 			</div>
 		)
 	}
 }
 
-export default ProfileContainer
+export default ProfileContainer;
