@@ -2,7 +2,7 @@
   .eventForm {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 9.3rem;
+    margin-top: 5.3rem;
     justify-content: center;
   }
 
@@ -41,9 +41,6 @@
     border: 1px solid #E2E2E2;
     box-sizing: border-box;
     border-radius: 3px;
-    border-top: none;
-    border-right: none;
-    border-left: none;
     padding-bottom: 0.625rem;
   }
 
@@ -51,27 +48,52 @@
     margin: auto auto 0.75rem 0.4rem;
     text-transform: capitalize;
     color: #C4C4C4;
+
+    border-top: none;
+    border-right: none;
+    border-left: none;
+
   }
 
   .last {
     margin-bottom: 0.75rem;
     text-transform: capitalize;
     color: #C4C4C4;
+
+    border-top: none;
+    border-right: none;
+    border-left: none;
+
   }
 
   .userName {
     margin-bottom: 0.75rem;
     color: #C4C4C4;
+
+    border-top: none;
+    border-right: none;
+    border-left: none;
+
   }
 
   .Email {
     margin-bottom: 0.75rem;
     color: #C4C4C4;
 
+    border-top: none;
+    border-right: none;
+    border-left: none;
+
+
   }
 
-  .password {
+  .confirm-password {
     margin-bottom: 0.75rem;
+
+    border-top: none;
+    border-right: none;
+    border-left: none;
+
   }
 
   .save {
@@ -102,96 +124,128 @@
 }
 
 @media(min-width: 768px) {
-  .form-register {
+  .eventForm {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 6rem;
+    margin-top: 5.3rem;
     justify-content: center;
   }
 
-  .app-name {
-    display: none;
-  }
+  .app-name: none;
 
-  .create-new-acc {
+  .edit-form-title {
     font-family: Heebo;
     font-style: normal;
     font-weight: 500;
     font-size: 1.6rem;
     align-items: center;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 2.4rem;
 
-    height: 2.75rem;
+    height: 3.5rem;
     
     flex-basis: 100%;
 
     color: #C4C4C4;
   }
 
-  input{
+  .form{
+    margin: auto 2rem 0.75rem;
+    color: #C4C4C4;
+
+    padding-bottom: 0.625rem;
+    text-indent: 0.75rem;
+  }
+
+  input {
     font-family: Helvetica;
     font-size: 1.2rem;
-    text-indent: 5%;
+    text-indent: 0.75rem;
     color: #E2C792;
-    width: 24rem;
-    height: 3.625rem;
+
+    margin: auto 2rem 0.75rem 1.1rem;
 
     border: 1px solid #E2E2E2;
     box-sizing: border-box;
     border-radius: 3px;
+    padding-bottom: 0.625rem;
+  }
+
+  input.first {
+    margin: auto auto 0.75rem 0.4rem;
+    text-transform: capitalize;
+    color: #C4C4C4;
+
+    border-top: none;
+    border-right: none;
+    border-left: none;
 
   }
 
-  .first-name {
-    margin: 1.5rem auto 1.25rem auto;
+  .last {
+    margin-bottom: 0.75rem;
+    text-transform: capitalize;
+    color: #C4C4C4;
+
+    border-top: none;
+    border-right: none;
+    border-left: none;
+
   }
 
-  .last-name {
-    margin-bottom: 1.25rem;
+  .userName {
+    margin-bottom: 0.75rem;
+    color: #C4C4C4;
+
+    border-top: none;
+    border-right: none;
+    border-left: none;
+
   }
 
-  .register-username {
-    margin-bottom: 1.25rem;
+  .Email {
+    margin-bottom: 0.75rem;
+    color: #C4C4C4;
+
+    border-top: none;
+    border-right: none;
+    border-left: none;
+
+
   }
 
-  .email {
-    margin-bottom: 1.25rem;
+  .confirm-password {
+    margin-bottom: 0.75rem;
+
+    border-top: none;
+    border-right: none;
+    border-left: none;
+
   }
 
-  .password {
-    margin-bottom: 1.25rem;
-  }
-
-  .create-account-button {
+  .save {
     background: #E2C792;  
     font-family: Helvetica;
     font-size: 0.85rem;
     text-transform: capitalize;
-    height: 3.375rem;
-    width: 24rem;
+    height: 2rem;
+    width: 7.3125rem;
+    margin-top: 2rem;
+    margin-right: 1.25rem;
     
     color: #000000;
   }
 
-  .already-registered {
-    display: flex;
-    justify-content: center;
-    font-family: Heebo;
-    height: 2.2rem;
-    margin-top: 1rem;
+  .go-back {
+    background: #E2C792;  
+    font-family: Helvetica;
+    font-size: 0.85rem;
+    text-transform: capitalize;
+    height: 2rem;
+    width: 7.3125rem;
 
-    font-size: 0.875rem;
-    line-height: 1rem;
-    text-decoration: none;
-
-    flex-basis: 100%;
-
-    color: #7C7F91;
+    color: #000000;
   }
 
-  .link-to-login {
-    color: #E2C792;
-    text-decoration: none;
-  }
+  
 }
