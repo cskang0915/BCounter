@@ -1,4 +1,5 @@
 .overview-sidenav {
+	font-family: 'Heebo', sans-serif;
 	transition: .5s;
 	overflow-x: hidden;
 	background: #2A2B37;
@@ -20,17 +21,20 @@
 .close-button {
 	top: 0;
 	left: 25px;
-	position: absolute;
+	position: fixed;
 	font-size: 40px;
+	display: inline-block;
 
 }
 
 .sub-menu a {
 	transition: 10s;
+	-webkit-transition: all .5s ease-out;
+
 }
 
 .sub-menu {
-	display: none;
+	display: inline-block;
 	transition: .5s;
 	-webkit-transition: all .5s ease-out;
 }

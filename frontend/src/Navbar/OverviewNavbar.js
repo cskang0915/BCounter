@@ -23,7 +23,7 @@ class OverviewNavbar extends Component {
 	render(){
 		return(
 			<div className="overview-sidenav" style={{width: this.props.width}}>
-				<a className="close-button" onClick={this.props.closeNavbar}>&lt;</a>
+				<a className="close-button" style={{visibility: this.props.visibility}}onClick={this.props.closeNavbar}>&lt;</a>
 					<nav className="side-nav">
 						<div><a onClick={this.openSubmenu} className="overview-navbar-link">Time</a>
 							<div className="sub-menu" style={{display: this.state.display}}>

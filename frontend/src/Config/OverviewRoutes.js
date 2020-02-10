@@ -12,28 +12,31 @@ class OverviewRoutes extends Component {
 	state = {
 		width: "0",
 		// visibilityToggle: true,
-		visibility: "visible"
+		hamburgerMenuVisibility: "visible",
+		backButtonVisibility: "hidden"
 	}
 
 	closeNavbar = (event) => {
 		this.setState({
 			width: "0",
-			visibility: "visible"
+			hamburgerMenuVisibility: "visible",
+			backButtonVisibility: "hidden"
 		})
 	}
 
 	openNavbar = (event) => {
 		this.setState({
 			width:"30%",
-			visibility: "hidden"
+			hamburgerMenuVisibility: "hidden",
+			backButtonVisibility: "visible"
 		})
 	}
 
 	render() {
 		return(
 			<div className="overview-routes-wrapper">
-				<a className="hamburger-menu" style={{visibility: this.state.visibility}} onClick={this.openNavbar}>☰</a>
-				<OverviewNavbar logout={this.props.logout} closeNavbar={this.closeNavbar} width={this.state.width}/>
+				<a className="hamburger-menu" style={{visibility: this.state.hamburgerMenuVisibility}} onClick={this.openNavbar}>☰</a>
+				<OverviewNavbar logout={this.props.logout} closeNavbar={this.closeNavbar} width={this.state.width} visibility={this.state.backButtonVisibility}/>
 				<Switch>
 					<Route exact path = "/overview" render = {() => {
 						return this.props.dataDay.length 
