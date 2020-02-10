@@ -131,7 +131,9 @@
     justify-content: center;
   }
 
-  .app-name: none;
+  .app-name {
+    display: none;
+  }
 
   .edit-form-title {
     font-family: Heebo;
