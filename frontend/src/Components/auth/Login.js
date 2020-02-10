@@ -84,7 +84,7 @@ class Login extends Component {
               name="email" 
               value={this.state.email} 
               onChange={this.handleChange}
-              placeholder=" Username"
+              placeholder=" Email"
             />
           </div>
           <div className="password">
