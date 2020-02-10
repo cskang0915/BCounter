@@ -11,7 +11,6 @@ import './OverviewRoutes.css'
 class OverviewRoutes extends Component {
 	state = {
 		width: "0",
-		// visibilityToggle: true,
 		hamburgerMenuVisibility: "visible",
 		backButtonVisibility: "hidden"
 	}
@@ -36,7 +35,7 @@ class OverviewRoutes extends Component {
 		return(
 			<div className="overview-routes-wrapper">
 				<a className="hamburger-menu" style={{visibility: this.state.hamburgerMenuVisibility}} onClick={this.openNavbar}>☰</a>
-				<OverviewNavbar logout={this.props.logout} closeNavbar={this.closeNavbar} width={this.state.width} visibility={this.state.backButtonVisibility}/>
+				<OverviewNavbar logout={this.props.logout} closeNavbar={this.closeNavbar} width={this.state.width} visibility={this.state.backButtonVisibility} displayToggle={false} display="none"/>
 				<Switch>
 					<Route exact path = "/overview" render = {() => {
 						return this.props.dataDay.length 
