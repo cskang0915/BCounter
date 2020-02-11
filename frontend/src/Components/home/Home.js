@@ -6,7 +6,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <h1>B Counter</h1>
+        <h1 className="app-name">B Counter</h1>
         <Link to='/register'>
           <button>
             Get Started!
