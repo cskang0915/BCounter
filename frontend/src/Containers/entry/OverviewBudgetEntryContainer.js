@@ -10,7 +10,7 @@ class OverviewBudgetEntryContainer extends Component {
 	  		budgetEntry = "there is no entries on this day"
 	  	} else {
 	  		budgetEntry = this.props.data.map((entry) => {
-					sum = sum + parseInt(entry.amount)
+					sum = parseFloat(parseFloat(sum + parseFloat(parseFloat(entry.amount).toFixed(2))).toFixed(2))
 		  		return <BudgetEntry data={entry} rowid={entry.rowid}/>
 		  	})
 	  	}
