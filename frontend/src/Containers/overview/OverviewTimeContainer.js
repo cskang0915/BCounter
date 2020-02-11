@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import OverviewVisualContainer from '../entry/OverviewVisualContainer';
 import OverviewBudgetEntryContainer from '../entry/OverviewBudgetEntryContainer';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import './OverviewTimeContainer.css'
 
 class OverviewTimeContainer extends Component {
 	state = {
