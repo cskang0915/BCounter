@@ -102,9 +102,9 @@ class Register extends Component {
               placeholder="Email"
             />
           </div>
-          <div className ="password">
+          <div>
             {/* <label>Password</label> */}
-            <input 
+            <input className ="password"
               type="password" 
               name="password" 
               value={this.state.password} 
@@ -112,9 +112,9 @@ class Register extends Component {
               placeholder="Password"
             />
           </div>
-          <div className ="password">
+          <div>
             {/* <label>Re-enter Password</label> */}
-            <input 
+            <input className ="password"
               type="password" 
               name="password2" 
               value={this.state.password2} 

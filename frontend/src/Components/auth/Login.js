@@ -88,7 +88,7 @@ class Login extends Component {
               placeholder=" Email"
             />
           </div>
-          <div className="password">
+          <div className="login-password">
             {/* <label>Password</label> */}
             <input
               type="password" 

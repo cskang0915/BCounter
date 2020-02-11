@@ -50,7 +50,7 @@ class EditProfileForm extends Component {
 					{/* </label> */}
 					<br />
 					{/* <label>Password */}
-					<input
+					<input className="confirm-password"
 						type="password"
 						name="password"
 						value={this.props.state.password}
@@ -60,7 +60,7 @@ class EditProfileForm extends Component {
 					{/* </label> */}
 					<br />
 					{/* <label>Re-enter Password */}
-					<input
+					<input className="confirm-password"
 						type="password"
 						name="password2"
 						value={this.props.state.password2}

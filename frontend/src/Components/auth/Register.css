@@ -2,7 +2,7 @@
   .form-register {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 10rem;
+    margin-top: 6rem;
     justify-content: center;
   }
 
@@ -36,23 +36,27 @@
   }
 
   .first-name {
-    margin: 1rem auto 0.75rem auto;
+    margin: 1rem auto 0.75rem 1rem;
   }
 
   .last-name {
     margin-bottom: 0.75rem;
+    margin-left: 1rem;
   }
 
   .register-username {
     margin-bottom: 0.75rem;
+    margin-left: 1rem;
   }
 
   .email {
     margin-bottom: 0.75rem;
+    margin-left: 1rem;
   }
 
   .password {
-    margin-bottom: 0.75rem;
+    margin-bottom: 1.4rem;
+    margin-left: 2.1rem;
   }
 
   .create-account-button {
@@ -62,7 +66,8 @@
     text-transform: capitalize;
     height: 2rem;
     width: 13.4375rem;
-    
+    margin-left: 2.1rem;
+
     color: #000000;
   }
 
