@@ -85,7 +85,7 @@
 
   .login-password {
     margin-bottom: 2.75rem;
-    margin-left: 1.2rem;
+    margin-left: 1rem;
   }
 
   .form-login-button {
@@ -94,7 +94,7 @@
     font-size: 0.85rem;
     text-transform: capitalize;
     width: 13.4375rem;
-    margin-left: 100rem;
+    margin-left: 2.1rem;
     
     color: #000000;
   }
