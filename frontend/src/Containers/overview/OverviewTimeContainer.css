@@ -82,3 +82,9 @@ li {
   border: 1px solid black;
   margin-bottom: 0.5%;
 }
+
+.this-props-time {
+  text-align: center;
+  color: #E2C792;
+  letter-spacing: 0.2rem;
+}
