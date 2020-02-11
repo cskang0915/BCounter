@@ -36,13 +36,8 @@ class Login extends Component {
         "Content-Type": "application/json"
       }
     })
-    .then(res => {
-      console.log('here')
-      console.log(res)
-      return res.json()
-    })
+    .then(res => res.json())
     .then(data => {
-      console.log(data)
       if(data.status === 200) {
         this.props.setCurrentUser(data.signedJwt);
         this.setState({

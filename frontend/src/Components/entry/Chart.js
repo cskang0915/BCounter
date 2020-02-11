@@ -15,9 +15,9 @@ class Chart extends Component {
             null
           ],
           backgroundColor:[
-            'rgba(255, 0, 0, 0.6)',
-            'rgba(255, 255, 0, 0.6)',
-            'rgba(0, 255, 255, 0.6)'
+            'rgba(0, 0, 0, 0.6)',
+            'rgba(0, 0, 0, 0.6)',
+            'rgba(0, 0, 0, 0.6)'
           ]
         }
       ]
@@ -37,23 +37,19 @@ class Chart extends Component {
     let sumWants = 0;
     let sumSavings = 0;
     let state = this.props.state
-    console.log(state.needs)
-    
+
     for(let i = 0; i < state.needs.length; i++){
-      console.log('here')
-      console.log(state.needs[i].amount)
-      let parsed = parseInt(state.needs[i].amount)
-      console.log(parsed)
+      let parsed = parseFloat(state.needs[i].amount)
       sumNeeds = sumNeeds + parsed
     }
 
     for(let i = 0; i < state.wants.length; i++){
-      let parsed = parseInt(state.wants[i].amount)
+      let parsed = parseFloat(state.wants[i].amount)
       sumWants = sumWants + parsed
     }
 
     for(let i = 0; i < state.savings.length; i++){
-      let parsed = parseInt(state.savings[i].amount)
+      let parsed = parseFloat(state.savings[i].amount)
       sumSavings = sumSavings + parsed
     }
 
@@ -68,11 +64,16 @@ class Chart extends Component {
               sumWants, 
               sumSavings
             ],
+            borderColor:[
+              'rgb(0, 0, 0)',
+              'rgb(0, 0, 0)',
+              'rgb(0, 0, 0)'
+            ],
             backgroundColor:[
-              'rgba(255, 0, 0, 0.6)',
-              'rgba(255, 255, 0, 0.6)',
-              'rgba(0, 255, 255, 0.6)'
-            ]
+              'rgb(196, 196, 196)',
+              'rgb(255, 255, 255)',
+              'rgb(226, 199, 146)'
+            ],
           }
         ]
       },
@@ -91,7 +92,7 @@ class Chart extends Component {
             maintainAspectRatio: false
           }}
         />
-        <h2 className="total-spent"><b>Total Spent: </b>{this.state.sumNeeds + this.state.sumWants + this.state.sumSavings}</h2>
+        <h2 className="total-spent"><b>Total Spent: </b>${(this.state.sumNeeds + this.state.sumWants + this.state.sumSavings).toFixed(2)}</h2>
       </div>
     )
   }

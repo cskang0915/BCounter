@@ -42,11 +42,19 @@ class EditForm extends Component {
       })
     }
     return (
-      <div className="eventForm">
+      <div className="edit-form">
         <h1>Edit Form</h1>
         <form className="form" onSubmit={this.props.handleSubmit}>
-          <label>
-            Amount:
+          <label className="event-form-category">
+            <select
+              name = "category"
+              onChange={this.props.handleChange}
+            >
+            {options}
+            </select>
+          </label>
+          <br />          
+          <label className="event-form-category">
             <input
               type="text"
               name="amount"
@@ -56,18 +64,7 @@ class EditForm extends Component {
             />
           </label>
           <br />
-          <label>
-            Category:
-            <select
-              name = "category"
-              onChange={this.props.handleChange}
-            >
-              {options}
-            </select>
-          </label>
-          <br />
-          <label>
-            Comment:
+          <label className="event-form-category">
             <input 
               type="text"
               name="comment"
@@ -77,9 +74,9 @@ class EditForm extends Component {
             />
           </label>
           <br />
-          <input type="submit" value="submit" />
+          <input className="entry-form-submit" type="submit" value="Save"/>
         </form>
-        <Link to="/overview/weekly"><button>Go back</button></Link>
+        <Link className="back-button-x" to="/overview/weekly">X</Link>
       </div>
     )
   }

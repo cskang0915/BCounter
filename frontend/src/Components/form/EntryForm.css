@@ -1,15 +1,35 @@
-/* .event-form {
+.event-form {
+	color: white;
 	text-align: center;
-	font-family: 'Heebo', sans-serif;
 }
 
 .event-form input[type=text]{
 	border: none;
 	border-bottom: 1px solid #E2C792;
 }
-/* 
-.event-form-category {
-	border-style: none;
-	border-bottom: 5px solid #E2C792;
+
+.event-form select{
+	font-size: 1.2rem;
+	color: #C4C4C4;
+	width: 13.5rem;
+	margin: auto 2rem 0.75rem 1.1rem;
+	border: none;
+	border-bottom: 1px solid #E2C792;
 }
- */
+
+.back-button-x {
+	text-decoration: none;
+	color: #E2C792;
+	font-size: 2rem;
+	position: absolute;
+	top: 10px;
+	right: 10%;
+}
+
+.entry-form-submit {
+	text-indent: 0;
+	background-color: #E2C792;
+	color: #2A2B37;
+	padding: 1rem 2.5rem;
+	margin-top: 2.5rem;
+}

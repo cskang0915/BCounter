@@ -25,15 +25,15 @@ class BudgetEntry extends Component {
 	render() {
 		return (
 			<div>
-				<li><b>Amount: </b>{this.props.data.amount}</li>
-				<li><b>Comment: </b>{this.props.data.comment}</li>
-				<li><b>Date: </b>{this.props.data.monthOfEntry}/{this.props.data.dayOfEntry}/{this.props.data.yearOfEntry}</li>
-				<button onClick={this.handleDelete}>Delete entry</button>
+				<li className="budgetEntry-comment-specific"><b className="budgetEntry-comment"></b>{this.props.data.comment}</li>
+				<li className="budgetEntry-amount-specific"><b className="budgetEntry-amount"></b>${this.props.data.amount}</li>
+				<li className="budgetEntry-date-specific"><b className="budgetEntry-date"></b>{this.props.data.monthOfEntry}/{this.props.data.dayOfEntry}/{this.props.data.yearOfEntry}</li>
 				<Link to = {`/overview/update/${this.props.rowid}`}>
-					<button>
+					<button className="editButton">
 						Edit
 					</button>
 				</Link>
+				<button className="deleteButton"onClick={this.handleDelete}>Delete entry</button>
 			</div>
 		)
 	}

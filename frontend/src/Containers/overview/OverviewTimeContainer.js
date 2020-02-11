@@ -47,9 +47,9 @@ class OverviewTimeContainer extends Component {
 	render(){
 		return(
 			<div>
-				<h1>{this.props.time}</h1>
+				<h1 className="this-props-time">{this.props.time}</h1>
 				<OverviewVisualContainer state = {this.state}/>
-				<Link to='/overview/entry'><button>Add Entry</button></Link>
+				<Link to='/overview/entry'><button className="add-entry">Add Entry</button></Link>
 				<OverviewBudgetEntryContainer data = {this.state.needs} message = {this.state.message} time = "Needs"/>
 				<OverviewBudgetEntryContainer data = {this.state.wants} message = {this.state.message} time = "Wants"/>
 				<OverviewBudgetEntryContainer data = {this.state.savings} message = {this.state.message} time = "Savings"/>

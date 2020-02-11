@@ -51,7 +51,6 @@ class EntryForm extends Component {
             </select>
           </label>
           <br />
-          <br />
           <label className="event-form-category">
             <input
               type="text"
@@ -60,7 +59,6 @@ class EntryForm extends Component {
               onChange={this.props.handleChange}
             />
           </label>
-          <br />
           <br />
           <label className="event-form-category">
             <input 
@@ -71,9 +69,9 @@ class EntryForm extends Component {
             />
           </label>
           <br />
-          <input type="submit" value="submit" />
+          <input className="entry-form-submit" type="submit" value="Save" />
         </form>
-        <Link to="/overview/weekly"><button>Go back</button></Link>
+        <Link className="back-button-x" to="/overview/weekly">X</Link>
       </div>
     )
   }
