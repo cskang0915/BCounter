@@ -1,0 +1,56 @@
+/* 
+- use rem 
+- use percentages rather than pixels
+- 1 rem = 16px
+- background blue/black color is 2A2B37
+-  gold is E2C792
+- silver C4C4C4
+- white FFFFFF
+*/
+
+.total-spent {
+  color: #E2C792;
+}
+
+.OverviewBudgetEntryContainer-category-total {
+  background-color: #E2C792;
+}
+
+.OverviewBudgetEntryContainer-number {
+  background-color: #E2C792;
+  margin-bottom: 0%;
+  padding: 1.5% 0;
+  /* text-align: right; */
+}
+
+.OverviewBudgetEntryContainer-title {
+  background-color: #E2C792;
+}
+
+.budgetEntry-comment {
+  background-color: #FFFFFF;
+}
+
+.budgetEntry-amount {
+  background-color: #FFFFFF;
+}
+
+.budgetEntry-date {
+  background-color: #FFFFFF;
+}
+
+.budgetEntry-comment-specific {
+  background-color: #FFFFFF;
+}
+
+.budgetEntry-amount-specific {
+  background-color: #FFFFFF;
+}
+
+.budgetEntry-date-specific {
+  background-color: #FFFFFF;
+}
+
+.add-entry {
+  margin-left: 85%;
+}

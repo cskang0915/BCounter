@@ -16,12 +16,12 @@ class OverviewBudgetEntryContainer extends Component {
 	  	}
 
 	    return (
-	      <div>
-					<h2>
-						<b>
-							{this.props.time} Total:&nbsp;
+	      <div className="OverviewBudgetEntryContainer-category-total">
+					<h2 className="OverviewBudgetEntryContainer-number">
+						<b className="OverviewBudgetEntryContainer-title">
+							{this.props.time} Total:&nbsp;$
 						</b>
-						{sum}
+						{sum}.00
 					</h2>
 	      	{budgetEntry}
 	      </div>
