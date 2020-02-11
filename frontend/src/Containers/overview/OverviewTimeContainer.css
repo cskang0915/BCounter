@@ -25,32 +25,44 @@
 
 .OverviewBudgetEntryContainer-title {
   background-color: #E2C792;
+  margin-left: 3%;
 }
 
 .budgetEntry-comment {
   background-color: #FFFFFF;
+  margin-left: 5%;
 }
 
 .budgetEntry-amount {
   background-color: #FFFFFF;
+  margin-left: 5%;
 }
 
 .budgetEntry-date {
   background-color: #FFFFFF;
+  margin-left: 5%;
 }
 
 .budgetEntry-comment-specific {
   background-color: #FFFFFF;
+  font-size: 140%;
 }
 
 .budgetEntry-amount-specific {
   background-color: #FFFFFF;
+  float: right;
+  margin-right: 2%;
 }
 
 .budgetEntry-date-specific {
   background-color: #FFFFFF;
+  color: gray
 }
 
 .add-entry {
   margin-left: 85%;
+}
+
+li {
+  list-style-type: none;
 }
