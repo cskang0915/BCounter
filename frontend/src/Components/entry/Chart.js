@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {Pie} from 'react-chartjs-2';
-import {Link} from 'react-router-dom';
 
 class Chart extends Component {
 
@@ -93,7 +92,6 @@ class Chart extends Component {
           }}
         />
         <h2 className="total-spent"><b>Total Spent: </b>{this.state.sumNeeds + this.state.sumWants + this.state.sumSavings}</h2>
-        <Link to='/overview/entry'><button>Add Entry</button></Link>
       </div>
     )
   }

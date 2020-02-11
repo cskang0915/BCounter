@@ -4,7 +4,7 @@ import './Login.css';
 class Login extends Component {
 
   state = {
-    username: '',
+    email: '',
     password: '',
     rowid: '',
     error: null
@@ -76,15 +76,15 @@ class Login extends Component {
           </div>
         </div>
         <form onSubmit = {this.handleSubmit}>
-          <div className="username">
+          <div className="email">
             {/* <label>Username</label> */}
             {/* <i className = "fa fa-user-o fa-lg fa-fw"></i> */}
             <input
               type="text" 
-              name="username" 
-              value={this.state.username} 
+              name="email" 
+              value={this.state.email} 
               onChange={this.handleChange}
-              placeholder=" Username"
+              placeholder=" Email"
             />
           </div>
           <div className="login-password">
