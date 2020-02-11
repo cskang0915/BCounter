@@ -162,26 +162,20 @@
   input {
     font-family: Helvetica;
     font-size: 1.2rem;
-    text-indent: 0.75rem;
+    text-indent: 5%;
     color: #E2C792;
-
-    margin: auto 2rem 0.75rem 1.1rem;
+    width: 24rem;
+    height: 3.625rem;
 
     border: 1px solid #E2E2E2;
     box-sizing: border-box;
-    border-radius: 3px;
-    padding-bottom: 0.625rem;
+    border-radius: 3px;  
   }
 
   input.first {
     margin: auto auto 0.75rem 0.4rem;
     text-transform: capitalize;
     color: #C4C4C4;
-
-    border-top: none;
-    border-right: none;
-    border-left: none;
-
   }
 
   .last {
@@ -189,40 +183,27 @@
     text-transform: capitalize;
     color: #C4C4C4;
 
-    border-top: none;
-    border-right: none;
-    border-left: none;
-
+    margin-left: 1.1rem;
   }
 
   .userName {
     margin-bottom: 0.75rem;
     color: #C4C4C4;
 
-    border-top: none;
-    border-right: none;
-    border-left: none;
-
+    margin-left: 1.1rem;
   }
 
   .Email {
     margin-bottom: 0.75rem;
     color: #C4C4C4;
 
-    border-top: none;
-    border-right: none;
-    border-left: none;
-
-
+    margin-left: 1.1rem;
   }
 
   .confirm-password {
     margin-bottom: 0.75rem;
 
-    border-top: none;
-    border-right: none;
-    border-left: none;
-
+    margin-left: 1.1rem;
   }
 
   .save {
@@ -230,10 +211,11 @@
     font-family: Helvetica;
     font-size: 0.85rem;
     text-transform: capitalize;
-    height: 2rem;
+    height: 3.375rem;
     width: 7.3125rem;
     margin-top: 2rem;
     margin-right: 1.25rem;
+    margin-left: 5.2rem;
     
     color: #000000;
   }
@@ -243,7 +225,7 @@
     font-family: Helvetica;
     font-size: 0.85rem;
     text-transform: capitalize;
-    height: 2rem;
+    height: 3.375rem;
     width: 7.3125rem;
 
     color: #000000;

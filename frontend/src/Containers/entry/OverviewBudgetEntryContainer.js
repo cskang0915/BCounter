@@ -16,7 +16,7 @@ class OverviewBudgetEntryContainer extends Component {
 	  	}
 
 	    return (
-	      <div>
+	      <div className={this.props.time}>
 					<h2>
 						<b>
 							{this.props.time} Total:&nbsp;

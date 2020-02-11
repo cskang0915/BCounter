@@ -18,7 +18,7 @@
     font-size: 1.0625rem;
     text-align: center;
     margin-bottom: 2.25rem;
-    
+        
     color: #F2F2F2;
   }
 
@@ -83,17 +83,26 @@
   .profile {
     font-family: Heebo;
     font-weight: 500;
-    font-size: 1.0625rem;
+    font-size: 1.875rem;
     text-align: center;
     margin-bottom: 2.25rem;
-    
     color: #F2F2F2;
+
+    margin-top: 8rem;
   }
 
   .profile-info p{
     margin: auto 2rem 0.75rem;
     border-bottom: 0.0625rem solid #C4C4C4;
     color: #C4C4C4;
+    width: 24rem;
+    height: 3.625rem;
+    margin-left: 41.58rem;
+    font-size: 1rem;
+
+    border: 1px solid #E2E2E2;
+    box-sizing: border-box;
+    border-radius: 3px;
 
     padding-bottom: 0.625rem;
     text-indent: 0.75rem;
@@ -116,14 +125,18 @@
   }
 
   .edit {
-    width: 7.4rem;
-    margin: 2rem 1.625rem auto 3.2rem;
+    height: 3.375rem;
+    width: 7.3125rem;
+
+    margin: 2rem 1.625rem auto 45.5rem;
 
     background: #C4C4C4;
   }
 
   .back {
-    width: 7.4rem;
+    height: 3.375rem;
+    width: 7.3125rem;
+
     margin-top: 2rem;
     margin-right: 1.625rem;
 
@@ -132,7 +145,7 @@
 
   .delete-account {
     display: flex;
-    margin: 2rem auto auto 8.4rem;
+    margin: 2rem auto auto 51rem;
     font-family: Helvetica;
     font-style: normal;
     font-weight: normal;
