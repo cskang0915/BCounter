@@ -52,6 +52,10 @@
   background-color: #FFFFFF;
   float: right;
   margin-right: 2%;
+  font-size: 140%;
+  margin-top: 0;
+  margin-bottom: auto;
+  margin-top: -5%;
 }
 
 .budgetEntry-date-specific {
@@ -65,4 +69,16 @@
 
 li {
   list-style-type: none;
+}
+
+.deleteButton {
+  width: 50%;
+  border: 1px solid black;
+  margin-bottom: 0.5%;
+}
+
+.editButton {
+  width: 50%;
+  border: 1px solid black;
+  margin-bottom: 0.5%;
 }
