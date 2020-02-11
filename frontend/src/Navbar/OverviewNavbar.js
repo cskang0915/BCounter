@@ -42,7 +42,7 @@ class OverviewNavbar extends Component {
 							</div>
 						</div>
 						<Link to = '/overview/profile' className="overview-navbar-link"> Profile </Link>
-						<Link to = '/' onClick={this.props.logout} className="overview-navbar-link overview-navbar-logout"> LOGOUT </Link>
+						<Link to = '/' onClick={this.props.logout} className="overview-navbar-link overview-navbar-logout"> Sign Out </Link>
 					</nav>
 			</div>
 		)

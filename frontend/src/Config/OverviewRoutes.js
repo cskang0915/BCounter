@@ -25,7 +25,7 @@ class OverviewRoutes extends Component {
 
 	openNavbar = (event) => {
 		this.setState({
-			width:"30%",
+			width:"40%",
 			hamburgerMenuVisibility: "hidden",
 			backButtonVisibility: "visible"
 		})

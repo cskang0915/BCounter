@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
+import './EntryForm.css'
 
 class EntryForm extends Component {
 
@@ -23,7 +24,6 @@ class EntryForm extends Component {
 		})
 			.then((response) => response.json())
 			.then(data => {
-				console.log(data)
 				this.setState({
 					category_name: data
 				})
@@ -39,7 +39,7 @@ class EntryForm extends Component {
       })
     }
     return (
-      <div className="eventForm">
+      <div className="event-form">
         <h1>Entry Form</h1>
         <form className="form" onSubmit={this.props.handleSubmit}>
           <label>
