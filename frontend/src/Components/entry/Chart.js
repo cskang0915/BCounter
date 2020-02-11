@@ -96,7 +96,7 @@ class Chart extends Component {
             maintainAspectRatio: false
           }}
         />
-        <h2 className="total-spent"><b>Total Spent: </b>${this.state.sumNeeds + this.state.sumWants + this.state.sumSavings}.00</h2>
+        <h2 className="total-spent"><b>Total Spent: </b>${this.state.sumNeeds + this.state.sumWants + this.state.sumSavings}</h2>
       </div>
     )
   }
