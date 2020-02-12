@@ -29,7 +29,7 @@ class Login extends Component {
 
     const user = this.state
 
-    fetch(`http://localhost:4000/api/user/login`, {
+    fetch(`http://api.bcounter.club/api/user/login`, {
       method: "POST",
       body: JSON.stringify(user),
       headers: {

@@ -25,7 +25,7 @@ class Register extends Component {
 
     const newUser = this.state
     
-    fetch(`http://localhost:4000/api/user/register`, {
+    fetch(`http://api.bcounter.club/api/user/register`, {
       method: "POST",
       body: JSON.stringify(newUser),
       headers: {

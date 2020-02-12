@@ -18,7 +18,7 @@ class ProfileContainer extends Component {
 	}
 
 	getUserId = () => {
-		fetch('http://localhost:4000/api/user/info', {
+		fetch('http://api.bcounter.club/api/user/info', {
 			headers: {
 				"authorization": `Bearer ${localStorage.uid}`
 			}
@@ -38,7 +38,7 @@ class ProfileContainer extends Component {
 	}
 
 	deleteUserInfo = () => {
-		fetch('http://localhost:4000/api/user/delete', {
+		fetch('http://api.bcounter.club/api/user/delete', {
 			method: "DELETE",
 			headers: {
 				"authorization": `Bearer ${localStorage.uid}`

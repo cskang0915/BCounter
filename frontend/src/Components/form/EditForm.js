@@ -14,7 +14,7 @@ class EditForm extends Component {
   }
 
   getByCategory = () => {
-		fetch(`http://localhost:4000/api/budgetEntry/get/category/all`, {
+		fetch(`http://api.bcounter.club/api/budgetEntry/get/category/all`, {
 			headers: {
         "authorization": `Bearer ${localStorage.uid}`,
         "Content-Type":"applicaton/json"

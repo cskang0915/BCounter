@@ -51,7 +51,7 @@ class EntryFormContainer extends Component {
     this.state.monthOfEntry = month
     this.state.yearOfEntry = year
 
-    fetch('http://localhost:4000/api/budgetEntry/new', {
+    fetch('http://api.bcounter.club/api/budgetEntry/new', {
       method: 'POST',
       headers: {
         'authorization': `Bearer ${localStorage.uid}`,

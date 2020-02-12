@@ -27,7 +27,7 @@ class EditFormContainer extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     const entry = this.state
-    fetch(`http://localhost:4000/api/budgetEntry/update/${this.props.rowid}`, {
+    fetch(`http://api.bcounter.club/api/budgetEntry/update/${this.props.rowid}`, {
       method: 'PUT',
       headers: {
         'authorization': `Bearer ${localStorage.uid}`,
@@ -39,7 +39,7 @@ class EditFormContainer extends Component {
   }
 
   getById = () => {
-		fetch(`http://localhost:4000/api/budgetEntry/get/${this.props.rowid}`, {
+		fetch(`http://api.bcounter.club/api/budgetEntry/get/${this.props.rowid}`, {
 			headers: {
 				"authorization": `Bearer ${localStorage.uid}`
 			}

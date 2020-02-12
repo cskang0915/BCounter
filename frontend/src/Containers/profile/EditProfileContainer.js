@@ -26,7 +26,7 @@ class EditProfileContainer extends Component {
 	handleSubmit = (event) => {
 		event.preventDefault();
 	    const entry = this.state
-	    fetch('http://localhost:4000/api/user/update', {
+	    fetch('http://api.bcounter.club/api/user/update', {
 		    method: 'PUT',
 	    	headers: {
 	        	'authorization': `Bearer ${localStorage.uid}`,
@@ -40,7 +40,7 @@ class EditProfileContainer extends Component {
 	}
 
 	getUserInfo = () => {
-		fetch('http://localhost:4000/api/user/info', {
+		fetch('http://api.bcounter.club/api/user/info', {
 			headers: {
 				"authorization": `Bearer ${localStorage.uid}`
 			}
