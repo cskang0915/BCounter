@@ -39,7 +39,7 @@ class OverviewRoutes extends Component {
 				<Switch>
 					<Route exact path = "/overview" render = {() => {
 						return this.props.dataDay.length 
-								? <OverviewTimeContainer data = {this.props.dataDay} time = "Daily"/>
+								? <OverviewTimeContainer data = {this.props.dataDay} time = "Weekly"/>
 								: "Loading..."
 					}}/>
 					<Route exact path = "/overview/daily" render = {() => {
