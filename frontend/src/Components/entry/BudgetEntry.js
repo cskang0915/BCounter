@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 
 class BudgetEntry extends Component {
 	handleDelete = () => {
-		fetch(`http://api.bcounter.club/api/budgetEntry/delete/${this.props.rowid}`, {
+		fetch(`${process.env.REACT_APP_API}/api/budgetEntry/delete/${this.props.rowid}`, {
 			method: "DELETE",
 			headers: {
 				"authorization": `Bearer ${localStorage.uid}`,

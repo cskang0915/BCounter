@@ -18,7 +18,7 @@ class ProfileContainer extends Component {
 	}
 
 	getUserId = () => {
-		fetch('http://api.bcounter.club/api/user/info', {
+		fetch(`${process.env.REACT_APP_API}/api/user/info`, {
 			headers: {
 				"authorization": `Bearer ${localStorage.uid}`
 			}
@@ -38,7 +38,7 @@ class ProfileContainer extends Component {
 	}
 
 	deleteUserInfo = () => {
-		fetch('http://api.bcounter.club/api/user/delete', {
+		fetch(`${process.env.REACT_APP_API}/api/user/delete`, {
 			method: "DELETE",
 			headers: {
 				"authorization": `Bearer ${localStorage.uid}`
