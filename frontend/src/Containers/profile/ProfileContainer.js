@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Profile from '../../Components/profile/Profile';
 import './ProfileContainer.css';
+import {Link} from 'react-router-dom';
 
 
 class ProfileContainer extends Component {
@@ -54,6 +55,11 @@ class ProfileContainer extends Component {
 				<p className="B-counter">B COUNTER</p>
 				<p className="profile">Profile</p>
 				<Profile state={this.state} />
+					<Link to="/overview/password/edit">
+						<button className="changePassword">
+							Change Password
+						</button>
+					</Link>
 				<a className="delete-account" onClick={this.deleteUserInfo}>delete account</a>
 			</div>
 		)

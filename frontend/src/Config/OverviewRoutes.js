@@ -7,6 +7,7 @@ import EditFormContainer from '../Containers/form/EditFormContainer';
 import ProfileContainer from '../Containers/profile/ProfileContainer';
 import EditProfileContainer from '../Containers/profile/EditProfileContainer';
 import './OverviewRoutes.css'
+import EditPasswordContainer from '../Containers/profile/EditPasswordContainer';
 
 class OverviewRoutes extends Component {
 	state = {
@@ -67,6 +68,9 @@ class OverviewRoutes extends Component {
 					<Route exact path ="/overview/profile/edit/:rowid" render={(props) => {
 						return <EditProfileContainer history={this.props.history} rowid={props.match.params.rowid} />
 					}}/>
+					<Route exact path="/overview/password/edit" render={(props) => {
+						return <EditPasswordContainer history={this.props.history} />
+					}} />
 				</Switch>
 			</div>
 		)
