@@ -5,6 +5,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const authRequired = require("../middleware/authRequired");
 
+require('dotenv').config()
 
 userRouter.post("/register", (req, res) => {
   const {error, notValid} = validate(req.body);
@@ -103,7 +104,7 @@ userRouter.post("/login", (req, res) => {
           let user = {
             id:checkedUser[0].rowid
           }
-          jwt.sign(user, "brock", {expiresIn: "1hr"}, (err, signedJwt) => {
+          jwt.sign(user, process.env.JWT_SECRET, {expiresIn: "1hr"}, (err, signedJwt) => {
             if(err) {
               return res.status(500).json({
                 status: 500,

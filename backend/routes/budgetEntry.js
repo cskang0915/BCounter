@@ -32,12 +32,12 @@ budgetEntryRouter.post("/new", authRequired, (req, res) => {
 		});
 });
 
-// get by rowid
-budgetEntryRouter.get("/get/:id", authRequired, (req, res) => {
+// get all - entries
+budgetEntryRouter.get("/all", authRequired, (req, res) => {
 	const getAllBudgetEntry = `
 	SELECT *, budget_entry.rowid from budget_entry
-	WHERE budget_entry.userId = ${req.userId}
-	AND budget_entry.rowid = ${req.params.id}`;
+	JOIN category ON category.rowid = budget_entry.category
+	WHERE budget_entry.userId = ${req.userId}`;
 
 	database.all(getAllBudgetEntry, (err, budgetEntry) => {
 		if(err) {
@@ -51,12 +51,12 @@ budgetEntryRouter.get("/get/:id", authRequired, (req, res) => {
 	});
 });
 
-// get all - entries
-budgetEntryRouter.get("/get/all", authRequired, (req, res) => {
+// get by rowid
+budgetEntryRouter.get("/get/:id", authRequired, (req, res) => {
 	const getAllBudgetEntry = `
 	SELECT *, budget_entry.rowid from budget_entry
-	JOIN category ON category.rowid = budget_entry.category
-	WHERE budget_entry.userId = ${req.userId}`;
+	WHERE budget_entry.userId = ${req.userId}
+	AND budget_entry.rowid = ${req.params.id}`;
 
 	database.all(getAllBudgetEntry, (err, budgetEntry) => {
 		if(err) {

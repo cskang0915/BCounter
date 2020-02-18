@@ -2,6 +2,8 @@ const express = require("express");
 const database = require("../database");
 const jwt = require("jsonwebtoken");
 
+require('dotenv').config()
+
 module.exports = (req, res, next) => {
 	const bearerHeader = req.headers["authorization"];
 
@@ -10,7 +12,7 @@ module.exports = (req, res, next) => {
         const bearerToken = bearer[1]
         req.token = bearerToken;
 
-        let verified = jwt.verify(bearerToken, "brock");
+        let verified = jwt.verify(bearerToken, process.env.JWT_SECRET);
         req.userId = verified.id;
 
         const checkUser = `SELECT *, rowid FROM user WHERE user.rowid = ${verified.id}`;
