@@ -47,27 +47,7 @@ class EditProfileForm extends Component {
 						placeholder="Email"
 						onChange={this.props.handleChange}
 					/>
-					{/* </label> */}
-					<br />
-					{/* <label>Password */}
-					<input className="confirm-password"
-						type="password"
-						name="password"
-						value={this.props.state.password}
-						placeholder="Confirm Password"
-						onChange={this.props.handleChange}
-					/>
-					{/* </label> */}
-					<br />
-					{/* <label>Re-enter Password */}
-					<input className="confirm-password"
-						type="password"
-						name="password2"
-						value={this.props.state.password2}
-						placeholder="Re-enter Password"
-						onChange={this.props.handleChange}
-					/>
-					{/* </label> */}
+					
 					<br />
 						<button type="save" className="save">
 							save
