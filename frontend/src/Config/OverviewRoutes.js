@@ -38,8 +38,8 @@ class OverviewRoutes extends Component {
 				<OverviewNavbar logout={this.props.logout} closeNavbar={this.closeNavbar} width={this.state.width} visibility={this.state.backButtonVisibility} displayToggle={false} display="none"/>
 				<Switch>
 					<Route exact path = "/overview" render = {() => {
-						return this.props.dataDay.length 
-								? <OverviewTimeContainer data = {this.props.dataDay} time = "Weekly"/>
+						return this.props.dataWeek.length 
+								? <OverviewTimeContainer data = {this.props.dataWeek} time = "Weekly"/>
 								: "Loading..."
 					}}/>
 					<Route exact path = "/overview/daily" render = {() => {

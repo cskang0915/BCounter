@@ -46,8 +46,6 @@ class EditFormContainer extends Component {
 		})
 			.then((response) => response.json())
 			.then(data => {
-				console.log('get by id')
-				console.log(data)
 				this.setState({
           amount: data[0].amount,
           category: data[0].category,
@@ -58,9 +56,6 @@ class EditFormContainer extends Component {
           comment: data[0].comment
 
 				})
-			})
-			.then(() => {
-				console.log(this.state)
 			})
 			.catch(error => console.log(error))
 		}
