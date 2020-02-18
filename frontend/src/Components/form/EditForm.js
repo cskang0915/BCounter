@@ -41,6 +41,7 @@ class EditForm extends Component {
         }
       })
     }
+    
     return (
       <div className="edit-form">
         <h1>Edit Form</h1>
