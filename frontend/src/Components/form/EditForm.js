@@ -56,7 +56,9 @@ class EditForm extends Component {
           <br />          
           <label className="event-form-category">
             <input
-              type="text"
+              type="number"
+              step="0.01"
+              min="0"
               name="amount"
               placeholder="Amount"
               value={this.props.state.amount}
