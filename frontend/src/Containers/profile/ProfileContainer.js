@@ -26,8 +26,6 @@ class ProfileContainer extends Component {
 		})
 		.then(res => res.json())
 		.then(data => {
-			console.log('here')
-			console.log(data)
 			this.setState({
 				rowid: data.rowId,
 				first_name: data.user[0].first_name,

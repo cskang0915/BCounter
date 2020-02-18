@@ -18,7 +18,6 @@ budgetEntryRouter.post("/new", authRequired, (req, res) => {
 			req.body.comment
 		], (err) => {
 			if(err) {
-				console.log(err)
 				return res.status(500).json({
 					status: 500,
 					message: "something went wrong. try again"
@@ -105,7 +104,6 @@ budgetEntryRouter.get("/get/week/:week/:year", authRequired, (req, res) => {
 
 	database.all(getAllBudgetEntryByWeek, (err, budgetEntry) => {
 		if(err) {
-			console.log(err)
 			return res.status(500).json({
 				status: 500,
 				message: "something went wrong. try again"
@@ -160,14 +158,11 @@ budgetEntryRouter.put("/update/:rowid", authRequired, (req, res) => {
 			req.body.comment
 		], (err) => {
 			if(err) {
-				console.log('hellos')
-				console.log(err)
 				return res.status(500).json({
 					status: 500,
 					message: "something went wrong. try again"
 				});
 			} else {
-				console.log('done')
 				return res.status(200).json({
 					status: 200,
 					message: "successfully updated budget_entry by month and date"

@@ -22,7 +22,6 @@ class EditForm extends Component {
 		})
 			.then((response) => response.json())
 			.then(data => {
-				console.log(data)
 				this.setState({
 					category_name: data
 				})
@@ -41,7 +40,7 @@ class EditForm extends Component {
         }
       })
     }
-    
+
     return (
       <div className="edit-form">
         <h1>Edit Form</h1>

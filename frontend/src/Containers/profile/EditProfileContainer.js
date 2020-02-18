@@ -23,7 +23,6 @@ class EditProfileContainer extends Component {
 
 	handleSubmit = (event) => {
 		event.preventDefault();
-		console.log('here again')
 	    const entry = this.state
 	    fetch(`${process.env.REACT_APP_API}/api/user/update/profile`, {
 		    method: 'PUT',

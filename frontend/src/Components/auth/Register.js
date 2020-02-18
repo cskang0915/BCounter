@@ -34,16 +34,13 @@ class Register extends Component {
     })
     .then(res => res.json())
     .then(data => {
-      console.log('here')
       if(data.status === 201){
         this.props.history.push('/')
       } else {
-        console.log(data)
         alert('Username or email is already taken')
       }
     })
     .catch(err => {
-      console.log(err)
       this.setState({
         error: err
       })

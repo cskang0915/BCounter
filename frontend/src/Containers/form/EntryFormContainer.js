@@ -35,7 +35,6 @@ class EntryFormContainer extends Component {
     let name = target.name
     let value = target.value
     this.setState({[name]:value})
-    console.log(value)
   }
 
   // POST request via form
@@ -69,7 +68,6 @@ class EntryFormContainer extends Component {
       yearOfEntry: null,
       comment: ''
     }))
-    console.log("entry submitted")
     this.props.history.push('/overview/weekly')
   };
 
