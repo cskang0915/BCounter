@@ -52,7 +52,7 @@ class EditProfileForm extends Component {
 						<button type="save" className="save">
 							save
 						</button>
-						<Link to="/overview/weekly">
+						<Link to="/overview/profile">
 							<button className="go-back">
 								Go back
 							</button>

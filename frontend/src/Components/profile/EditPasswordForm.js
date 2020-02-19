@@ -28,7 +28,7 @@ class EditPasswordForm extends Component {
           >Change Password
           </button>
         </form>
-        <Link className="back-button-x" to="/overview/weekly">X</Link>
+        <Link className="back-button-x" to="/overview/profile">X</Link>
       </div>
     )
   }

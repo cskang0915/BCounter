@@ -34,6 +34,7 @@ class EditPasswordContainer extends Component {
       .then(() => alert("You've changed your password!"))
       .then(() => this.props.history.push('/overview/profile'))
       .catch(err => console.log(err))
+      this.props.history.push('/overview/profile')
   }
 
   render() {

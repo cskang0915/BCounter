@@ -33,7 +33,7 @@ class BudgetEntry extends Component {
 						Edit
 					</button>
 				</Link>
-				<button className="deleteButton"onClick={this.handleDelete}>Delete entry</button>
+				<button className="deleteButton"onClick={this.handleDelete} >Delete entry</button>
 			</div>
 		)
 	}
