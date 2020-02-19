@@ -1,0 +1,20 @@
+.delete-h1 {
+  text-align: center;
+  color: white;
+}
+
+.button-container {
+  text-align: center;
+}
+
+.yes-delete {
+  margin-right: 5%;
+  width: 15%;
+  font-size: 20px;
+}
+
+.no-delete {
+  margin-left: 5%;
+  width: 15%;
+  font-size: 20px;
+}

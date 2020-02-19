@@ -36,17 +36,6 @@ class ProfileContainer extends Component {
 		})
 	}
 
-	deleteUserInfo = () => {
-		fetch(`${process.env.REACT_APP_API}/api/user/delete`, {
-			method: "DELETE",
-			headers: {
-				"authorization": `Bearer ${localStorage.uid}`
-			}
-		})
-		.then(() => localStorage.removeItem('uid'))
-		.then(() => this.props.history.push('/'))
-	}
-
 	render() {
 		return(
 			<div className="profile-page">
@@ -58,7 +47,7 @@ class ProfileContainer extends Component {
 							Change Password
 						</button>
 					</Link>
-				<a className="delete-account" onClick={this.deleteUserInfo}>delete account</a>
+				<Link to='/overview/profile/delete' className="delete-account" >delete account</Link>
 			</div>
 		)
 	}

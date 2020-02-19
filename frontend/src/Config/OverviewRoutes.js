@@ -6,8 +6,9 @@ import EntryFormContainer from '../Containers/form/EntryFormContainer';
 import EditFormContainer from '../Containers/form/EditFormContainer';
 import ProfileContainer from '../Containers/profile/ProfileContainer';
 import EditProfileContainer from '../Containers/profile/EditProfileContainer';
-import './OverviewRoutes.css'
 import EditPasswordContainer from '../Containers/profile/EditPasswordContainer';
+import DeleteConfirmation from '../Components/profile/DeleteConfirmation';
+import './OverviewRoutes.css';
 
 class OverviewRoutes extends Component {
 	state = {
@@ -70,6 +71,9 @@ class OverviewRoutes extends Component {
 					}}/>
 					<Route exact path="/overview/password/edit" render={(props) => {
 						return <EditPasswordContainer history={this.props.history} />
+					}} />
+					<Route exact path="/overview/profile/delete" render={(props) => {
+						return <DeleteConfirmation history={this.props.history} />
 					}} />
 				</Switch>
 			</div>
