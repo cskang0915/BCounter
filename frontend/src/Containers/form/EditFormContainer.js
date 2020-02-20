@@ -63,7 +63,7 @@ class EditFormContainer extends Component {
   render() {
     return (
       <div>
-        <EditForm state={this.state} handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
+        <EditForm state={this.state} handleChange={this.handleChange} handleSubmit={this.handleSubmit} time={this.props.time}/>
       </div>
     )
   }

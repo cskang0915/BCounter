@@ -78,7 +78,7 @@ class EditForm extends Component {
           <br />
           <input className="entry-form-submit" type="submit" value="Save"/>
         </form>
-        <Link className="back-button-x" to="/overview/weekly">X</Link>
+        <Link className="back-button-x" to={`/overview/${this.props.time}`}>X</Link>
       </div>
     )
   }
