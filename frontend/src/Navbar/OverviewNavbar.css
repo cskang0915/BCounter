@@ -18,6 +18,10 @@
 	margin: 0 10px;
 }
 
+.side-nav .overview-navbar-link:hover {
+	cursor: pointer;
+}
+
 .close-button {
 	top: 0;
 	left: 25px;
