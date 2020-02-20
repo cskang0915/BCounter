@@ -36,6 +36,10 @@ class OverviewTimeContainer extends Component {
 				}
 			})
 
+			needs.reverse()
+			wants.reverse()
+			savings.reverse()
+
 			this.setState({
 				needs: needs,
 				wants: wants,

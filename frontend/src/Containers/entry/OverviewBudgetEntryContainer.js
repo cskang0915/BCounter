@@ -9,7 +9,7 @@ class OverviewBudgetEntryContainer extends Component {
 	  	if(typeof this.props.data === "undefined"){
 	  		budgetEntry = "there is no entries on this day"
 	  	} else {
-	  		budgetEntry = this.props.data.reverse().map((entry) => {
+	  		budgetEntry = this.props.data.map((entry) => {
 					sum = sum + parseFloat(entry.amount)
 		  		return <BudgetEntry data={entry} rowid={entry.rowid} time={this.props.time}/>
 		  	})
