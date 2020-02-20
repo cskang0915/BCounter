@@ -5,11 +5,11 @@ import Login from '../Components/auth/Login';
 import Register from '../Components/auth/Register';
 import OverviewContainer from '../Containers/overview/OverviewContainer'
 
-export default withRouter(({setCurrentUser, currentUser, logout, history}) => {
+export default withRouter(({setCurrentUser, currentUser, logout, history, location}) => {
   const PrivateRoute = ({component: Component, ...rest}) => {
     return <Route {...rest} render = {(props) => (
       currentUser
-        ? <Component {...props} logout={logout}/>
+        ? <Component {...props} logout={logout} location={location}/>
         : <Redirect to = '/login' />
     )} />
   }
@@ -20,7 +20,7 @@ export default withRouter(({setCurrentUser, currentUser, logout, history}) => {
         <Route exact path = '/home' component={Home} />
         <Route path = '/login' render={() => <Login history = {history} setCurrentUser = {setCurrentUser} />}/>
         <Route path = '/register' component={Register} />
-        <PrivateRoute path = '/overview' component={OverviewContainer} logout={logout}/>
+        <PrivateRoute path = '/overview' component={OverviewContainer} logout={logout} location={location}/>
       </Switch>     
     </div>
   )

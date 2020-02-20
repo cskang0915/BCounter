@@ -27,7 +27,7 @@ class EditFormContainer extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     const entry = this.state
-    fetch(`http://localhost:4000/api/budgetEntry/update/${this.props.rowid}`, {
+    fetch(`${process.env.REACT_APP_API}/api/budgetEntry/update/${this.props.rowid}`, {
       method: 'PUT',
       headers: {
         'authorization': `Bearer ${localStorage.uid}`,
@@ -39,15 +39,13 @@ class EditFormContainer extends Component {
   }
 
   getById = () => {
-		fetch(`http://localhost:4000/api/budgetEntry/get/${this.props.rowid}`, {
+		fetch(`${process.env.REACT_APP_API}/api/budgetEntry/get/${this.props.rowid}`, {
 			headers: {
 				"authorization": `Bearer ${localStorage.uid}`
 			}
 		})
 			.then((response) => response.json())
 			.then(data => {
-				console.log('get by id')
-				console.log(data)
 				this.setState({
           amount: data[0].amount,
           category: data[0].category,
@@ -59,16 +57,13 @@ class EditFormContainer extends Component {
 
 				})
 			})
-			.then(() => {
-				console.log(this.state)
-			})
 			.catch(error => console.log(error))
 		}
 
   render() {
     return (
       <div>
-        <EditForm state={this.state} handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
+        <EditForm state={this.state} handleChange={this.handleChange} handleSubmit={this.handleSubmit} time={this.props.time}/>
       </div>
     )
   }

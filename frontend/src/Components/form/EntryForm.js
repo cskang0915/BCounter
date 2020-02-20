@@ -16,7 +16,7 @@ class EntryForm extends Component {
 
   // get by category fetch
   getByCategory = () => {
-		fetch(`http://localhost:4000/api/budgetEntry/get/category/all`, {
+		fetch(`${process.env.REACT_APP_API}/api/budgetEntry/get/category/all`, {
 			headers: {
         "authorization": `Bearer ${localStorage.uid}`,
         "Content-Type":"applicaton/json"
@@ -53,7 +53,9 @@ class EntryForm extends Component {
           <br />
           <label className="event-form-category">
             <input
-              type="text"
+              type="number"
+              step="0.01"
+              min="0"
               name="amount"
               placeholder="Amount"
               onChange={this.props.handleChange}

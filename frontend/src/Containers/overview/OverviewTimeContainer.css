@@ -65,6 +65,7 @@
 
 .add-entry {
   margin-left: 85%;
+  cursor: pointer;
 }
 
 li {
@@ -75,12 +76,14 @@ li {
   width: 50%;
   border: 1px solid black;
   margin-bottom: 0.5%;
+  cursor: pointer;
 }
 
 .editButton {
   width: 50%;
   border: 1px solid black;
   margin-bottom: 0.5%;
+  cursor: pointer;
 }
 
 .this-props-time {

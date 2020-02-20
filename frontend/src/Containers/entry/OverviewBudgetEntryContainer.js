@@ -11,7 +11,7 @@ class OverviewBudgetEntryContainer extends Component {
 	  	} else {
 	  		budgetEntry = this.props.data.map((entry) => {
 					sum = sum + parseFloat(entry.amount)
-		  		return <BudgetEntry data={entry} rowid={entry.rowid}/>
+		  		return <BudgetEntry data={entry} rowid={entry.rowid} time={this.props.time}/>
 		  	})
 	  	}
 	  	sum = sum.toFixed(2)
@@ -20,7 +20,7 @@ class OverviewBudgetEntryContainer extends Component {
 	      <div className="OverviewBudgetEntryContainer-category-total">
 					<h2 className="OverviewBudgetEntryContainer-number">
 						<b className="OverviewBudgetEntryContainer-title">
-							{this.props.time} Total:&nbsp;${sum}
+							{this.props.category} Total:&nbsp;${sum}
 						</b>
 					</h2>
 	      	{budgetEntry}

@@ -85,13 +85,18 @@ class Chart extends Component {
 
   render() {
     return (
-      <div className="chart">
-        <Pie 
-          data={this.state.chartData}
-          options={{
-            maintainAspectRatio: false
-          }}
-        />
+      <div>
+        <div className="chart">
+          <Pie 
+            width={400}
+            height={400}
+            data={this.state.chartData}
+            options={{
+              reponsive: true,
+              maintainAspectRatio: false
+            }}
+          />
+        </div>
         <h2 className="total-spent"><b>Total Spent: </b>${(this.state.sumNeeds + this.state.sumWants + this.state.sumSavings).toFixed(2)}</h2>
       </div>
     )

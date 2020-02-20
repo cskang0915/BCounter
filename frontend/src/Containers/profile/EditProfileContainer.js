@@ -7,9 +7,7 @@ class EditProfileContainer extends Component {
 		first_name: '',
 		last_name: '',
 		username: '',
-		email: '',
-		password: '',
-		password2: ''
+		email: ''
 	}
 
 	componentDidMount() {
@@ -26,7 +24,7 @@ class EditProfileContainer extends Component {
 	handleSubmit = (event) => {
 		event.preventDefault();
 	    const entry = this.state
-	    fetch('http://localhost:4000/api/user/update', {
+	    fetch(`${process.env.REACT_APP_API}/api/user/update/profile`, {
 		    method: 'PUT',
 	    	headers: {
 	        	'authorization': `Bearer ${localStorage.uid}`,
@@ -40,15 +38,13 @@ class EditProfileContainer extends Component {
 	}
 
 	getUserInfo = () => {
-		fetch('http://localhost:4000/api/user/info', {
+		fetch(`${process.env.REACT_APP_API}/api/user/info`, {
 			headers: {
 				"authorization": `Bearer ${localStorage.uid}`
 			}
 		})
 		.then(res => res.json())
 		.then(data => {
-			console.log('here')
-			console.log(data)
 			this.setState({
 				rowid: data.rowId,
 				first_name: data.user[0].first_name,

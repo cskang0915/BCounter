@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Profile from '../../Components/profile/Profile';
 import './ProfileContainer.css';
+import {Link} from 'react-router-dom';
 
 
 class ProfileContainer extends Component {
@@ -18,15 +19,13 @@ class ProfileContainer extends Component {
 	}
 
 	getUserId = () => {
-		fetch('http://localhost:4000/api/user/info', {
+		fetch(`${process.env.REACT_APP_API}/api/user/info`, {
 			headers: {
 				"authorization": `Bearer ${localStorage.uid}`
 			}
 		})
 		.then(res => res.json())
 		.then(data => {
-			console.log('here')
-			console.log(data)
 			this.setState({
 				rowid: data.rowId,
 				first_name: data.user[0].first_name,
@@ -37,24 +36,18 @@ class ProfileContainer extends Component {
 		})
 	}
 
-	deleteUserInfo = () => {
-		fetch('http://localhost:4000/api/user/delete', {
-			method: "DELETE",
-			headers: {
-				"authorization": `Bearer ${localStorage.uid}`
-			}
-		})
-		.then(() => localStorage.removeItem('uid'))
-		.then(() => this.props.history.push('/'))
-	}
-
 	render() {
 		return(
 			<div className="profile-page">
 				<p className="B-counter">B COUNTER</p>
 				<p className="profile">Profile</p>
 				<Profile state={this.state} />
-				<a className="delete-account" onClick={this.deleteUserInfo}>delete account</a>
+					<Link to="/overview/password/edit">
+						<button className="changePassword">
+							Change Password
+						</button>
+					</Link>
+				<Link to='/overview/profile/delete' className="delete-account" >delete account</Link>
 			</div>
 		)
 	}

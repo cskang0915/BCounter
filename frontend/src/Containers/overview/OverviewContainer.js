@@ -19,7 +19,7 @@ class OverviewContainer extends Component {
 		let day = moment().format('D')
 		let month = moment().format('M')
 		let year = moment().format('Y')
-		fetch(`http://localhost:4000/api/budgetEntry/get/day/${month}/${day}/${year}`, {
+		fetch(`${process.env.REACT_APP_API}/api/budgetEntry/get/day/${month}/${day}/${year}`, {
 			headers: {
 				"authorization": `Bearer ${localStorage.uid}`
 			}
@@ -36,7 +36,7 @@ class OverviewContainer extends Component {
 	getByWeek = () => {
 		let year = moment().format('Y')
 		let week = moment().format('W')
-		fetch(`http://localhost:4000/api/budgetEntry/get/week/${week}/${year}`, {
+		fetch(`${process.env.REACT_APP_API}/api/budgetEntry/get/week/${week}/${year}`, {
 			headers: {
 				"authorization": `Bearer ${localStorage.uid}`
 			}
@@ -54,7 +54,7 @@ class OverviewContainer extends Component {
 	getByMonth = () => {
 		let month = moment().format('M')
 		let year = moment().format('Y')
-		fetch(`http://localhost:4000/api/budgetEntry/get/month/${month}/${year}`, {
+		fetch(`${process.env.REACT_APP_API}/api/budgetEntry/get/month/${month}/${year}`, {
 			headers: {
 				"authorization": `Bearer ${localStorage.uid}`
 			}

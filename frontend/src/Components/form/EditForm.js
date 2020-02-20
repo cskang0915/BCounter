@@ -14,7 +14,7 @@ class EditForm extends Component {
   }
 
   getByCategory = () => {
-		fetch(`http://localhost:4000/api/budgetEntry/get/category/all`, {
+		fetch(`${process.env.REACT_APP_API}/api/budgetEntry/get/category/all`, {
 			headers: {
         "authorization": `Bearer ${localStorage.uid}`,
         "Content-Type":"applicaton/json"
@@ -22,7 +22,6 @@ class EditForm extends Component {
 		})
 			.then((response) => response.json())
 			.then(data => {
-				console.log(data)
 				this.setState({
 					category_name: data
 				})
@@ -41,6 +40,7 @@ class EditForm extends Component {
         }
       })
     }
+
     return (
       <div className="edit-form">
         <h1>Edit Form</h1>
@@ -56,7 +56,9 @@ class EditForm extends Component {
           <br />          
           <label className="event-form-category">
             <input
-              type="text"
+              type="number"
+              step="0.01"
+              min="0"
               name="amount"
               placeholder="Amount"
               value={this.props.state.amount}
@@ -76,7 +78,7 @@ class EditForm extends Component {
           <br />
           <input className="entry-form-submit" type="submit" value="Save"/>
         </form>
-        <Link className="back-button-x" to="/overview/weekly">X</Link>
+        <Link className="back-button-x" to={`/overview/${this.props.time}`}>X</Link>
       </div>
     )
   }

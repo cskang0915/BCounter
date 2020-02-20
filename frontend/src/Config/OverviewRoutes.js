@@ -6,7 +6,9 @@ import EntryFormContainer from '../Containers/form/EntryFormContainer';
 import EditFormContainer from '../Containers/form/EditFormContainer';
 import ProfileContainer from '../Containers/profile/ProfileContainer';
 import EditProfileContainer from '../Containers/profile/EditProfileContainer';
-import './OverviewRoutes.css'
+import EditPasswordContainer from '../Containers/profile/EditPasswordContainer';
+import DeleteConfirmation from '../Components/profile/DeleteConfirmation';
+import './OverviewRoutes.css';
 
 class OverviewRoutes extends Component {
 	state = {
@@ -38,28 +40,28 @@ class OverviewRoutes extends Component {
 				<OverviewNavbar logout={this.props.logout} closeNavbar={this.closeNavbar} width={this.state.width} visibility={this.state.backButtonVisibility} displayToggle={false} display="none"/>
 				<Switch>
 					<Route exact path = "/overview" render = {() => {
-						return this.props.dataDay.length 
-								? <OverviewTimeContainer data = {this.props.dataDay} time = "Daily"/>
+						return this.props.dataWeek.length 
+								? <OverviewTimeContainer data = {this.props.dataWeek} time = "weekly"/>
 								: "Loading..."
 					}}/>
 					<Route exact path = "/overview/daily" render = {() => {
 						return this.props.dataDay.length 
-								? <OverviewTimeContainer data = {this.props.dataDay} time = "Daily"/>
+								? <OverviewTimeContainer data = {this.props.dataDay} time = "daily"/>
 								: "Loading..."
 					}}/>
 					<Route exact path = "/overview/weekly" render = {() => {
 						return this.props.dataWeek.length 
-								? <OverviewTimeContainer data = {this.props.dataWeek} time = "Weekly"/>
+								? <OverviewTimeContainer data = {this.props.dataWeek} time = "weekly"/>
 								: "Loading..."
 					}}/>
 					<Route exact path = "/overview/monthly" render = {() => {
 						return this.props.dataMonth.length 
-								? <OverviewTimeContainer data = {this.props.dataMonth} time = "Monthly"/>
+								? <OverviewTimeContainer data = {this.props.dataMonth} time = "monthly"/>
 								: "Loading..."
 					}}/>
 					<Route exact path ="/overview/entry" component={EntryFormContainer} />
-					<Route exact path = "/overview/update/:rowid" render={(props) => {
-						return <EditFormContainer rowid={props.match.params.rowid} />
+					<Route exact path = "/overview/update/:time/:rowid" render={(props) => {
+						return <EditFormContainer time={props.match.params.time} rowid={props.match.params.rowid}/>
 					}} />
 					<Route exact path ="/overview/profile" render={() => {
 						return <ProfileContainer history={this.props.history} />
@@ -67,6 +69,12 @@ class OverviewRoutes extends Component {
 					<Route exact path ="/overview/profile/edit/:rowid" render={(props) => {
 						return <EditProfileContainer history={this.props.history} rowid={props.match.params.rowid} />
 					}}/>
+					<Route exact path="/overview/password/edit" render={(props) => {
+						return <EditPasswordContainer history={this.props.history} />
+					}} />
+					<Route exact path="/overview/profile/delete" render={(props) => {
+						return <DeleteConfirmation history={this.props.history} />
+					}} />
 				</Switch>
 			</div>
 		)

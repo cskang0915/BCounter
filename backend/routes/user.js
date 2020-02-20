@@ -1,13 +1,16 @@
 const userRouter = require("express").Router();
 const database = require("../database");
-const validate = require("../validation/formValidation");
+const formValidate = require("../validation/formValidation");
+const passwordValidate = require("../validation/passwordValidation");
+const profileValidate = require("../validation/profileValidation");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const authRequired = require("../middleware/authRequired");
 
+require('dotenv').config()
 
 userRouter.post("/register", (req, res) => {
-  const {error, notValid} = validate(req.body);
+  const {error, notValid} = formValidate(req.body);
   if (notValid) {
     return res.status(400).json({
       status: 400, 
@@ -103,7 +106,7 @@ userRouter.post("/login", (req, res) => {
           let user = {
             id:checkedUser[0].rowid
           }
-          jwt.sign(user, "brock", {expiresIn: "1hr"}, (err, signedJwt) => {
+          jwt.sign(user, process.env.JWT_SECRET, {expiresIn: "1hr"}, (err, signedJwt) => {
             if(err) {
               return res.status(500).json({
                 status: 500,
@@ -144,8 +147,8 @@ userRouter.get("/info", authRequired, (req, res) => {
   });
 });
 
-userRouter.put("/update", authRequired, (req, res) => {
-  const {error, notValid} = validate(req.body);
+userRouter.put("/update/profile", authRequired, (req, res) => {
+  const {error, notValid} = profileValidate(req.body);
   if (notValid) {
     return res.status(400).json({
       status: 400, 
@@ -153,6 +156,48 @@ userRouter.put("/update", authRequired, (req, res) => {
     });
   };
   
+  const checkUser = `
+  SELECT * FROM user
+  WHERE user.username = ${req.body.username}
+  AND user.email = ${req.body.email}`;
+
+  database.all(checkUser, (err, checkedUser) => {
+    if(checkedUser) {
+      return res.status(400).json({
+        status: 400,
+        message: "username or email is already registered"
+      });
+    };
+
+    const updateUser = `
+    UPDATE user SET first_name = ?, last_name = ?, username = ?, email = ?
+    WHERE user.rowid = ${req.userId}`;
+
+    database.run(updateUser, [req.body.first_name, req.body.last_name, req.body.username, req.body.email], (err) => {
+      if(err){
+        return res.status(500).json({
+          status: 500,
+          message: "something went wrong. try again"
+        });
+      } else{
+        return res.status(200).json({
+          status: 200,
+          message: "successfully updated user info"
+        });
+      };
+    });
+  });
+});
+
+userRouter.put("/update/password", authRequired, (req, res) => {
+  const {error, notValid} = passwordValidate(req.body);
+  if (notValid) {
+    return res.status(400).json({
+      status: 400, 
+      error
+    });
+  };
+
   const checkUser = `
   SELECT * FROM user
   WHERE user.username = ${req.body.username}
@@ -183,10 +228,9 @@ userRouter.put("/update", authRequired, (req, res) => {
         };
 
         const updateUser = `
-        UPDATE user SET first_name = ?, last_name = ?, username = ?, email = ?, password = ?
-        WHERE user.rowid = ${req.userId}`;
+        UPDATE user SET password = ? WHERE user.rowid = ${req.userId}`;
 
-        database.run(updateUser, [req.body.first_name, req.body.last_name, req.body.username, req.body.email, hash], (err) => {
+        database.run(updateUser, [hash], (err) => {
           if(err){
             return res.status(500).json({
               status: 500,

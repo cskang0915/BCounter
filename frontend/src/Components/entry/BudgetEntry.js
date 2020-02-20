@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 
 class BudgetEntry extends Component {
 	handleDelete = () => {
-		fetch(`http://localhost:4000/api/budgetEntry/delete/${this.props.rowid}`, {
+		fetch(`${process.env.REACT_APP_API}/api/budgetEntry/delete/${this.props.rowid}`, {
 			method: "DELETE",
 			headers: {
 				"authorization": `Bearer ${localStorage.uid}`,
@@ -28,12 +28,12 @@ class BudgetEntry extends Component {
 				<li className="budgetEntry-comment-specific"><b className="budgetEntry-comment"></b>{this.props.data.comment}</li>
 				<li className="budgetEntry-amount-specific"><b className="budgetEntry-amount"></b>${this.props.data.amount}</li>
 				<li className="budgetEntry-date-specific"><b className="budgetEntry-date"></b>{this.props.data.monthOfEntry}/{this.props.data.dayOfEntry}/{this.props.data.yearOfEntry}</li>
-				<Link to = {`/overview/update/${this.props.rowid}`}>
+				<Link to = {`/overview/update/${this.props.time}/${this.props.rowid}`}>
 					<button className="editButton">
 						Edit
 					</button>
 				</Link>
-				<button className="deleteButton"onClick={this.handleDelete}>Delete entry</button>
+				<button className="deleteButton"onClick={this.handleDelete} >Delete entry</button>
 			</div>
 		)
 	}
