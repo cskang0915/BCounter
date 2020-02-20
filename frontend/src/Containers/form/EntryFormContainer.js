@@ -68,7 +68,8 @@ class EntryFormContainer extends Component {
       yearOfEntry: null,
       comment: ''
     }))
-    this.props.history.push('/overview/weekly')
+    // console.log(`/overview/${this.props.time}`)
+    this.props.history.push(`/overview/${this.props.time}`)
   };
 
   render() {

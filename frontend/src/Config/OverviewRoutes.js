@@ -59,7 +59,9 @@ class OverviewRoutes extends Component {
 								? <OverviewTimeContainer data = {this.props.dataMonth} time = "monthly"/>
 								: "Loading..."
 					}}/>
-					<Route exact path ="/overview/entry" component={EntryFormContainer} />
+					<Route exact path ="/overview/entry/:time" render={(props) => {
+						return <EntryFormContainer history={this.props.history} time={props.match.params.time}/>
+					}} />
 					<Route exact path = "/overview/update/:time/:rowid" render={(props) => {
 						return <EditFormContainer time={props.match.params.time} rowid={props.match.params.rowid}/>
 					}} />
