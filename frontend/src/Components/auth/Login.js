@@ -63,7 +63,7 @@ class Login extends Component {
           <p>B COUNTER</p>
         </div>
         <div className = "welcome-back">
-          <p>Welcome Back!</p>
+          <p>Welcome!</p>
         </div>
         <div className = "login-instructions">
           <p>Please enter your Username &amp; Password to log in.</p>
