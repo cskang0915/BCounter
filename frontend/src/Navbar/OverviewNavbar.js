@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import "./OverviewNavbar.css"
+import "./OverviewNavbar.css";
+import BackButton from '../Pics/BackArrow/BackArrow.svg';
 
 class OverviewNavbar extends Component {
 	state = {
@@ -32,7 +33,9 @@ class OverviewNavbar extends Component {
 	render(){
 		return(
 			<div className="overview-sidenav" style={{width: this.props.width}}>
-				<a className="close-button" style={{visibility: this.props.visibility}} onClick={this.resetSubMenu}>&lt;</a>
+				<a className="close-button" style={{visibility: this.props.visibility}} onClick={this.resetSubMenu}>
+					<img src={BackButton} className="back-button" style={{height:35}} alt="BackButton SVG"/>
+				</a>
 					<nav className="side-nav">
 						<div><a onClick={this.openSubmenu} className="overview-navbar-link">Time</a>
 							<div className="sub-menu" style={{display: this.state.display}}>
