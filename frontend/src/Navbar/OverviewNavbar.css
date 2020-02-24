@@ -31,18 +31,6 @@
 
 }
 
-.sub-menu a {
-	transition: 10s;
-	-webkit-transition: all .5s ease-out;
-
-}
-
-.sub-menu {
-	display: inline-block;
-	transition: .5s;
-	-webkit-transition: all .5s ease-out;
-}
-
 .overview-navbar-logout {
 	color: #E2C792;
 	border: 0;
