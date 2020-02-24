@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import {Pie} from 'react-chartjs-2';
+import {defaults} from 'react-chartjs-2';
+
+defaults.global.defaultFontColor = 'white';
+defaults.global.onClick = {};
 
 class Chart extends Component {
 
@@ -31,6 +35,8 @@ class Chart extends Component {
   componentDidMount() {
     this.calculateBudgetValues()
   }
+
+  doNothing = () => {}
 
   calculateBudgetValues = () => {
     let sumNeeds = 0;

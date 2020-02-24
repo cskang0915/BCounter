@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Link} from "react-router-dom";
-import './EditForm.css'
+import './EditForm.css';
+import X from '../../Pics/X/X.svg';
 
 class EditForm extends Component {
 
@@ -46,6 +47,7 @@ class EditForm extends Component {
         <h1>Edit Form</h1>
         <form className="form" onSubmit={this.props.handleSubmit}>
           <label className="event-form-category">
+            <div>Category</div>
             <select
               name = "category"
               onChange={this.props.handleChange}
@@ -55,6 +57,7 @@ class EditForm extends Component {
           </label>
           <br />          
           <label className="event-form-category">
+          <div>Amount</div>
             <input
               type="number"
               step="0.01"
@@ -67,6 +70,7 @@ class EditForm extends Component {
           </label>
           <br />
           <label className="event-form-category">
+          <div>Comment</div>
             <input 
               type="text"
               name="comment"
@@ -78,7 +82,9 @@ class EditForm extends Component {
           <br />
           <input className="entry-form-submit" type="submit" value="Save"/>
         </form>
-        <Link className="back-button-x" to={`/overview/${this.props.time}`}>X</Link>
+        <Link className="back-button-x" to={`/overview/${this.props.time}`}>
+          <img src={X} className="X-icon" style={{height:35}} alt="X SVG"/>
+        </Link>
       </div>
     )
   }
