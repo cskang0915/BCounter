@@ -46,6 +46,7 @@ class EditForm extends Component {
         <h1>Edit Form</h1>
         <form className="form" onSubmit={this.props.handleSubmit}>
           <label className="event-form-category">
+            <div>Category</div>
             <select
               name = "category"
               onChange={this.props.handleChange}
@@ -55,6 +56,7 @@ class EditForm extends Component {
           </label>
           <br />          
           <label className="event-form-category">
+          <div>Amount</div>
             <input
               type="number"
               step="0.01"
@@ -67,6 +69,7 @@ class EditForm extends Component {
           </label>
           <br />
           <label className="event-form-category">
+          <div>Comment</div>
             <input 
               type="text"
               name="comment"

@@ -9,7 +9,7 @@ class EditProfileForm extends Component {
 				<p className="app-name">B Counter</p>
 				<h1 className="edit-form-title">Edit Profile</h1>
 				<form className="form" onSubmit={this.props.handleSubmit}>
-					<label>First Name</label>
+					<div>First Name</div>
 					<input className="first"
 						type="text"
 						name="first_name"
@@ -18,7 +18,7 @@ class EditProfileForm extends Component {
 						onChange={this.props.handleChange}
 					/>
 					<br />
-					<label>Last Name</label>
+					<div>Last Name</div>
 					<input className="last"
 						type="text"
 						name="last_name"
@@ -35,7 +35,7 @@ class EditProfileForm extends Component {
 						placeholder="Username"
 						onChange={this.props.handleChange}
 					/> */}
-					<label>Email</label>
+					<div>Email</div>
 					<input className="Email"
 						type="email"
 						name="email"

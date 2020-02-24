@@ -18,9 +18,12 @@
     color: #E2C792;
   } */
   
+  .above-input {
+    text-align: center;
+    color: #C4C4C4;
+  }
 
-
-  /* .first-name {
+  .first-name {
     margin: auto auto 0.75rem auto;
     border-bottom: 1px solid #C4C4C4;
   }
@@ -41,4 +44,4 @@
   .password {
     margin-bottom: 0.75rem;
   }
-} */
+/* } */

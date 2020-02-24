@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import Pencil from '../../Pics/Pencil/Pencil.svg';
-import Trash from '../../Pics/Trashcan/Trashcan.svg';
+import Trash from '../../Pics/Trashcan/Trashcandark.svg';
 
 class BudgetEntry extends Component {
 	handleDelete = () => {
@@ -32,10 +32,11 @@ class BudgetEntry extends Component {
 				<li className="budgetEntry-date-specific"><b className="budgetEntry-date"></b>{this.props.data.monthOfEntry}/{this.props.data.dayOfEntry}/{this.props.data.yearOfEntry}</li>
 				<Link to = {`/overview/update/${this.props.time}/${this.props.rowid}`}>
 					<button className="editButton">
-						<img src={Pencil} className="pencil-icon" style={{backgroundColor: "#E2C792", height:30}} alt="Pencil SVG"/>
+						<img src={Pencil} className="pencil-icon" style={{backgroundColor: "#E2C792", height:35}} alt="Pencil SVG"/>
 					</button>
 				</Link>
-				<button className="deleteButton"onClick={this.handleDelete} >Delete entry
+				<button className="deleteButton"onClick={this.handleDelete} >
+					<img src={Trash} className="pencil-icon" style={{backgroundColor: "#E2C792", height:35}} alt="Trashcan Dark SVG"/>
 				</button>
 			</div>
 		)

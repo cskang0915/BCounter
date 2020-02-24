@@ -74,6 +74,7 @@ li {
 
 .deleteButton {
   width: 50%;
+  /* height: 200%; */
   border: 1px solid black;
   margin-bottom: 0.5%;
   cursor: pointer;
@@ -81,6 +82,7 @@ li {
 
 .editButton {
   width: 50%;
+  /* height: 200%; */
   border: 1px solid black;
   margin-bottom: 0.5%;
   cursor: pointer;
