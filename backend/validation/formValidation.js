@@ -1,9 +1,5 @@
-module.exports = ({username, email, password, password2}) => {
+module.exports = ({email, password, password2}) => {
   let error = []
-
-  if (!username) {
-    error.push({message: "no username"})
-  }
 
   if (!email) {
     error.push({message: "no email"})

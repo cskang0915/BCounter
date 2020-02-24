@@ -1,4 +1,4 @@
-module.exports = ({first_name, last_name, username, email}) => {
+module.exports = ({first_name, last_name, email}) => {
   let error = []
 
   if (!first_name) {
@@ -7,10 +7,6 @@ module.exports = ({first_name, last_name, username, email}) => {
 
   if (!last_name) {
     error.push({message: "no last name"})
-  }
-
-  if (!username) {
-    error.push({message: "no username"})
   }
 
   if (!email) {

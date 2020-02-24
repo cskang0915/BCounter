@@ -20,14 +20,13 @@ userRouter.post("/register", (req, res) => {
   
   const checkUser = `
   SELECT * FROM user
-  WHERE user.username = ${req.body.username}
-  AND user.email = ${req.body.email}`;
+  WHERE user.email = ${req.body.email}`;
 
   database.all(checkUser, (err, checkedUser) => {
     if(checkedUser) {
       return res.status(400).json({
         status: 400,
-        message: "username or email is already registered"
+        message: "email is already registered"
       });
     };
 
@@ -47,9 +46,9 @@ userRouter.post("/register", (req, res) => {
           });
         };
 
-        const createNewUser = `INSERT INTO user VALUES (?, ?, ?, ?, ?)`;
+        const createNewUser = `INSERT INTO user VALUES (?, ?, ?, ?)`;
 
-        database.run(createNewUser, [req.body.first_name, req.body.last_name, req.body.username, req.body.email, hash], (err) => {
+        database.run(createNewUser, [req.body.first_name, req.body.last_name, req.body.email, hash], (err) => {
           if (err) {
             return res.status(500).json({
               status:500,
@@ -129,7 +128,7 @@ userRouter.post("/login", (req, res) => {
 
 userRouter.get("/info", authRequired, (req, res) => {
   const getOneUser = `
-  SELECT user.first_name, user.last_name, user.username, user.email FROM user 
+  SELECT *, user.rowid FROM user 
   WHERE user.rowid = ${req.userId}`;
 
   database.all(getOneUser, (err, user) => {
@@ -158,22 +157,21 @@ userRouter.put("/update/profile", authRequired, (req, res) => {
   
   const checkUser = `
   SELECT * FROM user
-  WHERE user.username = ${req.body.username}
-  AND user.email = ${req.body.email}`;
+  WHERE user.email = ${req.body.email}`;
 
   database.all(checkUser, (err, checkedUser) => {
     if(checkedUser) {
       return res.status(400).json({
         status: 400,
-        message: "username or email is already registered"
+        message: "email is already registered"
       });
     };
 
     const updateUser = `
-    UPDATE user SET first_name = ?, last_name = ?, username = ?, email = ?
+    UPDATE user SET first_name = ?, last_name = ?, email = ?
     WHERE user.rowid = ${req.userId}`;
 
-    database.run(updateUser, [req.body.first_name, req.body.last_name, req.body.username, req.body.email], (err) => {
+    database.run(updateUser, [req.body.first_name, req.body.last_name, req.body.email], (err) => {
       if(err){
         return res.status(500).json({
           status: 500,
@@ -200,14 +198,13 @@ userRouter.put("/update/password", authRequired, (req, res) => {
 
   const checkUser = `
   SELECT * FROM user
-  WHERE user.username = ${req.body.username}
-  AND user.email = ${req.body.email}`;
+  WHERE user.email = ${req.body.email}`;
 
   database.all(checkUser, (err, checkedUser) => {
     if(checkedUser) {
       return res.status(400).json({
         status: 400,
-        message: "username or email is already registered"
+        message: "email is already registered"
       });
     };
 

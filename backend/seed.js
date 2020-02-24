@@ -17,8 +17,7 @@ database.serialize( () => {
   const dropTableBudgetEntry = `DROP TABLE budget_entry`;
   const dropTableCategory = `DROP TABLE category`;
   const createTableUser = `CREATE TABLE IF NOT EXISTS
-    user (first_name TEXT, last_name TEXT, username TEXT UNIQUE,
-    email TEXT UNIQUE, password TEXT)`;
+    user (first_name TEXT, last_name TEXT, email TEXT UNIQUE, password TEXT)`;
   const createTableBudgetEntry = `CREATE TABLE IF NOT EXISTS budget_entry
     (userId INTEGER, amount TEXT, category INTEGER, dayOfEntry INTEGER, weekOfEntry INTEGER, monthOfEntry INTEGER, yearOfEntry INTEGER, comment TEXT)`;
   const createTableCategory = `CREATE TABLE IF NOT EXISTS category
