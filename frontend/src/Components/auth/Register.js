@@ -7,6 +7,7 @@ class Register extends Component {
   state = {
     first_name: '',
     last_name: '',
+    username: '',
     email: '',
     password: '',
     password2: '',
@@ -83,6 +84,16 @@ class Register extends Component {
               value={this.state.last_name} 
               onChange={this.handleChange} 
               placeholder="Last Name"
+            />
+          </div>
+          <div className ="register-username">
+            {/* <label>Username</label> */}
+            <input 
+              type="text" 
+              name="username" 
+              value={this.state.username} 
+              onChange={this.handleChange} 
+              placeholder="Username"
             />
           </div>
           <div className ="email">
