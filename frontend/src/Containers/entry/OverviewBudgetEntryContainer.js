@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import BudgetEntry from '../../Components/entry/BudgetEntry';
+import './OverviewBudgetEntry.css'
 
 class OverviewBudgetEntryContainer extends Component {
 	render() {
@@ -21,12 +22,12 @@ class OverviewBudgetEntryContainer extends Component {
 			<div>
 				{/* OverviewBudgetEntryContainer */}
 				<h2>
-					<button onClick={this.props.toggleCategory}>
+					<button className="needsWantsSavings" onClick={this.props.toggleCategory}>
 						{this.props.category}
 					</button>
 				</h2>
 				{budgetEntry}
-				<div>
+				<div className="total">
 						Total:&nbsp;${sum}
 				</div>
 			</div>
