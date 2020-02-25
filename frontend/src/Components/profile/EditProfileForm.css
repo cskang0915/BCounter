@@ -30,7 +30,7 @@
     text-indent: 0.75rem;
   }
 
-  input {
+  /* input {
     font-family: Helvetica;
     font-size: 1.2rem;
     text-indent: 0.75rem;
@@ -42,10 +42,10 @@
     box-sizing: border-box;
     border-radius: 3px;
     padding-bottom: 0.625rem;
-  }
+  } */
 
   input.first {
-    margin: auto auto 0.75rem 1.1rem;
+    margin: auto auto 0.75rem 1rem;
     text-transform: capitalize;
     color: #C4C4C4;
 
@@ -53,9 +53,11 @@
     border-right: none;
     border-left: none;
 
+    padding-bottom: 0.625rem;
   }
 
   .last {
+    margin-left: 1rem;
     margin-bottom: 0.75rem;
     text-transform: capitalize;
     color: #C4C4C4;
@@ -64,6 +66,7 @@
     border-right: none;
     border-left: none;
 
+    padding-bottom: 0.625rem;
   }
 
   .userName {
@@ -74,16 +77,19 @@
     border-right: none;
     border-left: none;
 
+    padding-bottom: 0.625rem;
   }
 
   .Email {
     margin-bottom: 0.75rem;
+    margin-left: 1rem;
     color: #C4C4C4;
 
     border-top: none;
     border-right: none;
     border-left: none;
 
+    padding-bottom: 0.625rem;
 
   }
 

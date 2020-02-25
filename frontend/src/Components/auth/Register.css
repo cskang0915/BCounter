@@ -22,7 +22,7 @@
     color: #C4C4C4;
   }
 
-  input{
+  /* input{
     font-family: Helvetica;
     font-size: 1.2rem;
     text-indent: 5%;
@@ -33,7 +33,7 @@
     border-radius: 3px;
 
     flex-basis: 100%;
-  }
+  } */
 
   .first-name {
     margin: 1rem auto 0.75rem 1rem;

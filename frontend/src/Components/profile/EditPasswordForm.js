@@ -8,7 +8,7 @@ class EditPasswordForm extends Component {
       <div>
         <form className="editPasswordForm" onSubmit={this.props.handleSubmit}>
           <p className="currentPassword">Current Password</p>
-          <input 
+          <input className="passwordEdit"
             type="password"
             name="password"
             className="password"
@@ -17,7 +17,7 @@ class EditPasswordForm extends Component {
             onChange={this.props.handleChange}
           />
           <p className="newPassword">New Password</p>
-          <input 
+          <input className="password2Edit"
             type="password"
             name="password2"
             className="password2"

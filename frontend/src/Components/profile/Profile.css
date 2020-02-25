@@ -24,28 +24,34 @@
     margin-left: 2rem;
   }
 
-  .first-name {
+  .first-nameProfile {
     margin: auto auto 0.75rem auto;
     border: 0.0625rem solid #C4C4C4;
 
     width: 18.5rem;
     height: 1.875rem;
+    border-radius: 0.2rem;
+
   }
 
-  .last-name {
+  .last-nameProfile {
     margin-bottom: 0.75rem;
     border: 0.0625rem solid #C4C4C4;
 
     width: 18.5rem;
     height: 1.875rem;
+
+    border-radius: 0.2rem;
   }
 
   .register-username {
     margin-bottom: 0.75rem;
   }
 
-  .email {
+  .emailProfile {
     border: 0.0625rem solid #C4C4C4;
+    border-radius: 0.2rem;
+
 
     width: 18.5rem;
     height: 1.875rem;

@@ -79,12 +79,27 @@
   }
 
   .emailLogin{
-    margin-left: 1rem;
+    /* margin-left: 1rem; */
+
+    font-family: Helvetica;
+    font-size: 1.2rem;
+    text-indent: 5%;
+    margin-bottom: 2rem;
+    color: #E2C792;
+    
+
+    /* border: 1px solid #E2E2E2;
+    box-sizing: border-box;
+    border-radius: 3px; */
+
+    flex-basis: 100%;
   }
 
   .login-password {
     margin-bottom: 2.75rem;
-    margin-left: 1rem;
+    margin-left: 0.75rem;
+
+    height: 1rem;
   }
 
   .form-login-button {
@@ -93,7 +108,7 @@
     font-size: 0.85rem;
     text-transform: capitalize;
     width: 13.4375rem;
-    margin-left: 2.1rem;
+    margin-left: 0.75rem;
     
     color: #000000;
   }
