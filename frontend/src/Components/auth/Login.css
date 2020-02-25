@@ -78,9 +78,8 @@
     flex-basis: 100%;
   }
 
-
-  .username {
-    margin: 1.75rem auto 1rem 1.4rem; 
+  .emailLogin{
+    margin-left: 1rem;
   }
 
   .login-password {

@@ -65,7 +65,7 @@ class Login extends Component {
         <div className = "welcome-back">
           <p>Welcome!</p>
         </div>
-        <div className = "login- instructions">
+        <div className = "login-instructions">
           <p>Please enter your Email &amp; Password to log in.</p>
           <div className="sign-up">
             <p>Don't have an account? <Link to='/register'>Sign Up.</Link></p>
