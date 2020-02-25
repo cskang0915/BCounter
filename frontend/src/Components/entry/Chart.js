@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import {Pie} from 'react-chartjs-2';
 import {defaults} from 'react-chartjs-2';
+import NeedsIcon from '../../Pics/LegendIcons/Needs.svg'
+import WantsIcon from '../../Pics/LegendIcons/Wants.svg'
+import SavingsIcon from '../../Pics/LegendIcons/Savings.svg'
 
 defaults.global.defaultFontColor = 'white';
 defaults.global.onClick = {};
+defaults.global.legend.display = false; 
 
 class Chart extends Component {
 
@@ -92,6 +96,11 @@ class Chart extends Component {
   render() {
     return (
       <div>
+        <div className='cookies'>
+          <img src={NeedsIcon} className="needs-icon" style={{height:35}} alt="Needs.SVG"/>
+          <img src={WantsIcon} className="wants-icon" style={{height:35}} alt="Wants.SVG"/>
+          <img src={SavingsIcon} className="savings-icon" style={{height:35}} alt="Savings.SVG"/>
+        </div>
         <div className="chart">
           <Pie 
             width={400}
