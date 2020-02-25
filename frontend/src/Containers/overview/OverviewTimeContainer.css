@@ -12,7 +12,7 @@
   color: #E2C792;
 }
 
-.OverviewBudgetEntryContainer-category-total {
+/* .OverviewBudgetEntryContainer-category-total {
   background-color: #E2C792;
 }
 
@@ -20,13 +20,13 @@
   background-color: #E2C792;
   margin-bottom: 0%;
   padding: 1.5% 0;
-  /* text-align: right; */
+  text-align: right;
 }
 
 .OverviewBudgetEntryContainer-title {
   background-color: #E2C792;
   margin-left: 3%;
-}
+} */
 
 .budgetEntry-comment {
   background-color: #FFFFFF;
