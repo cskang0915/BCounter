@@ -4,25 +4,25 @@ import Pencil from '../../Pics/Pencil/Pencil.svg';
 import Trash from '../../Pics/Trashcan/Trashcandark.svg';
 
 class BudgetEntry extends Component {
-	handleDelete = () => {
-		fetch(`${process.env.REACT_APP_API}/api/budgetEntry/delete/${this.props.rowid}`, {
-			method: "DELETE",
-			headers: {
-				"authorization": `Bearer ${localStorage.uid}`,
-				"Content-Type": "application/json"
-			}
-		})
-		.then(res => res.json())
-		.then(data => {
-			if(data.status === 200){
-				console.log('deleted successfully')
-			} else {
-				console.log('deleted unsuccessfully')
-			}
-		})
-		.catch(err => console.log(err))
-		window.location.reload(true)
-	}
+	// handleDelete = () => {
+	// 	fetch(`${process.env.REACT_APP_API}/api/budgetEntry/delete/${this.props.rowid}`, {
+	// 		method: "DELETE",
+	// 		headers: {
+	// 			"authorization": `Bearer ${localStorage.uid}`,
+	// 			"Content-Type": "application/json"
+	// 		}
+	// 	})
+	// 	.then(res => res.json())
+	// 	.then(data => {
+	// 		if(data.status === 200){
+	// 			console.log('deleted successfully')
+	// 		} else {
+	// 			console.log('deleted unsuccessfully')
+	// 		}
+	// 	})
+	// 	.catch(err => console.log(err))
+	// 	window.location.reload(true)
+	// }
 
 	render() {
 		return (
@@ -35,9 +35,9 @@ class BudgetEntry extends Component {
 						<img src={Pencil} className="pencil-icon" style={{backgroundColor: "#E2C792", height:35}} alt="Pencil SVG"/>
 					</button>
 				</Link>
-				<button className="deleteButton"onClick={this.handleDelete} >
+				{/* <button className="deleteButton"onClick={this.handleDelete} >
 					<img src={Trash} className="pencil-icon" style={{backgroundColor: "#E2C792", height:35}} alt="Trashcan Dark SVG"/>
-				</button>
+				</button> */}
 			</div>
 		)
 	}

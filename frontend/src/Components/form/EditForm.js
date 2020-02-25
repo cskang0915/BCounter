@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Link} from "react-router-dom";
 import './EditForm.css';
+import Trash from '../../Pics/Trashcan/Trashcandark.svg';
 import X from '../../Pics/X/X.svg';
 
 class EditForm extends Component {
@@ -85,6 +86,9 @@ class EditForm extends Component {
         <Link className="back-button-x" to={`/overview/${this.props.time}`}>
           <img src={X} className="X-icon" style={{height:35}} alt="X SVG"/>
         </Link>
+        <button className="deleteButton"onClick={this.props.handleDelete} >
+					<img src={Trash} className="pencil-icon" style={{backgroundColor: "#E2C792", height:35}} alt="Trashcan Dark SVG"/>
+				</button>
       </div>
     )
   }
