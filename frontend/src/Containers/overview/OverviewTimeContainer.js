@@ -9,6 +9,7 @@ class OverviewTimeContainer extends Component {
 		needs: [],
 		wants: [],
 		savings: [],
+		display: "initial",
 		message: 'sending chart data'
 	}
 
@@ -48,15 +49,28 @@ class OverviewTimeContainer extends Component {
 		}
 	}
 
+	toggleCategory = () => {
+		if(this.state.display === "initial"){
+			this.setState({
+				display: "none"
+			})
+		}else if(this.state.display === "none"){
+			this.setState({
+				display: "initial"
+			})
+		}
+
+	}
+
 	render(){
 		return(
 			<div>
 				<h1 className="this-props-time">{this.props.time}</h1>
 				<OverviewVisualContainer state = {this.state}/>
 				<Link to={`/overview/entry/${this.props.time}`}><button className="add-entry">Add Entry</button></Link>
-				<OverviewBudgetEntryContainer data = {this.state.needs} message = {this.state.message} category = "Needs" time = {this.props.time}/>
-				<OverviewBudgetEntryContainer data = {this.state.wants} message = {this.state.message} category = "Wants" time = {this.props.time}/>
-				<OverviewBudgetEntryContainer data = {this.state.savings} message = {this.state.message} category = "Savings" time = {this.props.time}/>
+				<OverviewBudgetEntryContainer toggleCategory = {this.toggleCategory} toggle = {this.state.display} data = {this.state.needs} message = {this.state.message} category = "Needs" time = {this.props.time}/>
+				<OverviewBudgetEntryContainer toggleCategory = {this.toggleCategory} toggle = {this.state.display} data = {this.state.wants} message = {this.state.message} category = "Wants" time = {this.props.time}/>
+				<OverviewBudgetEntryContainer toggleCategory = {this.toggleCategory} toggle = {this.state.display} data = {this.state.savings} message = {this.state.message} category = "Savings" time = {this.props.time}/>
 			</div>
 		)
 	}
