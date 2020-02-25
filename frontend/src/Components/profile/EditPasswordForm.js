@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
+import './EditPasswordForm.css'
 
 class EditPasswordForm extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.props.handleSubmit}>
+        <form className="editPasswordForm" onSubmit={this.props.handleSubmit}>
+          <p className="currentPassword">Current Password</p>
           <input 
             type="password"
             name="password"
@@ -14,6 +16,7 @@ class EditPasswordForm extends Component {
             value={this.props.state.password}
             onChange={this.props.handleChange}
           />
+          <p className="newPassword">New Password</p>
           <input 
             type="password"
             name="password2"
@@ -25,7 +28,7 @@ class EditPasswordForm extends Component {
           <button
             type="submit"
             className="change-password-button"
-          >Change Password
+          >Save
           </button>
         </form>
         <Link className="back-button-x" to="/overview/profile">X</Link>

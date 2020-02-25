@@ -70,7 +70,7 @@ class EntryFormContainer extends Component {
       comment: ''
     }))
     // console.log(`/overview/${this.props.time}`)
-    this.props.hamburgerMenuVisibility = "visible"
+    // this.props.hamburgerMenuVisibility = "visible"
     this.props.history.push(`/overview/${this.props.time}`)
   };
 

@@ -16,7 +16,7 @@ class Profile extends Component {
 					<p className="email">{this.props.state.email}</p>
 				</div>
 					<Link to={`/overview/profile/edit/${this.props.state.rowid}`} ><button className="edit">Edit</button></Link>
-					<Link to="/overview/weekly"><button className="back">Back</button></Link>
+					{/* <Link to="/overview/weekly"><button className="back">Back</button></Link> */}
 			</div>
 		)
 	}

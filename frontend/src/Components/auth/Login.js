@@ -65,14 +65,14 @@ class Login extends Component {
         <div className = "welcome-back">
           <p>Welcome!</p>
         </div>
-        <div className = "login-instructions">
+        <div className = "login- instructions">
           <p>Please enter your Email &amp; Password to log in.</p>
           <div className="sign-up">
             <p>Don't have an account? <Link to='/register'>Sign Up.</Link></p>
           </div>
         </div>
         <form onSubmit = {this.handleSubmit}>
-          <div className="email">
+          <div className="emailLogin">
             {/* <label>Username</label> */}
             {/* <i className = "fa fa-user-o fa-lg fa-fw"></i> */}
             <input

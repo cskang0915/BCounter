@@ -43,9 +43,9 @@ class ProfileContainer extends Component {
 				<p className="profile">Profile</p>
 				<Profile state={this.state} />
 					<Link to="/overview/password/edit">
-						<button className="changePassword">
-							Change Password
-						</button>
+					<Link to='/overview/password/edit' className="changePassword" >
+						Change Password
+					</Link>
 					</Link>
 				<Link to='/overview/profile/delete' className="delete-account" >delete account</Link>
 			</div>

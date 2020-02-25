@@ -19,18 +19,25 @@
   } */
   
   .above-input {
-    text-align: center;
+    /* text-align: center; */
     color: #C4C4C4;
+    margin-left: 2rem;
   }
 
   .first-name {
     margin: auto auto 0.75rem auto;
-    border-bottom: 1px solid #C4C4C4;
+    border: 0.0625rem solid #C4C4C4;
+
+    width: 18.5rem;
+    height: 1.875rem;
   }
 
   .last-name {
     margin-bottom: 0.75rem;
-    border-bottom: 0.0625rem;
+    border: 0.0625rem solid #C4C4C4;
+
+    width: 18.5rem;
+    height: 1.875rem;
   }
 
   .register-username {
@@ -38,10 +45,24 @@
   }
 
   .email {
+    border: 0.0625rem solid #C4C4C4;
+
+    width: 18.5rem;
+    height: 1.875rem;
+
+
     margin-bottom: 0.75rem;
   }
 
-  .password {
-    margin-bottom: 0.75rem;
+  .changePassword {
+    display: flex;
+    margin: 2rem auto auto 7.8rem;
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 0.875rem;
+    text-transform: capitalize;
+    color: #7C7F91;
+    cursor: pointer;
   }
 /* } */
