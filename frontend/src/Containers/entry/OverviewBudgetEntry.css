@@ -1,8 +1,10 @@
 .needsWantsSavings{
   margin-left: -.75rem;
   text-align: left;
-  width: 24rem;
-  font-size: 1.2rem;
+  width: 23.7rem;
+  font-size: 1.75rem;
+  height: 4rem;
+  margin-bottom: -2rem;
 }
 
 .total{

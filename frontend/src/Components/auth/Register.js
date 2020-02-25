@@ -62,13 +62,14 @@ class Register extends Component {
         </div>
         <div className="create-new-acc">
           <p>
-          Create A New Account
+          Sign up
           </p>
         </div>
         <form onSubmit = {this.handleSubmit}>
-          <div className ="first-name">
+          <div >
+            <p className="register-input">First Name</p>
             {/* <label>First Name</label> */}
-            <input 
+            <input className ="first-name"
               type="text" 
               name="first_name" 
               value={this.state.first_name} 
@@ -76,9 +77,10 @@ class Register extends Component {
               placeholder="First Name"
             />
           </div>
-          <div className ="last-name">
+          <div>
             {/* <label>Last Name</label> */}
-            <input 
+            <p className="register-input">Last Name</p>
+            <input className ="last-name"
               type="text" 
               name="last_name" 
               value={this.state.last_name} 
@@ -86,19 +88,20 @@ class Register extends Component {
               placeholder="Last Name"
             />
           </div>
-          <div className ="register-username">
-            {/* <label>Username</label> */}
-            <input 
+          {/* <div>
+            <label>Username</label>
+            <input className ="register-username"
               type="text" 
               name="username" 
               value={this.state.username} 
               onChange={this.handleChange} 
               placeholder="Username"
             />
-          </div>
-          <div className ="email">
+          </div> */}
+          <div>
+            <p className="register-input">Email</p>
             {/* <label>Email</label> */}
-            <input 
+            <input className ="email"
               type="email" 
               name="email" 
               value={this.state.email} 
@@ -107,8 +110,9 @@ class Register extends Component {
             />
           </div>
           <div>
+            <p className="register-input">Password</p>
             {/* <label>Password</label> */}
-            <input className ="password"
+            <input className ="passwordRegister"
               type="password" 
               name="password" 
               value={this.state.password} 
@@ -117,8 +121,9 @@ class Register extends Component {
             />
           </div>
           <div>
+            <p className="register-input">Confirm password</p>
             {/* <label>Re-enter Password</label> */}
-            <input className ="password"
+            <input className ="passwordRegister"
               type="password" 
               name="password2" 
               value={this.state.password2} 

@@ -2,7 +2,7 @@
   .form-register {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 6rem;
+    margin-top: 4rem;
     justify-content: center;
   }
 
@@ -13,7 +13,8 @@
     font-size: 1.6rem;
     align-items: center;
     text-align: center;
-    margin-bottom: 2.4rem;
+    margin-bottom: 0.5rem;
+    margin-top: -2rem;
 
     height: 3.5rem;
     
@@ -36,39 +37,111 @@
   } */
 
   .first-name {
-    margin: 1rem auto 0.75rem 1rem;
+    /* margin: 1rem auto 0.75rem 1rem; */
+
+    font-family: Helvetica;
+    font-size: 1.2rem;
+    text-indent: 5%;
+    margin-bottom: -0.5rem;
+    margin-left: 0.5rem;
+    color: #E2C792;
+    height: 3rem;
+    width: 17rem;
+
+
+    border: 1px solid #E2E2E2;
+    box-sizing: border-box;
+    border-radius: 3px;
+
+    flex-basis: 100%;
   }
 
   .last-name {
-    margin-bottom: 0.75rem;
-    margin-left: 1rem;
-  }
+    font-family: Helvetica;
+    font-size: 1.2rem;
+    text-indent: 5%;
+    margin-bottom: -0.5rem;
+    margin-left: 0.5rem;
+    color: #E2C792;
+    height: 3rem;
+    width: 17rem;
+
+
+    border: 1px solid #E2E2E2;
+    box-sizing: border-box;
+    border-radius: 3px;
+
+    flex-basis: 100%;  }
 
   .register-username {
-    margin-bottom: 0.75rem;
-    margin-left: 1rem;
-  }
+    font-family: Helvetica;
+    font-size: 1.2rem;
+    text-indent: 5%;
+    margin-bottom: -0.5rem;
+    margin-left: 0.5rem;
+    color: #E2C792;
+    height: 3rem;
+    width: 17rem;
+
+
+    border: 1px solid #E2E2E2;
+    box-sizing: border-box;
+    border-radius: 3px;
+
+    flex-basis: 100%;  }
 
   .email {
-    margin-bottom: 0.75rem;
-    margin-left: 1rem;
-  }
+    font-family: Helvetica;
+    font-size: 1.2rem;
+    text-indent: 5%;
+    margin-bottom: -0.5rem;
+    margin-left: 0.5rem;
+    color: #E2C792;
+    height: 3rem;
+    width: 17rem;
 
-  .password {
-    margin-bottom: 1.4rem;
-    margin-left: 2.1rem;
-  }
+
+    border: 1px solid #E2E2E2;
+    box-sizing: border-box;
+    border-radius: 3px;
+
+    flex-basis: 100%;  }
+
+  .passwordRegister {
+    font-family: Helvetica;
+    font-size: 1.2rem;
+    text-indent: 5%;
+    margin-bottom: -0.5rem;
+    margin-left: 0.5rem;
+    color: #E2C792;
+    height: 3rem;
+    width: 17rem;
+
+
+    border: 1px solid #E2E2E2;
+    box-sizing: border-box;
+    border-radius: 3px;
+
+    flex-basis: 100%;  }
 
   .create-account-button {
     background: #E2C792;  
     font-family: Helvetica;
     font-size: 0.85rem;
     text-transform: capitalize;
-    height: 2rem;
-    width: 13.4375rem;
-    margin-left: 2.1rem;
+    height: 3rem;
+    width: 8rem;
+    margin-left: 5rem;
+    margin-top: 2rem;
 
     color: #000000;
+  }
+
+  .register-input{
+    color: #C4C4C4;
+    margin-left: 0.65rem;
+    margin-bottom: -0.05rem;
+    font-size: 1rem;
   }
 
   .already-registered {
@@ -76,7 +149,7 @@
     justify-content: center;
     font-family: Heebo;
     height: 2.2rem;
-    margin-top: 1rem;
+    margin-top: 1.25rem;
 
     font-size: 0.875rem;
     line-height: 1rem;

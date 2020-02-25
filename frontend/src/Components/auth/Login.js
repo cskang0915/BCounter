@@ -63,19 +63,20 @@ class Login extends Component {
           <p>B COUNTER</p>
         </div>
         <div className = "welcome-back">
-          <p>Welcome!</p>
+          <p>Sign in</p>
         </div>
-        <div className = "login-instructions">
+        {/* <div className = "login-instructions">
           <p>Please enter your Username &amp; Password to log in.</p>
           <div className="sign-up">
             <p>Don't have an account? <Link to='/register'>Sign Up.</Link></p>
           </div>
-        </div>
+        </div> */}
         <form onSubmit = {this.handleSubmit}>
-          <div className="emailLogin">
+          <div>
             {/* <label>Username</label> */}
             {/* <i className = "fa fa-user-o fa-lg fa-fw"></i> */}
-            <input
+            <p className="emailLoginLabel">Email</p>
+            <input className="emailLogin"
               type="text" 
               name="email" 
               value={this.state.email} 
@@ -83,9 +84,10 @@ class Login extends Component {
               placeholder=" Email"
             />
           </div>
-          <div className="login-password">
+          <div >
             {/* <label>Password</label> */}
-            <input
+            <p className="passwordLogin">Password</p>
+            <input className="login-password"
               type="password" 
               name="password" 
               value={this.state.password} 
@@ -97,7 +99,8 @@ class Login extends Component {
           </div>
             <button type = "submit" className="form-login-button">Log in</button>
         </form>
-          <a href="#" className="form-login-forgotPW">Forgot Password?</a>
+          {/* <a href="#" className="form-login-forgotPW">Forgot Password?</a> */}
+          <p className="sign-up"><Link to='/register'>Create account?</Link></p>
       </div>
     )
   }
