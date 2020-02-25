@@ -27,6 +27,7 @@ class EntryFormContainer extends Component {
         yearOfEntry: this.props.yearOfEntry,
         comment: this.props.comment
       })
+      // this.props.state.hamburgerMenuVisibility = "hidden"
     }
   }
 
@@ -69,10 +70,12 @@ class EntryFormContainer extends Component {
       comment: ''
     }))
     // console.log(`/overview/${this.props.time}`)
+    this.props.hamburgerMenuVisibility = "visible"
     this.props.history.push(`/overview/${this.props.time}`)
   };
 
   render() {
+
     return (
       <div>
         <EntryForm 
