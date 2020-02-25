@@ -19,7 +19,7 @@
 
 .back-button-x {
 	text-decoration: none;
-	color: #E2C792;
+	background: none;
 	font-size: 2rem;
 	position: absolute;
 	top: 10px;

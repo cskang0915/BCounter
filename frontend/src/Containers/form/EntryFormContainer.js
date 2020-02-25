@@ -27,7 +27,6 @@ class EntryFormContainer extends Component {
         yearOfEntry: this.props.yearOfEntry,
         comment: this.props.comment
       })
-      // this.props.state.hamburgerMenuVisibility = "hidden"
     }
   }
 
