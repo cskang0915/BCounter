@@ -64,7 +64,7 @@ class OverviewRoutes extends Component {
 						return <EntryFormContainer hamburgerMenuVisibility={this.state} history={this.props.history} time={props.match.params.time}/>
 					}} />
 					<Route exact path = "/overview/update/:time/:rowid" render={(props) => {
-						return <EditFormContainer time={props.match.params.time} rowid={props.match.params.rowid}/>
+						return <EditFormContainer history={this.props.history} time={props.match.params.time} rowid={props.match.params.rowid}/>
 					}} />
 					<Route exact path ="/overview/profile" render={() => {
 						return <ProfileContainer history={this.props.history} />

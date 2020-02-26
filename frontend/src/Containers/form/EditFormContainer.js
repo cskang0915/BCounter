@@ -60,30 +60,30 @@ class EditFormContainer extends Component {
 			.catch(error => console.log(error))
   }
   
-  handleDelete = () => {
-		fetch(`${process.env.REACT_APP_API}/api/budgetEntry/delete/${this.props.rowid}`, {
-			method: "DELETE",
-			headers: {
-				"authorization": `Bearer ${localStorage.uid}`,
-				"Content-Type": "application/json"
-			}
-		})
-		.then(res => res.json())
-		.then(data => {
-			if(data.status === 200){
-				console.log('deleted successfully')
-			} else {
-				console.log('deleted unsuccessfully')
-			}
-		})
-		.catch(err => console.log(err))
-		window.location.reload(true)
-	}
+  // handleDelete = () => {
+	// 	fetch(`${process.env.REACT_APP_API}/api/budgetEntry/delete/${this.props.rowid}`, {
+	// 		method: "DELETE",
+	// 		headers: {
+	// 			"authorization": `Bearer ${localStorage.uid}`,
+	// 			"Content-Type": "application/json"
+	// 		}
+	// 	})
+	// 	.then(res => res.json())
+	// 	.then(data => {
+	// 		if(data.status === 200){
+	// 			console.log('deleted successfully')
+	// 		} else {
+	// 			console.log('deleted unsuccessfully')
+	// 		}
+	// 	})
+	// 	.catch(err => console.log(err))
+	// 	window.location.reload(true)
+	// }
 
   render() {
     return (
       <div>
-        <EditForm state={this.state} handleChange={this.handleChange} handleSubmit={this.handleSubmit} handleDelete={this.handleDelete} time={this.props.time}/>
+        <EditForm history={this.props.history} state={this.state} handleChange={this.handleChange} handleSubmit={this.handleSubmit} time={this.props.time} rowid={this.props.rowid}/>
       </div>
     )
   }

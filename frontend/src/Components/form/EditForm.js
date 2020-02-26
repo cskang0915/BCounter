@@ -6,6 +6,27 @@ import X from '../../Pics/X/X.svg';
 
 class EditForm extends Component {
 
+  handleDelete = () => {
+		fetch(`${process.env.REACT_APP_API}/api/budgetEntry/delete/${this.props.rowid}`, {
+			method: "DELETE",
+			headers: {
+				"authorization": `Bearer ${localStorage.uid}`,
+				"Content-Type": "application/json"
+			}
+		})
+		.then(res => res.json())
+		.then(data => {
+			if(data.status === 200){
+				console.log('deleted successfully')
+			} else {
+        console.log(data)
+				console.log('deleted unsuccessfully')
+			}
+		})
+		.catch(err => console.log(err))
+		this.props.history.push(`/overview/${this.props.time}`)
+	}
+
   state = {
     category_name: '',
     category_rowid: null
@@ -45,7 +66,7 @@ class EditForm extends Component {
 
     return (
       <div className="event-formEdit">
-        <button className="trash-can"onClick={this.props.handleDelete} >
+        <button className="trash-can"onClick={this.handleDelete} >
 					<img src={Trash} className="pencil-icon" style={{height:25}} alt="Trashcan Dark SVG"/>
 				</button>
 

@@ -4,25 +4,6 @@ import Pencil from '../../Pics/Pencil/Pencil.svg';
 import Trash from '../../Pics/Trashcan/Trashcandark.svg';
 
 class BudgetEntry extends Component {
-	// handleDelete = () => {
-	// 	fetch(`${process.env.REACT_APP_API}/api/budgetEntry/delete/${this.props.rowid}`, {
-	// 		method: "DELETE",
-	// 		headers: {
-	// 			"authorization": `Bearer ${localStorage.uid}`,
-	// 			"Content-Type": "application/json"
-	// 		}
-	// 	})
-	// 	.then(res => res.json())
-	// 	.then(data => {
-	// 		if(data.status === 200){
-	// 			console.log('deleted successfully')
-	// 		} else {
-	// 			console.log('deleted unsuccessfully')
-	// 		}
-	// 	})
-	// 	.catch(err => console.log(err))
-	// 	window.location.reload(true)
-	// }
 
 	render() {
 		return (

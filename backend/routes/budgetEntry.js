@@ -180,9 +180,10 @@ budgetEntryRouter.delete("/delete/:rowid", authRequired, (req, res) => {
 
 	database.all(selectBudgetEntryByRowid, (err, checkedUser) => {
 		if(err) {
+			console.log(err)
 			return res.status(500).json({
 				status: 500,
-				message: "something went wrong. try again"
+				message: "something went wrong. try again1"
 			});
 		} else if(checkedUser.length === 0) {
 			return res.status(200).json('there are no entries to delete');
@@ -195,7 +196,7 @@ budgetEntryRouter.delete("/delete/:rowid", authRequired, (req, res) => {
 				if(err) {
 					return res.status(500).json({
 						status: 500,
-						message: "something went wrong. try again"
+						message: "something went wrong. try again2"
 					});
 				} else {
 					return res.status(200).json({
