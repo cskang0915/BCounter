@@ -24,7 +24,8 @@ class EditForm extends Component {
 			}
 		})
 		.catch(err => console.log(err))
-		this.props.history.push(`/overview/${this.props.time}`)
+    this.props.history.push(`/overview/${this.props.time}`)
+    window.location.reload(true);
 	}
 
   state = {
