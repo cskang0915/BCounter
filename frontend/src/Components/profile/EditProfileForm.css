@@ -27,7 +27,7 @@
     color: #C4C4C4;
 
     padding-bottom: 0.625rem;
-    text-indent: 0.75rem;
+    text-indent: 0.025rem;
   }
 
   /* input {
@@ -45,7 +45,7 @@
   } */
 
   input.first {
-    margin: auto auto 0.75rem 1rem;
+    /* margin: auto auto 0.75rem 1rem;
     text-transform: capitalize;
     color: #C4C4C4;
 
@@ -54,11 +54,20 @@
     border-left: none;
     width: 15rem;
 
-    padding-bottom: 0.625rem;
+    padding-bottom: 0.625rem; */
+    border: 0.0625rem solid #C4C4C4;
+    border-radius: 0.2rem;
+    width: 18.5rem;
+    height: 2rem;
+    margin-bottom: 0.75rem;
+    color: #C4C4C4;
+    text-indent: 2%;
+    font-size: 1rem;
+
   }
 
   .last {
-    margin-left: 1rem;
+    /* margin-left: 1rem;
     margin-bottom: 0.75rem;
     text-transform: capitalize;
     color: #C4C4C4;
@@ -67,22 +76,21 @@
     border-right: none;
     border-left: none;
 
-    padding-bottom: 0.625rem;
-  }
-
-  .userName {
+    padding-bottom: 0.625rem; */
+    border: 0.0625rem solid #C4C4C4;
+    border-radius: 0.2rem;
+    width: 18.5rem;
+    height: 2rem;
     margin-bottom: 0.75rem;
     color: #C4C4C4;
+    text-indent: 2%;
+    font-size: 1rem;
 
-    border-top: none;
-    border-right: none;
-    border-left: none;
-
-    padding-bottom: 0.625rem;
   }
 
+
   .Email {
-    margin-bottom: 0.75rem;
+    /* margin-bottom: 0.75rem;
     margin-left: 1rem;
     color: #C4C4C4;
 
@@ -90,8 +98,16 @@
     border-right: none;
     border-left: none;
 
-    padding-bottom: 0.625rem;
+    padding-bottom: 0.625rem; */
 
+    border: 0.0625rem solid #C4C4C4;
+    border-radius: 0.2rem;
+    width: 18.5rem;
+    height: 2rem;
+    margin-bottom: 0.75rem;
+    color: #C4C4C4;
+    text-indent: 2%;
+    font-size: 1rem;
   }
 
   .confirm-password {
@@ -112,6 +128,7 @@
     width: 7.3125rem;
     margin-top: 2rem;
     margin-right: 1.25rem;
+    margin-left: 1.5rem;
     
     color: #000000;
   }

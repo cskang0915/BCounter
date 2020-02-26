@@ -1,4 +1,18 @@
-.edit-form {
+.trash-can{
+	background-color: #2A2B37;
+	border: none;
+	margin-left: 19rem;
+	margin-bottom: 4rem;
+}
+
+.event-formEdit{
+	margin-top: -2.5rem;
+	color: white;
+	text-align: center;
+}
+
+
+/* .edit-form {
 	color: white;
 	text-align: center;
 }
@@ -32,4 +46,4 @@
 	color: #2A2B37;
 	padding: 1rem 2.5rem;
 	margin-top: 2.5rem;
-}
+} */

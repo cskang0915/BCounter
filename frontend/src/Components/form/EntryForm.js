@@ -41,11 +41,11 @@ class EntryForm extends Component {
     }
     return (
       <div className="event-form">
-        <h1>New Entry</h1>
-        <form className="form" onSubmit={this.props.handleSubmit}>
-          <label className="event-form-category">
-            <div>Category</div>
-            <select
+        <h1 className="newEntryTitle">New Entry</h1>
+        <form onSubmit={this.props.handleSubmit}>
+          <label >
+            <div className="entryFormLabel">Category</div>
+            <select className="event-form-category"
               name = "category"
               onChange={this.props.handleChange}
             >
@@ -53,24 +53,22 @@ class EntryForm extends Component {
             </select>
           </label>
           <br />
-          <label className="event-form-category">
-            <div>Amount</div>
-            <input
+          <label>
+            <div className="entryFormLabel">Amount</div>
+            <input className="event-form-category"
               type="number"
               step="0.01"
               min="0"
               name="amount"
-              placeholder="Amount"
               onChange={this.props.handleChange}
             />
           </label>
           <br />
-          <label className="event-form-category">
-            <div>Comment</div>
-            <input 
+          <label >
+            <div className="entryFormLabel">Comment</div>
+            <input className="event-form-category"
               type="text"
               name="comment"
-              placeholder="Comment"
               onChange={this.props.handleChange}
             />
           </label>

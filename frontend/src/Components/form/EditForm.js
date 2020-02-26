@@ -44,12 +44,16 @@ class EditForm extends Component {
     }
 
     return (
-      <div className="edit-form">
-        <h1>Edit Form</h1>
-        <form className="form" onSubmit={this.props.handleSubmit}>
-          <label className="event-form-category">
-            <div>Category</div>
-            <select
+      <div className="event-formEdit">
+        <button className="trash-can"onClick={this.props.handleDelete} >
+					<img src={Trash} className="pencil-icon" style={{height:25}} alt="Trashcan Dark SVG"/>
+				</button>
+
+        <h1 className="newEntryTitle">Edit Form</h1>
+        <form onSubmit={this.props.handleSubmit}>
+          <label>
+            <div className="entryFormLabel">Category</div>
+            <select className="event-form-category"
               name = "category"
               onChange={this.props.handleChange}
             >
@@ -57,9 +61,9 @@ class EditForm extends Component {
             </select>
           </label>
           <br />          
-          <label className="event-form-category">
-          <div>Amount</div>
-            <input
+          <label>
+          <div className="entryFormLabel">Amount</div>
+            <input className="event-form-category"
               type="number"
               step="0.01"
               min="0"
@@ -70,9 +74,9 @@ class EditForm extends Component {
             />
           </label>
           <br />
-          <label className="event-form-category">
-          <div>Comment</div>
-            <input 
+          <label>
+          <div className="entryFormLabel">Comment</div>
+            <input className="event-form-category" 
               type="text"
               name="comment"
               placeholder="Comment"
@@ -86,9 +90,6 @@ class EditForm extends Component {
         {/* <Link className="back-button-x" to={`/overview/${this.props.time}`}>
           <img src={X} className="X-icon" style={{height:35}} alt="X SVG"/>
         </Link> */}
-        <button className="back-button-x"onClick={this.props.handleDelete} >
-					<img src={Trash} className="pencil-icon" style={{height:35}} alt="Trashcan Dark SVG"/>
-				</button>
       </div>
     )
   }
