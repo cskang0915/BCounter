@@ -9,8 +9,8 @@
 */
 
 .total-spent {
-  color: #E2C792;
-}
+  color: white;
+  text-align: center;}
 
 /* .OverviewBudgetEntryContainer-category-total {
   background-color: #E2C792;
@@ -41,6 +41,8 @@
 .budgetEntry-date {
   background-color: #FFFFFF;
   margin-left: 5%;
+
+  
 }
 
 .budgetEntry-comment-specific {
@@ -49,7 +51,7 @@
   margin-top: -0.45rem;
 
   font-size: 140%;
-  width: 23.7rem;
+  width: 23.9rem;
 }
 
 .budgetEntry-amount-specific {
@@ -67,12 +69,14 @@
   color: gray;
 
   margin-left: -0.75rem;
-  width: 23.7rem;
+  width: 23.9rem;
 }
 
 .add-entry {
-  margin-left: 85%;
+  margin-left: 7.5rem;
   cursor: pointer;
+
+  width: 8rem;
 }
 
 li {
@@ -88,14 +92,18 @@ li {
 }
 
 .editButton {
+  position: absolute;
   border: none;
   background-color: white;
   margin-bottom: 0.5%;
   cursor: pointer;
+  margin-left: 20.5rem;
+  margin-top: -3rem;
+
 }
 
 .this-props-time {
   text-align: center;
-  color: #E2C792;
+  color: white;
   letter-spacing: 0.2rem;
 }

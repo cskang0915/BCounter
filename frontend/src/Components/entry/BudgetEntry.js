@@ -32,7 +32,7 @@ class BudgetEntry extends Component {
 				<li className="budgetEntry-date-specific"><b className="budgetEntry-date"></b>{this.props.data.monthOfEntry}/{this.props.data.dayOfEntry}/{this.props.data.yearOfEntry}</li>
 				<Link to = {`/overview/update/${this.props.time}/${this.props.rowid}`}>
 					<button className="editButton">
-						<img src={Pencil} className="pencil-icon" style={{backgroundColor: "white", height:35}} alt="Pencil SVG"/>
+						<img src={Pencil} className="pencil-icon" style={{backgroundColor: "white", height:25}} alt="Pencil SVG"/>
 					</button>
 				</Link>
 				{/* <button className="deleteButton"onClick={this.handleDelete} >
