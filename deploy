@@ -1,0 +1,59 @@
+1. create droplet
+	2. use public key
+	3. ssh -i ~/.ssh/{privatekey} root@{ip address}
+	4. apt update
+	5. apt upgrade
+	6. adduser {username}
+	7. usermod -aG sudo {username}
+	8. su {username}
+	9. mkdir ~/.ssh
+	10. chmod 700 ~/.ssh (chmod u+rwx ~/.ssh)
+	11. touch ~/.ssh/authorized_keys
+	12. copy root authorized keys
+	13. chmod 600 ~/.ssh/authorized_keys (chmod u+rw ~./ssh)
+	14. as root, sudo cd etc/ssh/sshd_config >> permitrootlogin to no
+	15. sudo reboot
+	16. sudo apt install  ufw (install firewall)
+	17. sudo ufw allow ssh (allow ssh)
+	18. get domain name and add ip address
+	19. sudo apt-get update
+	20. sudo apt-get install nginx
+	21. server directory
+	22. cd /etc/nginx/sites-available
+	23. filename >
+			// static
+			server {
+			  listen 80 default_server;
+			  listen [::]:80 default_server;
+			  server_name jgefroh.com www.jgefroh.com;
+			  root {server directory};
+			  index index.html;
+			  location / {
+			    try_files $uri $uri/ =404;
+			  }
+			}
+
+			// api
+			server {
+			  listen 80 default_server;
+			  listen [::]:80 default_server;
+			  server_name jgefroh.com www.jgefroh.com;
+			  location / {
+			    proxy_pass http://localhost:{port};
+			    proxy_http_version 1.1;
+			    proxy_set_header Upgrade $http_upgrade;
+			    proxy_set_header Connection 'upgrade';
+			    proxy_set_header Host $host;
+			    proxy_cache_bypass $http_upgrade;
+			  }
+			}
+
+
+	24. ln -s /etc/nginx/sites-available/{foldername} /etc/nginx/sites-enabled/{foldername}
+	25. sudo systemctl restart nginx
+	26. curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
+	27. source .bashrc
+	28. command -v nvm
+	29. nvm install node
+	30. build react and index the file inside
+	31. restart nginx and rebuild with every change
